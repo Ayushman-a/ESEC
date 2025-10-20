@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
 import { useThemeMode } from '../ThemeContext'
-import esecLogo from '../assets/images/esec-logo.png'
+import esecLogo from '../assets/images/new-logo.png'
 
 const cols = [
   { title: 'Solutions', items: ['License Management', 'Asset Tracking', 'Compliance & Audit', 'Cost Optimization'] },
