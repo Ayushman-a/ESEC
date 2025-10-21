@@ -8,9 +8,46 @@ export default function Hero() {
   const navigate = useNavigate()
   const { mode } = useThemeMode()
   return (
-    <Box sx={{ py: { xs: 12, md: 16 }, position: 'relative', overflow: 'hidden' }} className="hero-bg">
+    <Box sx={{ py: { xs: 8, md: 4 }, position: 'relative', overflow: 'hidden' }} className="hero-bg">
       <Container sx={{ position: 'relative', zIndex: 1 }}>
         <Stack spacing={3} alignItems="center" textAlign="center">
+          {/* Navigation Links */}
+          <Stack
+            direction={{ xs: 'column', sm: 'row' }}
+            spacing={{ xs: 2, sm: 4 }}
+            alignItems="center"
+            sx={{ mb: 1 }}
+          >
+            <Stack direction="row" spacing={3} alignItems="center">
+              <Typography
+                variant="body2"
+                sx={{
+                  color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  '&:hover': { opacity: 0.8 }
+                }}
+                onClick={() => navigate('/services')}
+              >
+                Engineering Software
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  '&:hover': { opacity: 0.8 }
+                }}
+                onClick={() => navigate('/services')}
+              >
+                Non-Engineering Software
+              </Typography>
+            </Stack>
+          </Stack>
+
           <Box sx={{
             px: 2.5,
             py: 1,

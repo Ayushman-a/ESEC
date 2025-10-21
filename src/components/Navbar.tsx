@@ -4,7 +4,7 @@ import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import { useThemeMode } from '../ThemeContext'
 import { useColors } from '../theme/useColors'
-import esecLogo from '../assets/images/new-logo.png'
+import esecLogo from '../assets/images/esec-logo.png'
 
 const menu = {
   Features: [

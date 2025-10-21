@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
 import { useThemeMode } from '../ThemeContext'
-import esecLogo from '../assets/images/new-logo.png'
+import esecLogo from '../assets/images/esec-logo.png'
 
 const cols = [
   { title: 'Solutions', items: ['License Management', 'Asset Tracking', 'Compliance & Audit', 'Cost Optimization'] },
@@ -48,6 +48,46 @@ export default function Footer() {
             <Typography variant="body2" color="text.secondary" sx={{ mt: 2, lineHeight: 1.7 }}>
               Engineering Software Expertise Capture - Intelligent software asset management solutions for modern enterprises.
             </Typography>
+
+            {/* US Office Address */}
+            <Typography variant="body2" sx={{
+              mt: 3,
+              color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+              fontWeight: 600,
+              lineHeight: 1.7
+            }}>
+              US Office: Nibana Solutions Inc. Delaware, USA.
+            </Typography>
+
+            {/* ISO Certifications */}
+            <Stack spacing={1.5} sx={{ mt: 3 }}>
+              <Stack direction="row" spacing={1} alignItems="center">
+                <Icon icon="mdi:certificate" color={mode === 'dark' ? '#00f0ff' : '#0097a7'} width="20" height="20" />
+                <Typography variant="body2" sx={{
+                  color: mode === 'dark' ? '#ffffff' : '#0f172a',
+                  fontWeight: 600
+                }}>
+                  ISO/IEC 27001:2022
+                </Typography>
+              </Stack>
+              <Typography variant="caption" color="text.secondary" sx={{ pl: 3.5 }}>
+                ISMS
+              </Typography>
+
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ mt: 1 }}>
+                <Icon icon="mdi:shield-check" color={mode === 'dark' ? '#a855f7' : '#7c3aed'} width="20" height="20" />
+                <Typography variant="body2" sx={{
+                  color: mode === 'dark' ? '#ffffff' : '#0f172a',
+                  fontWeight: 600
+                }}>
+                  ISO/IEC 27701:2019
+                </Typography>
+              </Stack>
+              <Typography variant="caption" color="text.secondary" sx={{ pl: 3.5 }}>
+                PIMS (GDPR)
+              </Typography>
+            </Stack>
+
             <Stack direction="row" spacing={2} sx={{ mt: 3 }}>
               <Box sx={{
                 width: 36,
