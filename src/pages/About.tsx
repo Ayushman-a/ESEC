@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Box, Button, Container, Grid, Paper, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
-import { useThemeMode } from '../ThemeContext'
+import { useColors } from '../theme/useColors'
 import { useNavigate } from 'react-router-dom'
 
 const values = [
@@ -35,7 +35,7 @@ const stats = [
 ]
 
 export default function About() {
-  const { mode } = useThemeMode()
+  const colors = useColors()
   const navigate = useNavigate()
 
   return (
@@ -47,24 +47,20 @@ export default function About() {
             px: 2.5,
             py: 1,
             borderRadius: 10,
-            border: mode === 'dark'
-              ? '1px solid rgba(0, 240, 255, 0.3)'
-              : '1px solid rgba(0, 151, 167, 0.3)',
-            background: mode === 'dark'
-              ? 'rgba(0, 240, 255, 0.05)'
-              : 'rgba(0, 151, 167, 0.05)',
+            border: `1px solid ${colors.border.primary}`,
+            background: colors.interactive.backgroundSubtle,
             display: 'inline-flex',
             alignItems: 'center',
             gap: 1,
           }}>
             <Icon
               icon="mdi:information"
-              color={mode === 'dark' ? '#00f0ff' : '#0097a7'}
+              color={colors.primary}
               width="16"
               height="16"
             />
             <Typography variant="caption" sx={{
-              color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+              color: colors.primary,
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>
@@ -75,9 +71,7 @@ export default function About() {
           <Typography variant="h2" sx={{
             fontSize: { xs: 32, md: 52 },
             fontWeight: 800,
-            background: mode === 'dark'
-              ? 'linear-gradient(135deg, #00f0ff 0%, #a855f7 100%)'
-              : 'linear-gradient(135deg, #0097a7 0%, #7c3aed 100%)',
+            background: colors.gradient.primary,
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
@@ -95,12 +89,8 @@ export default function About() {
         <Paper sx={{
           p: { xs: 3, md: 5 },
           mb: 6,
-          background: mode === 'dark'
-            ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%)'
-            : 'linear-gradient(135deg, rgba(0, 151, 167, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%)',
-          border: mode === 'dark'
-            ? '1px solid rgba(0, 240, 255, 0.2)'
-            : '1px solid rgba(0, 151, 167, 0.2)',
+          background: colors.gradient.subtle,
+          border: `1px solid ${colors.border.secondary}`,
         }}>
           <Typography variant="h4" sx={{ mb: 3, fontWeight: 700 }}>
             Our Mission
@@ -118,15 +108,9 @@ export default function About() {
       {/* Stats Section */}
       <Box sx={{
         py: 6,
-        background: mode === 'dark'
-          ? 'rgba(15, 23, 42, 0.4)'
-          : 'rgba(248, 250, 252, 0.8)',
-        borderTop: mode === 'dark'
-          ? '1px solid rgba(0, 240, 255, 0.1)'
-          : '1px solid rgba(0, 151, 167, 0.2)',
-        borderBottom: mode === 'dark'
-          ? '1px solid rgba(0, 240, 255, 0.1)'
-          : '1px solid rgba(0, 151, 167, 0.2)',
+        background: colors.background.surface,
+        borderTop: `1px solid ${colors.border.subtle}`,
+        borderBottom: `1px solid ${colors.border.subtle}`,
       }}>
         <Container>
           <Grid container spacing={4}>
@@ -135,9 +119,7 @@ export default function About() {
                 <Stack alignItems="center" spacing={1}>
                   <Typography variant="h3" sx={{
                     fontWeight: 900,
-                    background: mode === 'dark'
-                      ? 'linear-gradient(135deg, #00f0ff 0%, #a855f7 100%)'
-                      : 'linear-gradient(135deg, #0097a7 0%, #7c3aed 100%)',
+                    background: colors.gradient.primary,
                     backgroundClip: 'text',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent'
@@ -174,9 +156,7 @@ export default function About() {
                 transition: 'all 0.3s ease',
                 '&:hover': {
                   transform: 'translateY(-8px)',
-                  boxShadow: mode === 'dark'
-                    ? '0 12px 40px rgba(0, 240, 255, 0.2)'
-                    : '0 12px 40px rgba(0, 151, 167, 0.2)',
+                  boxShadow: colors.shadow.hover,
                 }
               }}>
                 <Stack spacing={2}>
@@ -184,12 +164,8 @@ export default function About() {
                     width: 56,
                     height: 56,
                     borderRadius: 3,
-                    background: mode === 'dark'
-                      ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.2))'
-                      : 'linear-gradient(135deg, rgba(0, 151, 167, 0.2), rgba(124, 58, 237, 0.2))',
-                    border: mode === 'dark'
-                      ? '1px solid rgba(0, 240, 255, 0.3)'
-                      : '1px solid rgba(0, 151, 167, 0.3)',
+                    background: `linear-gradient(135deg, ${colors.primary}20, ${colors.primary}20)`,
+                    border: `1px solid ${colors.border.primary}`,
                     display: 'grid',
                     placeItems: 'center'
                   }}>
@@ -197,7 +173,7 @@ export default function About() {
                       icon={value.icon}
                       width="28"
                       height="28"
-                      color={mode === 'dark' ? '#00f0ff' : '#0097a7'}
+                      color={colors.primary}
                     />
                   </Box>
                   <Typography variant="h5" sx={{ fontWeight: 700 }}>
@@ -218,12 +194,8 @@ export default function About() {
         <Paper sx={{
           p: { xs: 4, md: 6 },
           textAlign: 'center',
-          background: mode === 'dark'
-            ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)'
-            : 'linear-gradient(135deg, rgba(0, 151, 167, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%)',
-          border: mode === 'dark'
-            ? '1px solid rgba(0, 240, 255, 0.3)'
-            : '1px solid rgba(0, 151, 167, 0.3)',
+          background: colors.gradient.subtle,
+          border: `1px solid ${colors.border.primary}`,
         }}>
           <Stack spacing={3} alignItems="center">
             <Typography variant="h4" sx={{ fontWeight: 800 }}>

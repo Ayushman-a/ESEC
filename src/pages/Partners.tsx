@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Box, Button, Container, Grid, Paper, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
+import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { useNavigate } from 'react-router-dom'
 
@@ -15,7 +16,7 @@ const partnerTypes = [
       { name: 'Synopsys', description: 'Comprehensive SAM Solutions' },
       { name: 'Mentor Graphics', description: 'License Server Integration' }
     ],
-    color: '#00f0ff'
+    color: '#3b82f6'
   },
   {
     icon: 'mdi:cloud-check',
@@ -27,7 +28,7 @@ const partnerTypes = [
       { name: 'Google Cloud', description: 'Advanced Analytics Platform' },
       { name: 'IBM Cloud', description: 'Enterprise Solutions' }
     ],
-    color: '#a855f7'
+    color: '#3b82f6'
   },
   {
     icon: 'mdi:account-tie',
@@ -39,7 +40,7 @@ const partnerTypes = [
       { name: 'KPMG', description: 'Compliance & Audit Services' },
       { name: 'PwC', description: 'Software Asset Management' }
     ],
-    color: '#10b981'
+    color: '#3b82f6'
   }
 ]
 
@@ -104,6 +105,7 @@ const partnerLevels = [
 ]
 
 export default function Partners() {
+  const colors = useColors()
   const { mode } = useThemeMode()
   const navigate = useNavigate()
 
@@ -116,24 +118,20 @@ export default function Partners() {
             px: 2.5,
             py: 1,
             borderRadius: 10,
-            border: mode === 'dark'
-              ? '1px solid rgba(0, 240, 255, 0.3)'
-              : '1px solid rgba(0, 151, 167, 0.3)',
-            background: mode === 'dark'
-              ? 'rgba(0, 240, 255, 0.05)'
-              : 'rgba(0, 151, 167, 0.05)',
+            border: `1px solid ${colors.border.primary}`,
+            background: colors.interactive.backgroundSubtle,
             display: 'inline-flex',
             alignItems: 'center',
             gap: 1,
           }}>
             <Icon
               icon="mdi:handshake"
-              color={mode === 'dark' ? '#00f0ff' : '#0097a7'}
+              color={colors.primary}
               width="16"
               height="16"
             />
             <Typography variant="caption" sx={{
-              color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+              color: colors.primary,
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>
@@ -144,9 +142,7 @@ export default function Partners() {
           <Typography variant="h2" sx={{
             fontSize: { xs: 32, md: 52 },
             fontWeight: 800,
-            background: mode === 'dark'
-              ? 'linear-gradient(135deg, #00f0ff 0%, #a855f7 100%)'
-              : 'linear-gradient(135deg, #0097a7 0%, #7c3aed 100%)',
+            background: colors.gradient.primary,
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
@@ -219,17 +215,11 @@ export default function Partners() {
                         sx={{
                           p: 2,
                           borderRadius: 2,
-                          background: mode === 'dark'
-                            ? 'rgba(15, 23, 42, 0.4)'
-                            : 'rgba(248, 250, 252, 0.8)',
-                          border: mode === 'dark'
-                            ? '1px solid rgba(0, 240, 255, 0.1)'
-                            : '1px solid rgba(0, 151, 167, 0.2)',
+                          background: colors.background.surface,
+                          border: `1px solid ${colors.border.subtle}`,
                           transition: 'all 0.2s ease',
                           '&:hover': {
-                            background: mode === 'dark'
-                              ? 'rgba(0, 240, 255, 0.05)'
-                              : 'rgba(0, 151, 167, 0.05)',
+                            background: colors.interactive.backgroundSubtle,
                           }
                         }}
                       >
@@ -252,15 +242,9 @@ export default function Partners() {
       {/* Partner Benefits */}
       <Box sx={{
         py: 8,
-        background: mode === 'dark'
-          ? 'rgba(15, 23, 42, 0.4)'
-          : 'rgba(248, 250, 252, 0.8)',
-        borderTop: mode === 'dark'
-          ? '1px solid rgba(0, 240, 255, 0.1)'
-          : '1px solid rgba(0, 151, 167, 0.2)',
-        borderBottom: mode === 'dark'
-          ? '1px solid rgba(0, 240, 255, 0.1)'
-          : '1px solid rgba(0, 151, 167, 0.2)',
+        background: colors.background.surface,
+        borderTop: `1px solid ${colors.border.subtle}`,
+        borderBottom: `1px solid ${colors.border.subtle}`,
       }}>
         <Container>
           <Stack spacing={3} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
@@ -278,21 +262,15 @@ export default function Partners() {
                 <Paper sx={{
                   p: 4,
                   height: '100%',
-                  background: mode === 'dark'
-                    ? 'rgba(15, 23, 42, 0.8)'
-                    : 'rgba(255, 255, 255, 0.9)',
+                  background: colors.background.paper,
                 }}>
                   <Stack direction="row" spacing={2} alignItems="flex-start">
                     <Box sx={{
                       width: 48,
                       height: 48,
                       borderRadius: 2,
-                      background: mode === 'dark'
-                        ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.2))'
-                        : 'linear-gradient(135deg, rgba(0, 151, 167, 0.2), rgba(124, 58, 237, 0.2))',
-                      border: mode === 'dark'
-                        ? '1px solid rgba(0, 240, 255, 0.3)'
-                        : '1px solid rgba(0, 151, 167, 0.3)',
+                      background: `linear-gradient(135deg, ${colors.primary}20, ${colors.primary}20)`,
+                      border: `1px solid ${colors.border.primary}`,
                       display: 'grid',
                       placeItems: 'center',
                       flexShrink: 0
@@ -301,7 +279,7 @@ export default function Partners() {
                         icon={benefit.icon}
                         width="24"
                         height="24"
-                        color={mode === 'dark' ? '#00f0ff' : '#0097a7'}
+                        color={colors.primary}
                       />
                     </Box>
                     <Box>
@@ -339,21 +317,19 @@ export default function Partners() {
                 height: '100%',
                 border: partner.highlighted
                   ? mode === 'dark'
-                    ? '2px solid rgba(0, 240, 255, 0.5)'
-                    : '2px solid rgba(0, 151, 167, 0.5)'
+                    ? '2px solid rgba(59, 130, 246, 0.5)'
+                    : '2px solid rgba(37, 99, 235, 0.5)'
                   : 'inherit',
                 background: partner.highlighted
                   ? mode === 'dark'
-                    ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)'
-                    : 'linear-gradient(135deg, rgba(0, 151, 167, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%)'
+                    ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)'
+                    : 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%)'
                   : 'inherit',
                 position: 'relative',
                 transition: 'all 0.3s ease',
                 '&:hover': {
                   transform: 'translateY(-8px)',
-                  boxShadow: mode === 'dark'
-                    ? '0 12px 40px rgba(0, 240, 255, 0.2)'
-                    : '0 12px 40px rgba(0, 151, 167, 0.2)',
+                  boxShadow: colors.shadow.hover,
                 }
               }}>
                 {partner.highlighted && (
@@ -365,9 +341,7 @@ export default function Partners() {
                     px: 2,
                     py: 0.5,
                     borderRadius: 2,
-                    background: mode === 'dark'
-                      ? 'linear-gradient(135deg, #00f0ff 0%, #a855f7 100%)'
-                      : 'linear-gradient(135deg, #0097a7 0%, #7c3aed 100%)',
+                    background: colors.gradient.primary,
                   }}>
                     <Typography variant="caption" sx={{ color: 'white', fontWeight: 700 }}>
                       RECOMMENDED
@@ -391,7 +365,7 @@ export default function Partners() {
                           icon="mdi:check-circle"
                           width="20"
                           height="20"
-                          color={mode === 'dark' ? '#00f0ff' : '#0097a7'}
+                          color={colors.primary}
                           style={{ marginTop: '2px', flexShrink: 0 }}
                         />
                         <Typography variant="body2">
@@ -412,12 +386,8 @@ export default function Partners() {
         <Paper sx={{
           p: { xs: 4, md: 6 },
           textAlign: 'center',
-          background: mode === 'dark'
-            ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)'
-            : 'linear-gradient(135deg, rgba(0, 151, 167, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%)',
-          border: mode === 'dark'
-            ? '1px solid rgba(0, 240, 255, 0.3)'
-            : '1px solid rgba(0, 151, 167, 0.3)',
+          background: colors.gradient.subtle,
+          border: `1px solid ${colors.border.primary}`,
         }}>
           <Stack spacing={3} alignItems="center">
             <Typography variant="h4" sx={{ fontWeight: 800 }}>

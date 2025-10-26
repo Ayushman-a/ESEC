@@ -2,23 +2,19 @@ import * as React from 'react'
 import { Box, Button, Container, Paper, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
 import { useNavigate } from 'react-router-dom'
-import { useThemeMode } from '../ThemeContext'
+import { useColors } from '../theme/useColors'
 
 export default function CTA() {
   const navigate = useNavigate()
-  const { mode } = useThemeMode()
+  const colors = useColors()
 
   return (
     <Container sx={{ pb: { xs: 8, md: 12 } }}>
       <Paper sx={{
         p: { xs: 4, md: 6 },
         textAlign: 'center',
-        background: mode === 'dark'
-          ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)'
-          : 'linear-gradient(135deg, rgba(0, 151, 167, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%)',
-        border: mode === 'dark'
-          ? '1px solid rgba(0, 240, 255, 0.3)'
-          : '1px solid rgba(0, 151, 167, 0.3)',
+        background: colors.gradient.subtle,
+        border: `1px solid ${colors.border.primary}`,
         position: 'relative',
         overflow: 'hidden',
         '&::before': {
@@ -28,9 +24,7 @@ export default function CTA() {
           left: 0,
           right: 0,
           height: '2px',
-          background: mode === 'dark'
-            ? 'linear-gradient(90deg, #00f0ff, #a855f7, #00f0ff)'
-            : 'linear-gradient(90deg, #0097a7, #7c3aed, #0097a7)',
+          background: `linear-gradient(90deg, ${colors.primary}, ${colors.secondary}, ${colors.primary})`,
           backgroundSize: '200% 100%',
           animation: 'gradientShift 3s ease infinite',
         }
@@ -40,19 +34,15 @@ export default function CTA() {
             px: 2.5,
             py: 1,
             borderRadius: 10,
-            border: mode === 'dark'
-              ? '1px solid rgba(0, 240, 255, 0.3)'
-              : '1px solid rgba(0, 151, 167, 0.4)',
-            background: mode === 'dark'
-              ? 'rgba(0, 240, 255, 0.05)'
-              : 'rgba(0, 151, 167, 0.08)',
+            border: `1px solid ${colors.border.primary}`,
+            background: colors.interactive.backgroundSubtle,
             display: 'inline-flex',
             alignItems: 'center',
             gap: 1
           }}>
-            <Icon icon="mdi:security" color={mode === 'dark' ? '#00f0ff' : '#0097a7'} width="16" height="16" />
+            <Icon icon="mdi:security" color={colors.primary} width="16" height="16" />
             <Typography variant="caption" sx={{
-              color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+              color: colors.primary,
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>

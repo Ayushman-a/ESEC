@@ -119,8 +119,8 @@ export function ThemeProviderWrapper({ children }: ThemeProviderWrapperProps) {
                 borderRadius: 16,
                 backgroundImage: 'none',
                 border: mode === 'dark'
-                  ? '1px solid rgba(0, 240, 255, 0.1)'
-                  : '1px solid rgba(0, 151, 167, 0.2)',
+                  ? '1px solid rgba(59, 130, 246, 0.1)'
+                  : '1px solid rgba(37, 99, 235, 0.2)',
               },
             },
           },
@@ -131,28 +131,31 @@ export function ThemeProviderWrapper({ children }: ThemeProviderWrapperProps) {
               },
               contained: {
                 background: mode === 'dark'
-                  ? 'linear-gradient(135deg, #00f0ff 0%, #a855f7 100%)'
-                  : 'linear-gradient(135deg, #0097a7 0%, #7c3aed 100%)',
+                  ? '#3b82f6'
+                  : '#2563eb',
                 boxShadow: mode === 'dark'
-                  ? '0 4px 20px rgba(0, 240, 255, 0.3)'
-                  : '0 4px 20px rgba(0, 151, 167, 0.3)',
+                  ? '0 4px 20px rgba(59, 130, 246, 0.3)'
+                  : '0 4px 20px rgba(37, 99, 235, 0.3)',
                 '&:hover': {
+                  background: mode === 'dark'
+                    ? '#0ea5e9'
+                    : '#0284c7',
                   boxShadow: mode === 'dark'
-                    ? '0 6px 30px rgba(0, 240, 255, 0.4)'
-                    : '0 6px 30px rgba(0, 151, 167, 0.4)',
+                    ? '0 6px 30px rgba(59, 130, 246, 0.4)'
+                    : '0 6px 30px rgba(37, 99, 235, 0.4)',
                   transform: 'translateY(-2px)',
                   transition: 'all 0.3s ease',
                 },
               },
               outlined: {
                 borderColor: mode === 'dark'
-                  ? 'rgba(0, 240, 255, 0.5)'
-                  : 'rgba(0, 151, 167, 0.5)',
+                  ? 'rgba(59, 130, 246, 0.5)'
+                  : 'rgba(37, 99, 235, 0.5)',
                 '&:hover': {
-                  borderColor: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                  borderColor: mode === 'dark' ? '#3b82f6' : '#2563eb',
                   background: mode === 'dark'
-                    ? 'rgba(0, 240, 255, 0.1)'
-                    : 'rgba(0, 151, 167, 0.1)',
+                    ? 'rgba(59, 130, 246, 0.1)'
+                    : 'rgba(37, 99, 235, 0.1)',
                 },
               },
             },

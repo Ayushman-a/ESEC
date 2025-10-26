@@ -7,20 +7,20 @@
 
 // Brand Colors
 export const brandColors = {
-  // Primary Brand Color (Cyan/Teal)
+  // Primary Brand Color (Pale Azure - Option 3)
   primary: {
-    dark: '#00f0ff',      // Bright cyan for dark mode
-    light: '#0097a7',     // Teal for light mode
-    darker: '#00b8cc',    // Darker cyan
-    lighter: '#4dd0e1',   // Lighter teal
+    dark: '#7dd3fc',      // Very light sky for dark mode
+    light: '#38bdf8',     // Light sky blue for light mode
+    darker: '#0ea5e9',    // Bright sky
+    lighter: '#bae6fd',   // Extra light
   },
 
-  // Secondary Brand Color (Purple)
+  // Secondary Brand Color (Light Blue)
   secondary: {
-    dark: '#a855f7',      // Bright purple for dark mode
-    light: '#7c3aed',     // Deep purple for light mode
-    darker: '#5b21b6',    // Darker purple
-    lighter: '#a78bfa',   // Lighter purple
+    dark: '#93c5fd',      // Light blue for dark mode
+    light: '#60a5fa',     // Medium light blue for light mode
+    darker: '#3b82f6',    // Bright blue
+    lighter: '#dbeafe',   // Extra light blue
   },
 
   // Accent Colors
@@ -68,64 +68,64 @@ export const textColors = {
 // Border Colors (with opacity values)
 export const borderColors = {
   dark: {
-    primary: 'rgba(0, 240, 255, 0.3)',   // Primary borders
-    secondary: 'rgba(0, 240, 255, 0.2)',  // Subtle borders
-    subtle: 'rgba(0, 240, 255, 0.1)',     // Very subtle borders
-    purple: 'rgba(168, 85, 247, 0.3)',    // Purple borders
+    primary: 'rgba(59, 130, 246, 0.3)',    // Primary borders (blue)
+    secondary: 'rgba(59, 130, 246, 0.2)',  // Subtle borders
+    subtle: 'rgba(59, 130, 246, 0.1)',     // Very subtle borders
+    green: 'rgba(14, 165, 233, 0.3)',      // Sky blue borders
   },
   light: {
-    primary: 'rgba(0, 151, 167, 0.3)',    // Primary borders
-    secondary: 'rgba(0, 151, 167, 0.2)',  // Subtle borders
-    subtle: 'rgba(0, 151, 167, 0.2)',     // Very subtle borders
-    purple: 'rgba(124, 58, 237, 0.3)',    // Purple borders
+    primary: 'rgba(37, 99, 235, 0.3)',     // Primary borders (blue)
+    secondary: 'rgba(37, 99, 235, 0.2)',   // Subtle borders
+    subtle: 'rgba(37, 99, 235, 0.2)',      // Very subtle borders
+    green: 'rgba(2, 132, 199, 0.3)',       // Sky blue borders
   }
 }
 
 // Gradient Colors
 export const gradientColors = {
   dark: {
-    primary: 'linear-gradient(135deg, #00f0ff 0%, #a855f7 100%)',
-    primaryReverse: 'linear-gradient(135deg, #a855f7 0%, #00f0ff 100%)',
-    subtle: 'linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)',
-    text: 'linear-gradient(135deg, #ffffff 0%, #00f0ff 50%, #a855f7 100%)',
-    radial: 'radial-gradient(ellipse at top, rgba(0, 240, 255, 0.15), transparent 50%)',
+    primary: 'linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%)',
+    primaryReverse: 'linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%)',
+    subtle: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%)',
+    text: 'linear-gradient(135deg, #ffffff 0%, #3b82f6 50%, #0ea5e9 100%)',
+    radial: 'radial-gradient(ellipse at top, rgba(59, 130, 246, 0.15), transparent 50%)',
   },
   light: {
-    primary: 'linear-gradient(135deg, #0097a7 0%, #7c3aed 100%)',
-    primaryReverse: 'linear-gradient(135deg, #7c3aed 0%, #0097a7 100%)',
-    subtle: 'linear-gradient(135deg, rgba(0, 151, 167, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%)',
-    text: 'linear-gradient(135deg, #0f172a 0%, #0097a7 50%, #7c3aed 100%)',
-    radial: 'radial-gradient(ellipse at top, rgba(0, 151, 167, 0.08), transparent 50%)',
+    primary: 'linear-gradient(135deg, #2563eb 0%, #0284c7 100%)',
+    primaryReverse: 'linear-gradient(135deg, #0284c7 0%, #2563eb 100%)',
+    subtle: 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(2, 132, 199, 0.08) 100%)',
+    text: 'linear-gradient(135deg, #0f172a 0%, #2563eb 50%, #0284c7 100%)',
+    radial: 'radial-gradient(ellipse at top, rgba(37, 99, 235, 0.08), transparent 50%)',
   }
 }
 
 // Shadow/Glow Colors
 export const shadowColors = {
   dark: {
-    primary: '0 0 20px rgba(0, 240, 255, 0.5)',
-    secondary: '0 0 20px rgba(168, 85, 247, 0.5)',
-    subtle: '0 8px 32px rgba(0, 240, 255, 0.15)',
-    hover: '0 12px 40px rgba(0, 240, 255, 0.3)',
+    primary: '0 0 20px rgba(59, 130, 246, 0.5)',
+    secondary: '0 0 20px rgba(14, 165, 233, 0.5)',
+    subtle: '0 8px 32px rgba(59, 130, 246, 0.15)',
+    hover: '0 12px 40px rgba(59, 130, 246, 0.3)',
   },
   light: {
-    primary: '0 0 20px rgba(0, 151, 167, 0.5)',
-    secondary: '0 0 20px rgba(124, 58, 237, 0.5)',
-    subtle: '0 8px 32px rgba(0, 151, 167, 0.15)',
-    hover: '0 12px 40px rgba(0, 151, 167, 0.25)',
+    primary: '0 0 20px rgba(37, 99, 235, 0.5)',
+    secondary: '0 0 20px rgba(2, 132, 199, 0.5)',
+    subtle: '0 8px 32px rgba(37, 99, 235, 0.15)',
+    hover: '0 12px 40px rgba(37, 99, 235, 0.25)',
   }
 }
 
 // Hover/Interactive States
 export const interactiveColors = {
   dark: {
-    background: 'rgba(0, 240, 255, 0.1)',
-    backgroundSubtle: 'rgba(0, 240, 255, 0.05)',
-    border: '#00f0ff',
+    background: 'rgba(59, 130, 246, 0.1)',
+    backgroundSubtle: 'rgba(59, 130, 246, 0.05)',
+    border: '#3b82f6',
   },
   light: {
-    background: 'rgba(0, 151, 167, 0.1)',
-    backgroundSubtle: 'rgba(0, 151, 167, 0.05)',
-    border: '#0097a7',
+    background: 'rgba(37, 99, 235, 0.1)',
+    backgroundSubtle: 'rgba(37, 99, 235, 0.05)',
+    border: '#2563eb',
   }
 }
 

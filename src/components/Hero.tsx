@@ -2,11 +2,11 @@ import * as React from 'react'
 import { Box, Button, Container, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
 import { useNavigate } from 'react-router-dom'
-import { useThemeMode } from '../ThemeContext'
+import { useColors } from '../theme/useColors'
 
 export default function Hero() {
   const navigate = useNavigate()
-  const { mode } = useThemeMode()
+  const colors = useColors()
   return (
     <Box sx={{ py: { xs: 8, md: 4 }, position: 'relative', overflow: 'hidden' }} className="hero-bg">
       <Container sx={{ position: 'relative', zIndex: 1 }}>
@@ -22,7 +22,7 @@ export default function Hero() {
               <Typography
                 variant="body2"
                 sx={{
-                  color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                  color: colors.primary,
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
@@ -35,7 +35,7 @@ export default function Hero() {
               <Typography
                 variant="body2"
                 sx={{
-                  color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                  color: colors.primary,
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
@@ -52,20 +52,16 @@ export default function Hero() {
             px: 2.5,
             py: 1,
             borderRadius: 10,
-            border: mode === 'dark'
-              ? '1px solid rgba(0, 240, 255, 0.3)'
-              : '1px solid rgba(0, 151, 167, 0.4)',
-            background: mode === 'dark'
-              ? 'rgba(0, 240, 255, 0.05)'
-              : 'rgba(0, 151, 167, 0.08)',
+            border: `1px solid ${colors.border.primary}`,
+            background: colors.interactive.backgroundSubtle,
             backdropFilter: 'blur(10px)',
             display: 'inline-flex',
             alignItems: 'center',
             gap: 1
           }}>
-            <Icon icon="mdi:flag-variant" color={mode === 'dark' ? '#00f0ff' : '#0097a7'} width="16" height="16" />
+            <Icon icon="mdi:flag-variant" color={colors.primary} width="16" height="16" />
             <Typography variant="caption" sx={{
-              color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+              color: colors.primary,
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>
@@ -78,12 +74,7 @@ export default function Hero() {
             lineHeight: 1.1,
             maxWidth: 1100,
             fontWeight: 900,
-            background: mode === 'dark'
-              ? 'linear-gradient(135deg, #ffffff 0%, #00f0ff 50%, #a855f7 100%)'
-              : 'linear-gradient(135deg, #0f172a 0%, #0097a7 50%, #7c3aed 100%)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+            color: colors.primary,
           }}>
             Reduce Software Costs with Intelligent Asset Management
           </Typography>
@@ -91,7 +82,7 @@ export default function Hero() {
           <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.6 }}>
             Are you worried about escalating Software Asset costs and complex license types?
             ESEC will Reduce and Optimize your costs... <strong style={{
-              color: mode === 'dark' ? '#00f0ff' : '#0097a7'
+              color: colors.primary
             }}>GUARANTEED</strong>
           </Typography>
 
@@ -119,20 +110,20 @@ export default function Hero() {
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={4} sx={{ pt: 4 }}>
             <Stack alignItems="center">
               <Typography variant="h4" sx={{
-                color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                color: colors.primary,
                 fontWeight: 800
               }}>5X to 25+X</Typography>
               <Typography variant="caption" color="text.secondary">ROI in 2 Years</Typography>
             </Stack>
             <Stack alignItems="center">
               <Typography variant="h4" sx={{
-                color: mode === 'dark' ? '#a855f7' : '#7c3aed',
+                color: colors.primary,
                 fontWeight: 800
               }}>50 to 100K+</Typography>
               <Typography variant="caption" color="text.secondary">Scalable Users</Typography>
             </Stack>
             <Stack alignItems="center">
-              <Typography variant="h4" sx={{ color: '#10b981', fontWeight: 800 }}>Transparent</Typography>
+              <Typography variant="h4" sx={{ color: colors.primary, fontWeight: 800 }}>Transparent</Typography>
               <Typography variant="caption" color="text.secondary">User-Based Pricing</Typography>
             </Stack>
           </Stack>
