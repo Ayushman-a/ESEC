@@ -7,100 +7,52 @@ import { useNavigate } from 'react-router-dom'
 
 const partnerTypes = [
   {
-    icon: 'mdi:handshake',
-    title: 'Technology Partners',
-    description: 'Leading software vendors and technology platforms we integrate with',
-    partners: [
-      { name: 'Siemens', description: 'EDA License Management Integration' },
-      { name: 'Cadence', description: 'Design Tool License Optimization' },
-      { name: 'Synopsys', description: 'Comprehensive SAM Solutions' },
-      { name: 'Mentor Graphics', description: 'License Server Integration' }
-    ],
-    color: '#3b82f6'
+    icon: 'mdi:store',
+    title: 'Value Added Resellers',
+    description: 'For your established customer base, ESEC would be an excellent value-added product to offer. ESEC will help to enhance the productivity of software and hardware assets utilization and optimize the purchase of these assets.',
+    color: '#2563eb',
+    highlights: ['Established Customer Base', 'Enhance Asset Productivity', 'Optimize Purchases']
   },
   {
-    icon: 'mdi:cloud-check',
-    title: 'Cloud & Platform Partners',
-    description: 'Cloud platforms and infrastructure providers',
-    partners: [
-      { name: 'Microsoft Azure', description: 'Cloud Infrastructure & Integration' },
-      { name: 'Amazon AWS', description: 'Scalable Cloud Deployment' },
-      { name: 'Google Cloud', description: 'Advanced Analytics Platform' },
-      { name: 'IBM Cloud', description: 'Enterprise Solutions' }
-    ],
-    color: '#3b82f6'
+    icon: 'mdi:cog-box',
+    title: 'System Integrators',
+    description: 'By offering ESEC to your current and future customers, you will enhance your service offerings and enable organizations to directly save and optimize software and hardware assets on a continuous basis.',
+    color: '#7c3aed',
+    highlights: ['Enhanced Service Offerings', 'Continuous Optimization', 'Direct Cost Savings']
   },
   {
     icon: 'mdi:account-tie',
-    title: 'Consulting Partners',
-    description: 'Professional services and implementation partners',
-    partners: [
-      { name: 'Accenture', description: 'Enterprise SAM Consulting' },
-      { name: 'Deloitte', description: 'License Optimization Strategy' },
-      { name: 'KPMG', description: 'Compliance & Audit Services' },
-      { name: 'PwC', description: 'Software Asset Management' }
-    ],
-    color: '#3b82f6'
+    title: 'Referral Consultants',
+    description: 'Looking for individual consultants having reach to the top management of various companies. Your role would be to help us to present and demonstrate ESEC to the decision makers. Most of the times in principle decisions are taken by the senior management after looking at the value proposition of ESEC.',
+    color: '#dc2626',
+    highlights: ['Top Management Access', 'Presentation Support', 'Strategic Decision Making']
   }
 ]
 
 const benefits = [
   {
-    icon: 'mdi:chart-line-variant',
-    title: 'Grow Your Business',
-    description: 'Access new markets and customers through our partner network and co-selling opportunities.'
+    icon: 'mdi:cash-multiple',
+    title: 'Attractive Commissions',
+    description: 'Earn attractive commissions for 3 years after the initial sale and for subsequent annual renewals for 2 years.',
+    stats: '3 Years + 2 Years Renewals'
   },
   {
-    icon: 'mdi:school',
-    title: 'Training & Certification',
-    description: 'Get comprehensive training and certification programs to become an ESEC expert.'
+    icon: 'mdi:tools',
+    title: 'Complete Support',
+    description: 'Installation, training and post-sales support will be provided by the ESEC team.',
+    stats: 'Full Service Coverage'
   },
   {
-    icon: 'mdi:currency-usd',
-    title: 'Revenue Opportunities',
-    description: 'Attractive margin structures and incentive programs for our partners.'
+    icon: 'mdi:trending-up',
+    title: 'Rapid Growth',
+    description: 'ESEC is being used by some of the large companies in diverse industries in India for over 6 years and is now poised for rapid growth.',
+    stats: '6+ Years in Market'
   },
   {
-    icon: 'mdi:lifebuoy',
-    title: 'Dedicated Support',
-    description: 'Priority support and resources from our partner success team.'
-  }
-]
-
-const partnerLevels = [
-  {
-    level: 'Silver Partner',
-    description: 'Entry-level partnership with basic benefits and support',
-    features: [
-      'Partner portal access',
-      'Basic training materials',
-      'Standard margin structure',
-      'Email support'
-    ]
-  },
-  {
-    level: 'Gold Partner',
-    description: 'Advanced partnership with enhanced benefits and priority support',
-    features: [
-      'All Silver benefits',
-      'Advanced training & certification',
-      'Enhanced margin structure',
-      'Priority support',
-      'Co-marketing opportunities'
-    ],
-    highlighted: true
-  },
-  {
-    level: 'Platinum Partner',
-    description: 'Premier partnership with maximum benefits and strategic collaboration',
-    features: [
-      'All Gold benefits',
-      'Dedicated partner manager',
-      'Maximum margin structure',
-      '24/7 priority support',
-      'Joint product development',
-      'Strategic business planning'
-    ]
+    icon: 'mdi:handshake',
+    title: 'Proven Track Record',
+    description: 'Join a partner ecosystem backed by proven success in managing assets for leading organizations.',
+    stats: 'Trusted by Industry Leaders'
   }
 ]
 
@@ -147,35 +99,38 @@ export default function Partners() {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            Partner with ESEC
+            Be a Part of Our Growth
           </Typography>
 
           <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.7 }}>
-            Join our global partner ecosystem and deliver exceptional software asset management solutions to your customers
+            ESEC is being used by leading companies across diverse industries in India for over 6 years and is now poised for rapid growth. Join us on this journey.
           </Typography>
         </Stack>
       </Container>
 
       {/* Partner Types Section */}
-      <Container sx={{ mb: 10 }}>
-        <Stack spacing={3} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
+      <Container sx={{ mb: 8 }}>
+        <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 5 }}>
           <Typography variant="h3" sx={{ fontWeight: 800 }}>
-            Our Partner Ecosystem
+            Partnership Opportunities
           </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 700 }}>
-            Collaborate with industry leaders and innovators
+          <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 700 }}>
+            Choose the partnership model that best fits your business
           </Typography>
         </Stack>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={3}>
           {partnerTypes.map((type, index) => (
             <Grid key={index} item xs={12} md={4}>
               <Paper sx={{
-                p: 4,
+                p: 3.5,
                 height: '100%',
+                border: `1px solid ${colors.border.subtle}`,
+                background: colors.background.paper,
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  transform: 'translateY(-8px)',
+                  transform: 'translateY(-6px)',
+                  borderColor: type.color,
                   boxShadow: mode === 'dark'
                     ? `0 12px 40px ${type.color}33`
                     : `0 12px 40px ${type.color}26`,
@@ -186,8 +141,8 @@ export default function Partners() {
                     width: 64,
                     height: 64,
                     borderRadius: 3,
-                    background: `${type.color}20`,
-                    border: `1px solid ${type.color}40`,
+                    background: `linear-gradient(135deg, ${type.color}25, ${type.color}10)`,
+                    border: `2px solid ${type.color}40`,
                     display: 'grid',
                     placeItems: 'center'
                   }}>
@@ -200,34 +155,33 @@ export default function Partners() {
                   </Box>
 
                   <Box>
-                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
+                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
                       {type.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
                       {type.description}
                     </Typography>
                   </Box>
 
-                  <Stack spacing={1.5}>
-                    {type.partners.map((partner, idx) => (
+                  <Stack spacing={1}>
+                    {type.highlights.map((highlight, idx) => (
                       <Box
                         key={idx}
                         sx={{
-                          p: 2,
-                          borderRadius: 2,
-                          background: colors.background.surface,
-                          border: `1px solid ${colors.border.subtle}`,
-                          transition: 'all 0.2s ease',
-                          '&:hover': {
-                            background: colors.interactive.backgroundSubtle,
-                          }
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1
                         }}
                       >
-                        <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 0.5 }}>
-                          {partner.name}
-                        </Typography>
-                        <Typography variant="caption" color="text.secondary">
-                          {partner.description}
+                        <Icon
+                          icon="mdi:check-circle"
+                          width="18"
+                          height="18"
+                          color={type.color}
+                          style={{ flexShrink: 0 }}
+                        />
+                        <Typography variant="body2" sx={{ fontSize: '0.9rem' }}>
+                          {highlight}
                         </Typography>
                       </Box>
                     ))}
@@ -241,52 +195,72 @@ export default function Partners() {
 
       {/* Partner Benefits */}
       <Box sx={{
-        py: 8,
+        py: 7,
         background: colors.background.surface,
         borderTop: `1px solid ${colors.border.subtle}`,
         borderBottom: `1px solid ${colors.border.subtle}`,
       }}>
         <Container>
-          <Stack spacing={3} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
+          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 5 }}>
             <Typography variant="h3" sx={{ fontWeight: 800 }}>
-              Partner Benefits
+              Why Partner with ESEC?
             </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 700 }}>
-              Why partner with ESEC?
+            <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 700 }}>
+              Grow your business with attractive benefits and comprehensive support
             </Typography>
           </Stack>
 
           <Grid container spacing={3}>
             {benefits.map((benefit, index) => (
-              <Grid key={index} item xs={12} md={6}>
+              <Grid key={index} item xs={12} sm={6} md={3}>
                 <Paper sx={{
-                  p: 4,
+                  p: 3,
                   height: '100%',
                   background: colors.background.paper,
+                  border: `1px solid ${colors.border.subtle}`,
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-6px)',
+                    borderColor: colors.border.primary,
+                    boxShadow: colors.shadow.hover,
+                  }
                 }}>
-                  <Stack direction="row" spacing={2} alignItems="flex-start">
+                  <Stack spacing={2} alignItems="center">
                     <Box sx={{
-                      width: 48,
-                      height: 48,
-                      borderRadius: 2,
-                      background: `linear-gradient(135deg, ${colors.primary}20, ${colors.primary}20)`,
+                      width: 56,
+                      height: 56,
+                      borderRadius: 3,
+                      background: `linear-gradient(135deg, ${colors.primary}25, ${colors.primary}10)`,
                       border: `1px solid ${colors.border.primary}`,
                       display: 'grid',
                       placeItems: 'center',
-                      flexShrink: 0
                     }}>
                       <Icon
                         icon={benefit.icon}
-                        width="24"
-                        height="24"
+                        width="28"
+                        height="28"
                         color={colors.primary}
                       />
                     </Box>
                     <Box>
-                      <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+                      <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, fontSize: '1.1rem' }}>
                         {benefit.title}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
+                      <Box sx={{
+                        px: 2,
+                        py: 0.75,
+                        borderRadius: 1.5,
+                        background: `${colors.primary}15`,
+                        border: `1px solid ${colors.border.primary}`,
+                        mb: 1.5,
+                        display: 'inline-block'
+                      }}>
+                        <Typography variant="caption" sx={{ fontWeight: 600, color: colors.primary }}>
+                          {benefit.stats}
+                        </Typography>
+                      </Box>
+                      <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6, fontSize: '0.9rem' }}>
                         {benefit.description}
                       </Typography>
                     </Box>
@@ -298,103 +272,32 @@ export default function Partners() {
         </Container>
       </Box>
 
-      {/* Partner Levels */}
-      <Container sx={{ mt: 10 }}>
-        <Stack spacing={3} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-          <Typography variant="h3" sx={{ fontWeight: 800 }}>
-            Partnership Levels
-          </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 700 }}>
-            Choose the partnership level that fits your business
-          </Typography>
-        </Stack>
-
-        <Grid container spacing={3}>
-          {partnerLevels.map((partner, index) => (
-            <Grid key={index} item xs={12} md={4}>
-              <Paper sx={{
-                p: 4,
-                height: '100%',
-                border: partner.highlighted
-                  ? mode === 'dark'
-                    ? '2px solid rgba(59, 130, 246, 0.5)'
-                    : '2px solid rgba(37, 99, 235, 0.5)'
-                  : 'inherit',
-                background: partner.highlighted
-                  ? mode === 'dark'
-                    ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)'
-                    : 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%)'
-                  : 'inherit',
-                position: 'relative',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: colors.shadow.hover,
-                }
-              }}>
-                {partner.highlighted && (
-                  <Box sx={{
-                    position: 'absolute',
-                    top: -12,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    px: 2,
-                    py: 0.5,
-                    borderRadius: 2,
-                    background: colors.gradient.primary,
-                  }}>
-                    <Typography variant="caption" sx={{ color: 'white', fontWeight: 700 }}>
-                      RECOMMENDED
-                    </Typography>
-                  </Box>
-                )}
-                <Stack spacing={3}>
-                  <Box>
-                    <Typography variant="h4" sx={{ fontWeight: 800, mb: 1 }}>
-                      {partner.level}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {partner.description}
-                    </Typography>
-                  </Box>
-
-                  <Stack spacing={1.5}>
-                    {partner.features.map((feature, idx) => (
-                      <Stack key={idx} direction="row" spacing={1.5} alignItems="flex-start">
-                        <Icon
-                          icon="mdi:check-circle"
-                          width="20"
-                          height="20"
-                          color={colors.primary}
-                          style={{ marginTop: '2px', flexShrink: 0 }}
-                        />
-                        <Typography variant="body2">
-                          {feature}
-                        </Typography>
-                      </Stack>
-                    ))}
-                  </Stack>
-                </Stack>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
       {/* CTA Section */}
-      <Container sx={{ mt: 10 }}>
+      <Container sx={{ mt: 8, mb: 4 }}>
         <Paper sx={{
           p: { xs: 4, md: 6 },
           textAlign: 'center',
-          background: colors.gradient.subtle,
+          background: `linear-gradient(135deg, ${colors.primary}08, ${colors.primary}03)`,
           border: `1px solid ${colors.border.primary}`,
+          borderRadius: 3,
         }}>
           <Stack spacing={3} alignItems="center">
-            <Typography variant="h4" sx={{ fontWeight: 800 }}>
-              Ready to Become a Partner?
+            <Box sx={{
+              width: 64,
+              height: 64,
+              borderRadius: 3,
+              background: `linear-gradient(135deg, ${colors.primary}, ${colors.primary}CC)`,
+              display: 'grid',
+              placeItems: 'center'
+            }}>
+              <Icon icon="mdi:handshake" width="32" color="white" />
+            </Box>
+            <Typography variant="h3" sx={{ fontWeight: 800 }}>
+              Become a Partner
             </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600 }}>
-              Join our growing partner network and unlock new business opportunities
+            <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, lineHeight: 1.7 }}>
+              Join our partner ecosystem and help organizations optimize their software and hardware assets.
+              Earn attractive commissions while being part of our rapid growth journey.
             </Typography>
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
               <Button
@@ -402,7 +305,7 @@ export default function Partners() {
                 size="large"
                 onClick={() => navigate('/contact')}
                 endIcon={<Icon icon="mdi:arrow-right" />}
-                sx={{ px: 4, py: 1.5 }}
+                sx={{ px: 5, py: 1.75, fontSize: '1rem' }}
               >
                 Apply Now
               </Button>
@@ -410,9 +313,10 @@ export default function Partners() {
                 variant="outlined"
                 size="large"
                 onClick={() => navigate('/contact')}
-                sx={{ px: 4, py: 1.5 }}
+                startIcon={<Icon icon="mdi:email" />}
+                sx={{ px: 5, py: 1.75, fontSize: '1rem' }}
               >
-                Contact Partner Team
+                Contact Us
               </Button>
             </Box>
           </Stack>
