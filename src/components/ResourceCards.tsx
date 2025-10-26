@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Stack, Typography, Collapse } from '@mui/material'
 import { Icon } from '@iconify/react'
-import { useThemeMode } from '../ThemeContext'
+import { useColors } from '../theme/useColors'
 
 const items = [
   {
@@ -31,7 +31,7 @@ const items = [
 ]
 
 export default function ResourceCards() {
-  const { mode } = useThemeMode()
+  const colors = useColors()
   const [expandedCards, setExpandedCards] = React.useState<Record<number, boolean>>({})
 
   const handleReadMore = (index: number) => {
@@ -45,9 +45,7 @@ export default function ResourceCards() {
     <Container sx={{ py: { xs: 6, md: 10 } }}>
       <Stack spacing={1} sx={{ mb: 4 }}>
         <Typography variant="h4" sx={{
-          background: mode === 'dark'
-            ? 'linear-gradient(135deg, #00f0ff 0%, #a855f7 100%)'
-            : 'linear-gradient(135deg, #0097a7 0%, #7c3aed 100%)',
+          background: colors.gradient.primary,
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
@@ -69,16 +67,12 @@ export default function ResourceCards() {
               transition: 'all 0.3s ease',
               '&:hover': {
                 transform: 'translateY(-8px)',
-                boxShadow: mode === 'dark'
-                  ? '0 12px 40px rgba(0, 240, 255, 0.2)'
-                  : '0 12px 40px rgba(0, 151, 167, 0.2)',
+                boxShadow: colors.shadow.hover,
               }
             }}>
               <CardMedia sx={{
                 height: 200,
-                background: mode === 'dark'
-                  ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)'
-                  : 'linear-gradient(135deg, rgba(0, 151, 167, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%)',
+                background: colors.gradient.subtle,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -88,9 +82,7 @@ export default function ResourceCards() {
                   content: '""',
                   position: 'absolute',
                   inset: 0,
-                  background: mode === 'dark'
-                    ? 'radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.15), transparent 70%)'
-                    : 'radial-gradient(circle at 50% 50%, rgba(0, 151, 167, 0.15), transparent 70%)',
+                  background: colors.gradient.radial,
                 }
               }}>
                 <Icon
@@ -98,7 +90,7 @@ export default function ResourceCards() {
                   width="80"
                   height="80"
                   style={{
-                    color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                    color: colors.primary,
                     opacity: 0.8,
                     position: 'relative',
                     zIndex: 1
@@ -110,7 +102,7 @@ export default function ResourceCards() {
                   <Typography
                     variant="overline"
                     sx={{
-                      color: mode === 'dark' ? 'primary.main' : 'primary.dark',
+                      color: 'primary.main',
                       fontWeight: 700,
                       letterSpacing: '0.1em'
                     }}
@@ -142,9 +134,7 @@ export default function ResourceCards() {
                     mt: 2,
                     pt: 2,
                     borderTop: '1px solid',
-                    borderColor: mode === 'dark'
-                      ? 'rgba(0, 240, 255, 0.2)'
-                      : 'rgba(0, 151, 167, 0.2)'
+                    borderColor: colors.border.secondary
                   }}>
                     <Typography variant="body2" color="text.primary" sx={{ lineHeight: 1.8 }}>
                       {it.fullContent}
@@ -153,13 +143,9 @@ export default function ResourceCards() {
                       mt: 2,
                       p: 2,
                       borderRadius: 2,
-                      background: mode === 'dark'
-                        ? 'rgba(0, 240, 255, 0.05)'
-                        : 'rgba(0, 151, 167, 0.05)',
+                      background: colors.interactive.backgroundSubtle,
                       border: '1px solid',
-                      borderColor: mode === 'dark'
-                        ? 'rgba(0, 240, 255, 0.2)'
-                        : 'rgba(0, 151, 167, 0.2)'
+                      borderColor: colors.border.secondary
                     }}>
                       <Typography variant="body2" fontWeight={600} color="primary.main" sx={{ mb: 0.5 }}>
                         Key Takeaways:
@@ -182,9 +168,7 @@ export default function ResourceCards() {
                     fontWeight: 600,
                     color: 'primary.main',
                     '&:hover': {
-                      background: mode === 'dark'
-                        ? 'rgba(0, 240, 255, 0.1)'
-                        : 'rgba(0, 151, 167, 0.1)',
+                      background: colors.interactive.background,
                     }
                   }}
                 >

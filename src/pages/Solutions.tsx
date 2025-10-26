@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Box, Button, Container, Grid, Paper, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
+import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { useNavigate } from 'react-router-dom'
 
@@ -15,7 +16,7 @@ const solutions = [
       'Prevent license denial with predictive alerts',
       'Multi-site license pool optimization'
     ],
-    color: '#00f0ff'
+    color: '#3b82f6'
   },
   {
     icon: 'mdi:shield-check-outline',
@@ -27,7 +28,7 @@ const solutions = [
       'License vs usage reconciliation',
       'Audit trail and historical data'
     ],
-    color: '#a855f7'
+    color: '#3b82f6'
   },
   {
     icon: 'mdi:cloud-outline',
@@ -39,7 +40,7 @@ const solutions = [
       'Optimize SaaS spending',
       'Integration with major cloud platforms'
     ],
-    color: '#10b981'
+    color: '#3b82f6'
   },
   {
     icon: 'mdi:chart-line',
@@ -101,6 +102,7 @@ const useCases = [
 ]
 
 export default function Solutions() {
+  const colors = useColors()
   const { mode } = useThemeMode()
   const navigate = useNavigate()
 
@@ -113,24 +115,20 @@ export default function Solutions() {
             px: 2.5,
             py: 1,
             borderRadius: 10,
-            border: mode === 'dark'
-              ? '1px solid rgba(0, 240, 255, 0.3)'
-              : '1px solid rgba(0, 151, 167, 0.3)',
-            background: mode === 'dark'
-              ? 'rgba(0, 240, 255, 0.05)'
-              : 'rgba(0, 151, 167, 0.05)',
+            border: `1px solid ${colors.border.primary}`,
+            background: colors.interactive.backgroundSubtle,
             display: 'inline-flex',
             alignItems: 'center',
             gap: 1,
           }}>
             <Icon
               icon="mdi:puzzle-outline"
-              color={mode === 'dark' ? '#00f0ff' : '#0097a7'}
+              color={colors.primary}
               width="16"
               height="16"
             />
             <Typography variant="caption" sx={{
-              color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+              color: colors.primary,
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>
@@ -141,9 +139,7 @@ export default function Solutions() {
           <Typography variant="h2" sx={{
             fontSize: { xs: 32, md: 52 },
             fontWeight: 800,
-            background: mode === 'dark'
-              ? 'linear-gradient(135deg, #00f0ff 0%, #a855f7 100%)'
-              : 'linear-gradient(135deg, #0097a7 0%, #7c3aed 100%)',
+            background: colors.gradient.primary,
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
@@ -226,15 +222,9 @@ export default function Solutions() {
       {/* Use Cases Section */}
       <Box sx={{
         py: 8,
-        background: mode === 'dark'
-          ? 'rgba(15, 23, 42, 0.4)'
-          : 'rgba(248, 250, 252, 0.8)',
-        borderTop: mode === 'dark'
-          ? '1px solid rgba(0, 240, 255, 0.1)'
-          : '1px solid rgba(0, 151, 167, 0.2)',
-        borderBottom: mode === 'dark'
-          ? '1px solid rgba(0, 240, 255, 0.1)'
-          : '1px solid rgba(0, 151, 167, 0.2)',
+        background: colors.background.surface,
+        borderTop: `1px solid ${colors.border.subtle}`,
+        borderBottom: `1px solid ${colors.border.subtle}`,
       }}>
         <Container>
           <Stack spacing={3} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
@@ -252,15 +242,13 @@ export default function Solutions() {
                 <Paper sx={{
                   p: 4,
                   height: '100%',
-                  background: mode === 'dark'
-                    ? 'rgba(15, 23, 42, 0.8)'
-                    : 'rgba(255, 255, 255, 0.9)',
+                  background: colors.background.paper,
                 }}>
                   <Stack spacing={2}>
                     <Typography
                       variant="overline"
                       sx={{
-                        color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                        color: colors.primary,
                         fontWeight: 700,
                         letterSpacing: '0.1em'
                       }}
@@ -290,7 +278,7 @@ export default function Solutions() {
                         variant="body2"
                         sx={{
                           fontWeight: 700,
-                          color: mode === 'dark' ? '#00f0ff' : '#0097a7'
+                          color: colors.primary
                         }}
                       >
                         {useCase.result}
@@ -309,12 +297,8 @@ export default function Solutions() {
         <Paper sx={{
           p: { xs: 4, md: 6 },
           textAlign: 'center',
-          background: mode === 'dark'
-            ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)'
-            : 'linear-gradient(135deg, rgba(0, 151, 167, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%)',
-          border: mode === 'dark'
-            ? '1px solid rgba(0, 240, 255, 0.3)'
-            : '1px solid rgba(0, 151, 167, 0.3)',
+          background: colors.gradient.subtle,
+          border: `1px solid ${colors.border.primary}`,
         }}>
           <Stack spacing={3} alignItems="center">
             <Typography variant="h4" sx={{ fontWeight: 800 }}>

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
-import { useThemeMode } from '../ThemeContext'
+import { useColors } from '../theme/useColors'
 import esecLogo from '../assets/images/esec-logo.png'
 
 const cols = [
@@ -11,12 +11,12 @@ const cols = [
 ]
 
 export default function Footer() {
-  const { mode } = useThemeMode()
+  const colors = useColors()
 
   return (
     <Box component="footer" sx={{
-      bgcolor: mode === 'dark' ? 'rgba(10, 14, 26, 0.95)' : 'rgba(248, 250, 252, 0.95)',
-      borderTop: mode === 'dark' ? '1px solid rgba(0, 240, 255, 0.2)' : '1px solid rgba(0, 151, 167, 0.3)',
+      bgcolor: colors.background.overlay,
+      borderTop: `1px solid ${colors.border.secondary}`,
       mt: 8,
       position: 'relative',
       '&::before': {
@@ -26,9 +26,7 @@ export default function Footer() {
         left: 0,
         right: 0,
         height: '1px',
-        background: mode === 'dark'
-          ? 'linear-gradient(90deg, transparent, #00f0ff, #a855f7, transparent)'
-          : 'linear-gradient(90deg, transparent, #0097a7, #7c3aed, transparent)',
+        background: `linear-gradient(90deg, transparent, ${colors.primary}, ${colors.primary}, transparent)`,
       }
     }}>
       <Container sx={{ py: 8 }}>
@@ -52,7 +50,7 @@ export default function Footer() {
             {/* US Office Address */}
             <Typography variant="body2" sx={{
               mt: 3,
-              color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+              color: colors.primary,
               fontWeight: 600,
               lineHeight: 1.7
             }}>
@@ -62,9 +60,9 @@ export default function Footer() {
             {/* ISO Certifications */}
             <Stack spacing={1.5} sx={{ mt: 3 }}>
               <Stack direction="row" spacing={1} alignItems="center">
-                <Icon icon="mdi:certificate" color={mode === 'dark' ? '#00f0ff' : '#0097a7'} width="20" height="20" />
+                <Icon icon="mdi:certificate" color={colors.primary} width="20" height="20" />
                 <Typography variant="body2" sx={{
-                  color: mode === 'dark' ? '#ffffff' : '#0f172a',
+                  color: colors.text.primary,
                   fontWeight: 600
                 }}>
                   ISO/IEC 27001:2022
@@ -75,9 +73,9 @@ export default function Footer() {
               </Typography>
 
               <Stack direction="row" spacing={1} alignItems="center" sx={{ mt: 1 }}>
-                <Icon icon="mdi:shield-check" color={mode === 'dark' ? '#a855f7' : '#7c3aed'} width="20" height="20" />
+                <Icon icon="mdi:shield-check" color={colors.primary} width="20" height="20" />
                 <Typography variant="body2" sx={{
-                  color: mode === 'dark' ? '#ffffff' : '#0f172a',
+                  color: colors.text.primary,
                   fontWeight: 600
                 }}>
                   ISO/IEC 27701:2019
@@ -93,58 +91,52 @@ export default function Footer() {
                 width: 36,
                 height: 36,
                 borderRadius: 2,
-                border: mode === 'dark'
-                  ? '1px solid rgba(0, 240, 255, 0.3)'
-                  : '1px solid rgba(0, 151, 167, 0.3)',
+                border: `1px solid ${colors.border.primary}`,
                 display: 'grid',
                 placeItems: 'center',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  borderColor: mode === 'dark' ? '#00f0ff' : '#0097a7',
-                  background: mode === 'dark' ? 'rgba(0, 240, 255, 0.1)' : 'rgba(0, 151, 167, 0.1)',
+                  borderColor: colors.primary,
+                  background: colors.interactive.background,
                   transform: 'translateY(-2px)'
                 }
               }}>
-                <Icon icon="mdi:twitter" color={mode === 'dark' ? '#00f0ff' : '#0097a7'} width="18" height="18" />
+                <Icon icon="mdi:twitter" color={colors.primary} width="18" height="18" />
               </Box>
               <Box sx={{
                 width: 36,
                 height: 36,
                 borderRadius: 2,
-                border: mode === 'dark'
-                  ? '1px solid rgba(0, 240, 255, 0.3)'
-                  : '1px solid rgba(0, 151, 167, 0.3)',
+                border: `1px solid ${colors.border.primary}`,
                 display: 'grid',
                 placeItems: 'center',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  borderColor: mode === 'dark' ? '#00f0ff' : '#0097a7',
-                  background: mode === 'dark' ? 'rgba(0, 240, 255, 0.1)' : 'rgba(0, 151, 167, 0.1)',
+                  borderColor: colors.primary,
+                  background: colors.interactive.background,
                   transform: 'translateY(-2px)'
                 }
               }}>
-                <Icon icon="mdi:linkedin" color={mode === 'dark' ? '#00f0ff' : '#0097a7'} width="18" height="18" />
+                <Icon icon="mdi:linkedin" color={colors.primary} width="18" height="18" />
               </Box>
               <Box sx={{
                 width: 36,
                 height: 36,
                 borderRadius: 2,
-                border: mode === 'dark'
-                  ? '1px solid rgba(0, 240, 255, 0.3)'
-                  : '1px solid rgba(0, 151, 167, 0.3)',
+                border: `1px solid ${colors.border.primary}`,
                 display: 'grid',
                 placeItems: 'center',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  borderColor: mode === 'dark' ? '#00f0ff' : '#0097a7',
-                  background: mode === 'dark' ? 'rgba(0, 240, 255, 0.1)' : 'rgba(0, 151, 167, 0.1)',
+                  borderColor: colors.primary,
+                  background: colors.interactive.background,
                   transform: 'translateY(-2px)'
                 }
               }}>
-                <Icon icon="mdi:github" color={mode === 'dark' ? '#00f0ff' : '#0097a7'} width="18" height="18" />
+                <Icon icon="mdi:github" color={colors.primary} width="18" height="18" />
               </Box>
             </Stack>
           </Grid>
@@ -153,7 +145,7 @@ export default function Footer() {
           {cols.map((c) => (
             <Grid key={c.title} item xs={12} sm={4} md={3}>
               <Typography variant="overline" sx={{
-                color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                color: colors.primary,
                 fontWeight: 700,
                 letterSpacing: '0.1em'
               }}>{c.title}</Typography>
@@ -168,7 +160,7 @@ export default function Footer() {
                       fontSize: '0.875rem',
                       transition: 'all 0.2s ease',
                       '&:hover': {
-                        color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                        color: colors.primary,
                         paddingLeft: '4px'
                       }
                     }}
@@ -186,7 +178,7 @@ export default function Footer() {
           sx={{
             mt: 8,
             pt: 4,
-            borderTop: '1px solid rgba(0, 240, 255, 0.1)',
+            borderTop: `1px solid ${colors.border.subtle}`,
             gap: 2
           }}
         >
@@ -197,17 +189,17 @@ export default function Footer() {
             <Link href="#" underline="none" variant="caption" sx={{
               color: 'text.secondary',
               transition: 'color 0.2s ease',
-              '&:hover': { color: mode === 'dark' ? '#00f0ff' : '#0097a7' }
+              '&:hover': { color: colors.primary }
             }}>Privacy Policy</Link>
             <Link href="#" underline="none" variant="caption" sx={{
               color: 'text.secondary',
               transition: 'color 0.2s ease',
-              '&:hover': { color: mode === 'dark' ? '#00f0ff' : '#0097a7' }
+              '&:hover': { color: colors.primary }
             }}>Security</Link>
             <Link href="#" underline="none" variant="caption" sx={{
               color: 'text.secondary',
               transition: 'color 0.2s ease',
-              '&:hover': { color: mode === 'dark' ? '#00f0ff' : '#0097a7' }
+              '&:hover': { color: colors.primary }
             }}>Terms of Service</Link>
           </Stack>
         </Stack>

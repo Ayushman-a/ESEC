@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Box, Button, Container, Grid, Paper, Stack, Typography, Chip } from '@mui/material'
 import { Icon } from '@iconify/react'
+import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -49,7 +50,7 @@ const features = [
       'Make data-driven decisions about software purchases',
       'Optimize license allocation across teams'
     ],
-    color: '#00f0ff'
+    color: '#3b82f6'
   },
   {
     id: 'licenses',
@@ -95,7 +96,7 @@ const features = [
       'Reduce license costs by 25-35%',
       'Support distributed teams effectively'
     ],
-    color: '#a855f7'
+    color: '#3b82f6'
   },
   {
     id: 'compliance',
@@ -141,7 +142,7 @@ const features = [
       'Reduce audit preparation time by 90%',
       'Demonstrate license compliance to vendors'
     ],
-    color: '#10b981'
+    color: '#3b82f6'
   },
   {
     id: 'project',
@@ -192,6 +193,7 @@ const features = [
 ]
 
 export default function Features() {
+  const colors = useColors()
   const { mode } = useThemeMode()
   const navigate = useNavigate()
   const location = useLocation()
@@ -218,24 +220,20 @@ export default function Features() {
             px: 2.5,
             py: 1,
             borderRadius: 10,
-            border: mode === 'dark'
-              ? '1px solid rgba(0, 240, 255, 0.3)'
-              : '1px solid rgba(0, 151, 167, 0.3)',
-            background: mode === 'dark'
-              ? 'rgba(0, 240, 255, 0.05)'
-              : 'rgba(0, 151, 167, 0.05)',
+            border: `1px solid ${colors.border.primary}`,
+            background: colors.interactive.backgroundSubtle,
             display: 'inline-flex',
             alignItems: 'center',
             gap: 1,
           }}>
             <Icon
               icon="mdi:star-four-points"
-              color={mode === 'dark' ? '#00f0ff' : '#0097a7'}
+              color={colors.primary}
               width="16"
               height="16"
             />
             <Typography variant="caption" sx={{
-              color: mode === 'dark' ? '#00f0ff' : '#0097a7',
+              color: colors.primary,
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>
@@ -246,9 +244,7 @@ export default function Features() {
           <Typography variant="h2" sx={{
             fontSize: { xs: 32, md: 52 },
             fontWeight: 800,
-            background: mode === 'dark'
-              ? 'linear-gradient(135deg, #00f0ff 0%, #a855f7 100%)'
-              : 'linear-gradient(135deg, #0097a7 0%, #7c3aed 100%)',
+            background: colors.gradient.primary,
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
@@ -279,17 +275,11 @@ export default function Features() {
                 py: 3,
                 fontSize: '0.9rem',
                 fontWeight: 600,
-                background: mode === 'dark'
-                  ? 'rgba(15, 23, 42, 0.6)'
-                  : 'rgba(255, 255, 255, 0.9)',
-                border: mode === 'dark'
-                  ? '1px solid rgba(0, 240, 255, 0.2)'
-                  : '1px solid rgba(0, 151, 167, 0.2)',
+                background: colors.background.paper,
+                border: `1px solid ${colors.border.secondary}`,
                 '&:hover': {
-                  background: mode === 'dark'
-                    ? 'rgba(0, 240, 255, 0.1)'
-                    : 'rgba(0, 151, 167, 0.1)',
-                  borderColor: mode === 'dark' ? '#00f0ff' : '#0097a7',
+                  background: colors.interactive.background,
+                  borderColor: colors.primary,
                 }
               }}
             />
@@ -306,19 +296,13 @@ export default function Features() {
             py: 8,
             scrollMarginTop: '100px',
             background: index % 2 === 1
-              ? mode === 'dark'
-                ? 'rgba(15, 23, 42, 0.4)'
-                : 'rgba(248, 250, 252, 0.8)'
+              ? colors.background.surface
               : 'transparent',
             borderTop: index % 2 === 1
-              ? mode === 'dark'
-                ? '1px solid rgba(0, 240, 255, 0.1)'
-                : '1px solid rgba(0, 151, 167, 0.2)'
+              ? `1px solid ${colors.border.subtle}`
               : 'none',
             borderBottom: index % 2 === 1
-              ? mode === 'dark'
-                ? '1px solid rgba(0, 240, 255, 0.1)'
-                : '1px solid rgba(0, 151, 167, 0.2)'
+              ? `1px solid ${colors.border.subtle}`
               : 'none',
           }}
         >
@@ -441,12 +425,8 @@ export default function Features() {
         <Paper sx={{
           p: { xs: 4, md: 6 },
           textAlign: 'center',
-          background: mode === 'dark'
-            ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)'
-            : 'linear-gradient(135deg, rgba(0, 151, 167, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%)',
-          border: mode === 'dark'
-            ? '1px solid rgba(0, 240, 255, 0.3)'
-            : '1px solid rgba(0, 151, 167, 0.3)',
+          background: colors.gradient.subtle,
+          border: `1px solid ${colors.border.primary}`,
         }}>
           <Stack spacing={3} alignItems="center">
             <Typography variant="h4" sx={{ fontWeight: 800 }}>
