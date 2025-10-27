@@ -4,7 +4,8 @@ import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import { useThemeMode } from '../ThemeContext'
 import { useColors } from '../theme/useColors'
-import esecLogo from '../assets/images/esec-logo.png'
+import esecLogo from '../assets/images/new-logo.png'
+import esecDarkLogo from '../assets/images/esec_darklogo.png'
 
 const menu = {
   Features: [
@@ -46,7 +47,7 @@ export default function Navbar() {
           <Box component={RouterLink} to="/" sx={{ display:'flex', alignItems:'center', color:'inherit', textDecoration:'none' }}>
             <Box
               component="img"
-              src={esecLogo}
+              src={mode === 'dark' ? esecDarkLogo : esecLogo}
               alt="ESEC Logo"
               sx={{
                 height: 50,

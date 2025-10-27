@@ -2,7 +2,9 @@ import * as React from 'react'
 import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
 import { useColors } from '../theme/useColors'
-import esecLogo from '../assets/images/esec-logo.png'
+import { useThemeMode } from '../ThemeContext'
+import esecLogo from '../assets/images/new-logo.png'
+import esecDarkLogo from '../assets/images/esec_darklogo.png'
 
 const cols = [
   { title: 'Solutions', items: ['License Management', 'Asset Tracking', 'Compliance & Audit', 'Cost Optimization'] },
@@ -12,6 +14,7 @@ const cols = [
 
 export default function Footer() {
   const colors = useColors()
+  const { mode } = useThemeMode()
 
   return (
     <Box component="footer" sx={{
@@ -35,7 +38,7 @@ export default function Footer() {
           <Grid item xs={12} md={3}>
             <Box
               component="img"
-              src={esecLogo}
+              src={mode === 'dark' ? esecDarkLogo : esecLogo}
               alt="ESEC Logo"
               sx={{
                 height: 50,
