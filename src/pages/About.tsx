@@ -67,7 +67,7 @@ const founders = [
     role: 'Founder & Managing Director',
     linkedin: 'https://www.linkedin.com/in/narendar-reddy-b773b511/',
     experience: '35+ Years',
-    bio: '35+ years in CAD/CAM/CAE/PLM. Former Managing Director of Siemens Digital Industry (1995-2009), grew customer base from 25 to 3,000+. Mechanical Engineer with MBA.'
+    bio: 'Narendar is the Founder and Managing Director of Nibana Solutions, with over 35 years of experience. A Mechanical Engineer with an MBA, Narendar spent 16 years as an entrepreneur and previously held sales leadership roles across India. As Managing Director of a US-based multinational (now Siemens Digital Industry) from 1995 till 2009, he drove remarkable growth in the CAD/CAM/CAE/PLM sector, expanding the customer base from 25 to over 3,000. He is also an avid long-distance runner, having participated in several half marathons across India.'
   },
   {
     name: 'Rommal Fernando',
@@ -75,7 +75,7 @@ const founders = [
     role: 'Co-founder & Chief Architect',
     linkedin: 'https://www.linkedin.com/in/rommal-fernando-55466913/',
     experience: '30+ Years',
-    bio: '30+ years in Engineering & Manufacturing IT. Technical Director at Siemens Digital Industry, worked with automotive OEMs globally. 6 years at Mahindra & Mahindra.'
+    bio: 'Rommal is the Co-founder and Chief Architect of ESEC, with over 30 years’ expertise in Engineering and Manufacturing IT, especially for the manufacturing sector. He started at Bajaj Auto, specialising in CAD/CAM-driven casting dies, and later spent 13 years at SDRC/UGS (now Siemens Digital Industry) rising to Technical Director and gaining international exposure in the US and Australia with automotive OEMs. In 2009, he joined Mahindra and Mahindra’s Auto and Farm Division, guaseeing global engineering and manufacturing IT systems for 6 years. Rommal holds a Mechanical Engineering degree from PSG College of Technology.'
   }
 ]
 
@@ -128,7 +128,7 @@ export default function About() {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            Advanced Predictive Analytics<br />for Asset Management
+            Predictive Analytics<br />for Asset Management
           </Typography>
 
           <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.7 }}>
@@ -154,12 +154,19 @@ export default function About() {
                   </Typography>
                 </Box>
                 <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.7 }}>
-                  Founded in April 2011 by industry veterans, Nibana Solutions specializes in Predictive Analytics for asset management.
-                  Our flagship product, ESEC, has been serving diverse industries since 2017.
+                  Nibana Solutions was started in April 2011 by seasoned professionals possessing extensive experience and deep
+                  knowledge of processes within both global and Indian organisations in the manufacturing and services sectors.
+                  ESEC is an advanced Predictive Analytics Software, developed ground up by Nibana Solutions since 2017. The
+                  platform is designed to be highly scalable, capable of managing tens of thousands of software (both Engineering and
+                  Non-engineering) and hardware assets across diverse industries, including Automotive, Heavy Machinery, Aerospace
+                  and Defence, High Technology, Consumer Electronics, Oil & Gas, Construction, Engineering, and Information
+                  Technology Services.
+
                 </Typography>
                 <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.7 }}>
-                  ESEC manages tens of thousands of software and hardware assets across Automotive, Aerospace, Heavy Machinery,
-                  High-Tech, Oil & Gas, and IT sectors. Developed in Tuticorin and Chennai, certified for ISO/IEC 27001:2022 & 27701:2019.
+                  The development of ESEC is undertaken at Nibana Solutions’ offices located in Tuticorin and Chennai. The software
+                  has received certification for ISO/IEC 27001:2022 (Information Security) and ISO/IEC 27701:2019 (Privacy
+                  Information Management System/GDPR), ensuring compliance with rigorous international standards.
                 </Typography>
               </Stack>
             </Paper>
@@ -271,12 +278,20 @@ export default function About() {
           <Typography variant="h3" sx={{ fontWeight: 800 }}>
             Our Approach
           </Typography>
-          <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 700 }}>
-            How ESEC delivers value and optimizes ROI
+          <Typography variant="body1" color="text.secondary" >
+            ESEC gathers data from various software license servers, end points and hardware systems, providing secure, near
+            real-time reports, dashboards, and alerts. ESEC is set up at the customer's location, where access to the information is
+            limited to designated employees.
+            ESEC delivers hundreds of reports and dashboards to help organisations efficiently manage software and hardware
+            assets and make timely decisions. This ensures that productivity of the assets and the users are optimized to get the
+            best ROI.
+            Senior management often require customised reports and updates; our expert consultancy ensures these needs are met
+            effectively. In addition, based on customer’s requirement we add new features (if technically feasible) at no cost. This
+            enables not only to meet the customer expectations but also enhance ESEC product capabilities on a continuous basis.
           </Typography>
         </Stack>
 
-        <Grid container spacing={3}>
+        {/* <Grid container spacing={3}>
           {approach.map((item, index) => (
             <Grid key={index} item xs={12} sm={6} md={3}>
               <Paper sx={{
@@ -319,7 +334,7 @@ export default function About() {
               </Paper>
             </Grid>
           ))}
-        </Grid>
+        </Grid> */}
       </Container>
 
       {/* Founders Section */}
@@ -376,7 +391,7 @@ export default function About() {
                         {founder.role}
                       </Typography>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
-                        <Box sx={{
+                        {/* <Box sx={{
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: 0.5,
@@ -390,7 +405,7 @@ export default function About() {
                           <Typography variant="caption" sx={{ fontWeight: 600, color: colors.primary }}>
                             {founder.experience}
                           </Typography>
-                        </Box>
+                        </Box> */}
                         <Button
                           component="a"
                           href={founder.linkedin}

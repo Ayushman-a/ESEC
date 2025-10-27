@@ -55,7 +55,7 @@ export default function Pricing() {
     <Box sx={{ py: { xs: 8, md: 12 } }}>
       <Container>
         {/* Header */}
-        <Stack spacing={3} sx={{ mb: 8, textAlign: 'center' }}>
+        <Stack spacing={3} sx={{ mb: 8, textAlign: 'center', alignItems: 'center' }}>
           <Box sx={{
             px: 2.5,
             py: 1,
@@ -64,8 +64,7 @@ export default function Pricing() {
             background: colors.interactive.backgroundSubtle,
             display: 'inline-flex',
             alignItems: 'center',
-            gap: 1,
-            mx: 'auto'
+            gap: 1
           }}>
             <Icon icon="mdi:tag" color={colors.primary} width="16" height="16" />
             <Typography variant="caption" sx={{
@@ -82,7 +81,7 @@ export default function Pricing() {
           </Typography>
 
           <Typography variant="h5" sx={{ maxWidth: 800, mx: 'auto', fontWeight: 600 }}>
-            <span style={{ color: colors.primary }}>No Hidden Costs</span> - Inclusions and Guarantees
+            <span style={{ color: colors.primary }}>No Hidden Costs</span> - Inclusions and Refund
           </Typography>
         </Stack>
 
@@ -144,7 +143,7 @@ export default function Pricing() {
 
                 <Box>
                   <Typography variant="h4" sx={{ mb: 1, fontWeight: 800 }}>
-                    ₹ 3,00,000 <Typography component="span" variant="body2" color="text.secondary">/Year Base</Typography>
+                    ₹ 3,00,000 <Typography component="span" variant="body2" color="text.secondary">/ Year Base Price</Typography>
                   </Typography>
                   <Typography variant="h5" sx={{ color: colors.primary, fontWeight: 700 }}>
                     + ₹ XXX <Typography component="span" variant="body2" color="text.secondary">/Month/User</Typography>
@@ -166,8 +165,23 @@ export default function Pricing() {
                     </Stack>
                     <Stack direction="row" spacing={1} alignItems="flex-start">
                       <Icon icon="mdi:calendar-check" color={colors.primary} width="20" height="20" />
-                      <Typography variant="body2">
+                      <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                         Billed Annually
+                        <Box
+                          component="a"
+                          href="#included-features"
+                          sx={{
+                            display: 'inline-flex',
+                            color: colors.primary,
+                            transition: 'all 0.2s ease',
+                            '&:hover': {
+                              transform: 'translateY(-2px)',
+                              opacity: 0.8
+                            }
+                          }}
+                        >
+                          <Icon icon="mdi:information-outline" width="18" height="18" />
+                        </Box>
                       </Typography>
                     </Stack>
                     <Stack direction="row" spacing={1} alignItems="flex-start">
@@ -249,7 +263,7 @@ export default function Pricing() {
 
                 <Box>
                   <Typography variant="h4" sx={{ mb: 1, fontWeight: 800 }}>
-                    $ 4,000 <Typography component="span" variant="body2" color="text.secondary">/Year Base</Typography>
+                    $ 4,000 <Typography component="span" variant="body2" color="text.secondary">/ Year Base Price</Typography>
                   </Typography>
                   <Typography variant="h5" sx={{ color: colors.primary, fontWeight: 700 }}>
                     + $ XXX <Typography component="span" variant="body2" color="text.secondary">/Month/User</Typography>
@@ -271,8 +285,23 @@ export default function Pricing() {
                     </Stack>
                     <Stack direction="row" spacing={1} alignItems="flex-start">
                       <Icon icon="mdi:calendar-check" color={colors.primary} width="20" height="20" />
-                      <Typography variant="body2">
+                      <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                         Billed Annually
+                        <Box
+                          component="a"
+                          href="#included-features"
+                          sx={{
+                            display: 'inline-flex',
+                            color: colors.primary,
+                            transition: 'all 0.2s ease',
+                            '&:hover': {
+                              transform: 'translateY(-2px)',
+                              opacity: 0.8
+                            }
+                          }}
+                        >
+                          <Icon icon="mdi:information-outline" width="18" height="18" />
+                        </Box>
                       </Typography>
                     </Stack>
                     <Stack direction="row" spacing={1} alignItems="flex-start">
@@ -328,7 +357,7 @@ export default function Pricing() {
         </Grid>
 
         {/* What's Included */}
-        <Paper sx={{
+        <Paper id="included-features" sx={{
           p: { xs: 3, md: 5 },
           border: `2px solid ${colors.border.secondary}`,
           background: colors.gradient.subtle,
@@ -336,7 +365,7 @@ export default function Pricing() {
           <Stack spacing={4}>
             <Box sx={{ textAlign: 'center' }}>
               <Typography variant="h3" sx={{ mb: 2, fontWeight: 800 }}>
-                India and International Price Include the Following
+                India and International Price Include...
               </Typography>
               <Typography variant="body1" color="text.secondary">
                 Everything you need in one transparent package
@@ -357,7 +386,13 @@ export default function Pricing() {
                       placeItems: 'center',
                       flexShrink: 0
                     }}>
-                      <Icon icon={feature.icon} color={colors.primary} width="22" height="22" />
+                      <Typography sx={{
+                        color: colors.primary,
+                        fontWeight: 700,
+                        fontSize: '1.1rem'
+                      }}>
+                        {index + 1}
+                      </Typography>
                     </Box>
                     <Typography variant="body2" sx={{ flex: 1, pt: 1, lineHeight: 1.6 }}>
                       {feature.text}
@@ -459,11 +494,12 @@ export default function Pricing() {
               <Stack direction="row" spacing={2} alignItems="center" justifyContent="center" sx={{ mb: 2 }}>
                 <Icon icon="mdi:shield-star" color={colors.primary} width="36" height="36" />
                 <Typography variant="h3" sx={{ fontWeight: 900, color: colors.primary }}>
-                  Special Guarantee Offer
+                  Special Refund Offer
                 </Typography>
               </Stack>
-              <Typography variant="h6" color="text.secondary" sx={{ fontStyle: 'italic', mb: 1 }}>
-                You do not need but still....we want to ensure...{':)'}
+              <Typography variant="h6" color="text.secondary" sx={{ fontStyle: 'italic', mb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
+                You do not need but still....we want to ensure...
+                <Icon icon="mdi:emoticon-happy" color={colors.primary} width="24" height="24" />
               </Typography>
             </Box>
 

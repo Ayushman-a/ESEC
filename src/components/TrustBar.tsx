@@ -23,7 +23,7 @@ export default function TrustBar() {
   const colors = useColors()
 
   return (
-    <Container sx={{ mt: -6 }}>
+    <Container sx={{ mt: 4 }}>
       <Paper elevation={0} sx={{
         p: 4,
         borderRadius: 4,
