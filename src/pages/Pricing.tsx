@@ -7,7 +7,14 @@ import { useColors } from '../theme/useColors'
 const includedFeatures = [
   {
     icon: 'mdi:feature-search',
-    text: 'All the ESEC features, Reports and Dashboards of current modules (Software Asset Management, Project Management, Inventory Management and Compliance and Audit) plus new features, reports and dashboards released during the subscription period'
+    text: 'All the ESEC features, Reports and Dashboards of current modules (',
+    links: [
+      { text: 'Software Asset Management', to: '/features#sam' },
+      { text: 'Project Management & Costing', to: '/features#project' },
+      { text: 'Compliance & Audit', to: '/features#compliance' },
+      { text: 'Alerts, Customization and Integrations', to: '/features#alerts' }
+    ],
+    suffix: ') plus new features, reports and dashboards released during the subscription period'
   },
   {
     icon: 'mdi:database',
@@ -31,7 +38,7 @@ const includedFeatures = [
   },
   {
     icon: 'mdi:connection',
-    text: 'Integration with internal systems – LDAP, HR, Power BI, ERP, etc.'
+    text: 'Integration with internal systems - LDAP, HR, Power BI, ERP, ITAM etc.'
   },
   {
     icon: 'mdi:school',
@@ -66,13 +73,13 @@ export default function Pricing() {
             alignItems: 'center',
             gap: 1
           }}>
-            <Icon icon="mdi:tag" color={colors.primary} width="16" height="16" />
+            <Icon icon="mdi:tag" color={colors.primary} width="20" height="20" />
             <Typography variant="caption" sx={{
               color: colors.primary,
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>
-              TRANSPARENT ANNUAL SUBSCRIPTION PRICING
+              TRANSPARENT PRICING - No Hidden Costs
             </Typography>
           </Box>
 
@@ -80,9 +87,9 @@ export default function Pricing() {
             One Price Based on Actual Users
           </Typography>
 
-          <Typography variant="h5" sx={{ maxWidth: 800, mx: 'auto', fontWeight: 600 }}>
+          {/* <Typography variant="h5" sx={{ maxWidth: 800, mx: 'auto', fontWeight: 600 }}>
             <span style={{ color: colors.primary }}>No Hidden Costs</span> - Inclusions and Refund
-          </Typography>
+          </Typography> */}
         </Stack>
 
         {/* ROI Statement */}
@@ -166,21 +173,22 @@ export default function Pricing() {
                     <Stack direction="row" spacing={1} alignItems="flex-start">
                       <Icon icon="mdi:calendar-check" color={colors.primary} width="20" height="20" />
                       <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        Billed Annually
+                        Billed Annually -
                         <Box
                           component="a"
                           href="#included-features"
                           sx={{
-                            display: 'inline-flex',
                             color: colors.primary,
+                            fontWeight: 600,
+                            textDecoration: 'underline',
+                            cursor: 'pointer',
                             transition: 'all 0.2s ease',
                             '&:hover': {
-                              transform: 'translateY(-2px)',
                               opacity: 0.8
                             }
                           }}
                         >
-                          <Icon icon="mdi:information-outline" width="18" height="18" />
+                          Included
                         </Box>
                       </Typography>
                     </Stack>
@@ -213,7 +221,7 @@ export default function Pricing() {
                       </Typography>
                     </Stack>
                     <Stack direction="row" spacing={1} alignItems="flex-start">
-                      <Icon icon="mdi:chart-line" color={colors.primary} width="18" height="18" />
+                      <Icon icon="mdi:trending-down" color={colors.primary} width="18" height="18" />
                       <Typography variant="body2">
                         Attractive Volume Discounts for above 500 Users
                       </Typography>
@@ -286,21 +294,22 @@ export default function Pricing() {
                     <Stack direction="row" spacing={1} alignItems="flex-start">
                       <Icon icon="mdi:calendar-check" color={colors.primary} width="20" height="20" />
                       <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        Billed Annually
+                        Billed Annually -
                         <Box
                           component="a"
                           href="#included-features"
                           sx={{
-                            display: 'inline-flex',
                             color: colors.primary,
+                            fontWeight: 600,
+                            textDecoration: 'underline',
+                            cursor: 'pointer',
                             transition: 'all 0.2s ease',
                             '&:hover': {
-                              transform: 'translateY(-2px)',
                               opacity: 0.8
                             }
                           }}
                         >
-                          <Icon icon="mdi:information-outline" width="18" height="18" />
+                          Included
                         </Box>
                       </Typography>
                     </Stack>
@@ -333,7 +342,7 @@ export default function Pricing() {
                       </Typography>
                     </Stack>
                     <Stack direction="row" spacing={1} alignItems="flex-start">
-                      <Icon icon="mdi:chart-line" color={colors.primary} width="18" height="18" />
+                      <Icon icon="mdi:trending-down" color={colors.primary} width="18" height="18" />
                       <Typography variant="body2">
                         Attractive Volume Discounts for above 500 Users
                       </Typography>
@@ -395,7 +404,35 @@ export default function Pricing() {
                       </Typography>
                     </Box>
                     <Typography variant="body2" sx={{ flex: 1, pt: 1, lineHeight: 1.6 }}>
-                      {feature.text}
+                      {feature.links ? (
+                        <>
+                          {feature.text}
+                          {feature.links.map((link, linkIdx) => (
+                            <React.Fragment key={linkIdx}>
+                              <Typography
+                                component="span"
+                                onClick={() => navigate(link.to)}
+                                sx={{
+                                  color: colors.primary,
+                                  fontWeight: 600,
+                                  cursor: 'pointer',
+                                  textDecoration: 'underline',
+                                  transition: 'all 0.2s ease',
+                                  '&:hover': {
+                                    opacity: 0.8
+                                  }
+                                }}
+                              >
+                                {link.text}
+                              </Typography>
+                              {linkIdx < feature.links.length - 1 && ', '}
+                            </React.Fragment>
+                          ))}
+                          {feature.suffix}
+                        </>
+                      ) : (
+                        feature.text
+                      )}
                     </Typography>
                   </Stack>
                 </Grid>

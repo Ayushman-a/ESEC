@@ -10,9 +10,9 @@ import esecDarkLogo from '../assets/images/esec_darklogo.png'
 const menu = {
   Features: [
     { label: 'Software Asset Management', to: '/features#sam' },
-    { label: 'License Management', to: '/features#licenses' },
     { label: 'Compliance & Audit', to: '/features#compliance' },
-    { label: 'Project Management', to: '/features#project' },
+    { label: 'Project Management & Costing', to: '/features#project' },
+    { label: 'Alerts, Customization and Integrations', to: '/features#alerts' },
   ],
   Company: [
     { label: 'About Us', to: '/about' },

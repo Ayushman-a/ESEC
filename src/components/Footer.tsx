@@ -50,16 +50,6 @@ export default function Footer() {
               Engineering Software Expertise Capture - Intelligent software asset management solutions for modern enterprises.
             </Typography>
 
-            {/* US Office Address */}
-            <Typography variant="body2" sx={{
-              mt: 3,
-              color: colors.primary,
-              fontWeight: 600,
-              lineHeight: 1.7
-            }}>
-              US Office: Nibana Solutions Inc. Delaware, USA.
-            </Typography>
-
             {/* ISO Certifications */}
             <Stack spacing={1.5} sx={{ mt: 3 }}>
               <Stack direction="row" spacing={1} alignItems="center">
@@ -146,7 +136,7 @@ export default function Footer() {
 
           {/* Navigation Columns */}
           {cols.map((c) => (
-            <Grid key={c.title} item xs={12} sm={4} md={3}>
+            <Grid key={c.title} item xs={12} sm={4} md={2}>
               <Typography variant="overline" sx={{
                 color: colors.primary,
                 fontWeight: 700,
@@ -172,6 +162,67 @@ export default function Footer() {
               </Stack>
             </Grid>
           ))}
+
+          {/* Office Addresses Section */}
+          <Grid item xs={12} md={3}>
+            <Typography variant="overline" sx={{
+              color: colors.primary,
+              fontWeight: 700,
+              letterSpacing: '0.1em'
+            }}>Our Offices</Typography>
+
+            <Stack spacing={2.5} sx={{ mt: 2 }}>
+            <Box>
+                <Typography variant="body2" sx={{
+                  color: colors.text.primary,
+                  fontWeight: 600,
+                  mb: 0.5
+                }}>
+                  India Offices
+                </Typography>
+                <Stack spacing={0.8}>
+                  <Typography variant="body2" sx={{
+                    color: colors.text.secondary,
+                    lineHeight: 1.6,
+                    fontSize: '0.875rem'
+                  }}>
+                    <strong>Tuticorin</strong> - Operations Office
+                  </Typography>
+                  <Typography variant="body2" sx={{
+                    color: colors.text.secondary,
+                    lineHeight: 1.6,
+                    fontSize: '0.875rem'
+                  }}>
+                    <strong>Chennai</strong> - Branch Office
+                  </Typography>
+                  <Typography variant="body2" sx={{
+                    color: colors.text.secondary,
+                    lineHeight: 1.6,
+                    fontSize: '0.875rem'
+                  }}>
+                    <strong>Delhi</strong> - Registered Office
+                  </Typography>
+                </Stack>
+              </Box>
+              <Box>
+                <Typography variant="body2" sx={{
+                  color: colors.text.primary,
+                  fontWeight: 600,
+                  mb: 0.5
+                }}>
+                  US Office
+                </Typography>
+                <Typography variant="body2" sx={{
+                  color: colors.text.secondary,
+                  lineHeight: 1.6,
+                  fontSize: '0.875rem'
+                }}>
+                  Nibana Solutions Inc.<br />
+                  Delaware, USA
+                </Typography>
+              </Box>
+            </Stack>
+          </Grid>
         </Grid>
 
         <Stack
