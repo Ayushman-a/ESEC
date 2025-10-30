@@ -71,17 +71,17 @@ export default function Hero() {
           </Box>
 
           <Typography variant="h1" sx={{
-            fontSize: { xs: 40, md: 72 },
+            fontSize: { xs: 40, md: 64 },
             lineHeight: 1.1,
             maxWidth: 1100,
             fontWeight: 900,
             color: colors.primary,
           }}>
-            Reduce Software Costs with Intelligent Asset Management
+            Reduce Software Assets Cost and Optimize Utilization ongoing basis
           </Typography>
 
           <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.6, fontSize: { xs: 16, md: 19 } }}>
-            Are you worried about escalating Software Asset costs and complex license types?
+            Are you worried about escalating Software Asset costs and complex license models?
             ESEC will Reduce and Optimize your costs... <strong style={{
               color: colors.primary
             }}>GUARANTEED</strong>
@@ -108,54 +108,148 @@ export default function Hero() {
             </Button>
           </Stack>
 
-          <Stack
-            direction="row"
-            spacing={{ xs: 2, sm: 4, md: 6 }}
-            sx={{
-              pt: 5,
-              flexWrap: 'wrap',
-              justifyContent: 'center'
-            }}
-          >
-            <Stack alignItems="center" spacing={0.5} sx={{ minWidth: { xs: 'auto', sm: 140 } }}>
-              <Typography variant="h4" sx={{
-                color: colors.primary,
-                fontWeight: 700,
-                fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' }
-              }}>5X to 25+X</Typography>
-              <Typography variant="body2" sx={{
-                color: colors.text.secondary,
-                fontSize: { xs: '0.75rem', sm: '0.85rem', md: '0.95rem' },
-                textAlign: 'center'
-              }}>ROI in 2 Years</Typography>
-            </Stack>
+          <Box sx={{
+            pt: { xs: 4, md: 6 },
+            px: { xs: 3, md: 4 },
+            maxWidth: 1400,
+            mx: 'auto'
+          }}>
+            <Stack
+              direction="row"
+              spacing={{ xs: 3, sm: 4, md: 5, lg: 6 }}
+              sx={{
+                justifyContent: 'center',
+                flexWrap: { xs: 'wrap', lg: 'nowrap' },
+                alignItems: 'flex-start',
+                rowGap: { xs: 4, sm: 5 }
+              }}
+            >
+              <Stack alignItems="center" spacing={0.5} sx={{
+                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                px: { xs: 1, sm: 2 }
+              }}>
+                <Typography sx={{
+                  color: colors.primary,
+                  fontWeight: 700,
+                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.2
+                }}>5X to 25+X ROI</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>In 2 Years</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>Guaranteed</Typography>
+              </Stack>
 
-            <Stack alignItems="center" spacing={0.5} sx={{ minWidth: { xs: 'auto', sm: 140 } }}>
-              <Typography variant="h4" sx={{
-                color: colors.primary,
-                fontWeight: 700,
-                fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' }
-              }}>50 to 100K+</Typography>
-              <Typography variant="body2" sx={{
-                color: colors.text.secondary,
-                fontSize: { xs: '0.75rem', sm: '0.85rem', md: '0.95rem' },
-                textAlign: 'center'
-              }}>Scalable Users</Typography>
-            </Stack>
+              <Stack alignItems="center" spacing={0.5} sx={{
+                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                px: { xs: 1, sm: 2 }
+              }}>
+                <Typography sx={{
+                  color: colors.primary,
+                  fontWeight: 700,
+                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.2
+                }}>50 to 100,000+</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>Users</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>Highly Scalable</Typography>
+              </Stack>
 
-            <Stack alignItems="center" spacing={0.5} sx={{ minWidth: { xs: 'auto', sm: 140 } }}>
-              <Typography variant="h4" sx={{
-                color: colors.primary,
-                fontWeight: 700,
-                fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' }
-              }}>Transparent</Typography>
-              <Typography variant="body2" sx={{
-                color: colors.text.secondary,
-                fontSize: { xs: '0.75rem', sm: '0.85rem', md: '0.95rem' },
-                textAlign: 'center'
-              }}>User-Based Pricing</Typography>
+              <Stack alignItems="center" spacing={0.5} sx={{
+                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                px: { xs: 1, sm: 2 }
+              }}>
+                <Typography sx={{
+                  color: colors.primary,
+                  fontWeight: 700,
+                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.2
+                }}>One Price - All features</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>User Count Based only</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>Transparent Pricing</Typography>
+              </Stack>
+
+              <Stack alignItems="center" spacing={0.5} sx={{
+                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                px: { xs: 1, sm: 2 }
+              }}>
+                <Typography sx={{
+                  color: colors.primary,
+                  fontWeight: 700,
+                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.2
+                }}>Engineering & Non-Engineering</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>Software Assets</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>All types of Licenses</Typography>
+              </Stack>
+
+              <Stack alignItems="center" spacing={0.5} sx={{
+                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                px: { xs: 1, sm: 2 }
+              }}>
+                <Typography sx={{
+                  color: colors.primary,
+                  fontWeight: 700,
+                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.2
+                }}>Global</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>Certificates</Typography>
+                <Typography variant="caption" sx={{
+                  color: colors.text.secondary,
+                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                  textAlign: 'center',
+                  lineHeight: 1.4
+                }}>GDPR & ISMS</Typography>
+              </Stack>
             </Stack>
-          </Stack>
+          </Box>
         </Stack>
       </Container>
     </Box>
