@@ -1,0 +1,235 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "solutions": "Solutions",
+    "features": "Features",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "about": "About",
+    "partners": "Partners",
+    "contact": "Contact",
+    "demo": "Demo",
+    "login": "Login",
+    "requestDemo": "Request Demo",
+    "menu": {
+      "features": "Features",
+      "company": "Company",
+      "sam": "Software Asset Management",
+      "compliance": "Compliance & Audit",
+      "project": "Project Management & Costing",
+      "alerts": "Alerts, Customization and Integrations",
+      "aboutUs": "About Us",
+      "partners": "Partners",
+      "careers": "Careers",
+      "contact": "Contact"
+    }
+  },
+  "home": {
+    "hero": {
+      "engineeringSoftware": "Engineering Software",
+      "nonEngineeringSoftware": "Non-Engineering Software",
+      "badge": "DEVELOPED IN INDIA FOR THE WORLD",
+      "title": "Reduce Software Assets Cost and Optimize Utilization ongoing basis",
+      "subtitle": "Are you worried about escalating Software Asset costs and complex license models? ESEC will Reduce and Optimize your costs...",
+      "guaranteed": "GUARANTEED",
+      "requestDemo": "Request Demo",
+      "viewPricing": "View Pricing",
+      "roi": {
+        "value": "5X to 25+X ROI",
+        "period": "In 2 Years",
+        "guarantee": "Guaranteed"
+      },
+      "users": {
+        "value": "50 to 100,000+",
+        "label": "Users",
+        "note": "Highly Scalable"
+      },
+      "pricing": {
+        "value": "One Price - All features",
+        "note1": "User Count Based only",
+        "note2": "Transparent Pricing"
+      },
+      "software": {
+        "value": "Engineering & Non-Engineering",
+        "label": "Software Assets",
+        "note": "All types of Licenses"
+      },
+      "certificates": {
+        "value": "Global",
+        "label": "Certificates",
+        "note": "GDPR & ISMS"
+      }
+    }
+  },
+  "pricing": {
+    "badge": "TRANSPARENT PRICING - No Hidden Costs",
+    "scrollMessage": "Scroll down to see inclusions and special refund offer.",
+    "title": "One Price Based on Actual Users",
+    "roi": {
+      "title": "5X to 25+X ROI in 2 Years",
+      "subtitle": "Best Value for Money",
+      "description": "Many customers benefited by 5X to 25+X ROI within 2 years of ESEC's deployment"
+    },
+    "india": {
+      "badge": "India Pricing",
+      "basePrice": "Year Base Price",
+      "perUser": "Month/User",
+      "billedAnnually": "Billed Annually",
+      "included": "Included",
+      "location": "ESEC Servers located in India. Users and software globally",
+      "specialOffers": "Special Offers",
+      "smeDiscount": "20% discount for registered Small and Micro Companies (SMEs)",
+      "volumeDiscount": "Attractive Volume Discounts for above 500 Users",
+      "cta": "Get India Pricing"
+    },
+    "international": {
+      "badge": "International Pricing",
+      "basePrice": "Year Base Price",
+      "perUser": "Month/User",
+      "billedAnnually": "Billed Annually",
+      "included": "Included",
+      "location": "ESEC Servers located outside India",
+      "specialOffers": "Special Offers",
+      "smeDiscount": "20% discount for registered SMEs with revenue below US $100M",
+      "volumeDiscount": "Attractive Volume Discounts for above 500 Users",
+      "cta": "Get International Pricing"
+    },
+    "included": {
+      "title": "India and International Price Include...",
+      "subtitle": "Everything you need in one transparent package"
+    },
+    "volumeDiscounts": {
+      "title": "Volume Discounts and Site Licensing",
+      "subtitle": "Scale with us and save more",
+      "volume": {
+        "title": "Volume Discounts (500+ Users)",
+        "description": "For attractive volume discounts above 500 users and multi-year contracts, please contact sales team"
+      },
+      "enterprise": {
+        "title": "Enterprise Site Licensing (15,000+ Users)",
+        "description": "For special Enterprise Site licensing pricing above 15,000 users, please contact sales team"
+      }
+    },
+    "refund": {
+      "badge": "Special Refund Offer",
+      "subtitle": "You do not need but still....we want to ensure...",
+      "title": "75% Refund Within 45 Days",
+      "description": "75% of total amount to be returned if not satisfied within 45 days",
+      "minimum": "Minimum of Rs. 1.5 lacs or US $ 2,500 to be retained"
+    },
+    "cta": {
+      "title": "Ready to optimize your software costs?",
+      "subtitle": "Get started with ESEC today and experience guaranteed ROI within 2 years",
+      "demo": "Request Demo",
+      "proposal": "Request Proposal"
+    }
+  },
+  "partners": {
+    "badge": "PARTNERS",
+    "title": "Be a Part of Our Growth",
+    "subtitle": "ESEC is being used by some of the large companies in diverse industries in India for over 6 years and is now poised for a rapid growth. We invite you to come and be a part of this growth.",
+    "opportunities": {
+      "title": "Partnership Opportunities",
+      "subtitle": "Choose the partnership model that best fits your business"
+    },
+    "types": {
+      "var": {
+        "title": "Value Added Resellers",
+        "description": "For your established customer base and potential customers, ESEC would be an excellent value-added product to offer. ESEC will help to enhance the productivity of software and hardware assets utilization and optimize the purchase of these assets. Overtime it will improve your cost of sales too as customers will have clarity on when to buy and how many licenses to buy and what software applications and modules to buy based on actual utilization."
+      },
+      "si": {
+        "title": "System Integrators / MSPs",
+        "description": "By offering ESEC to your current and future customers, you will enhance your service offerings and enable organizations to directly save and optimize software and hardware assets on a continuous basis. ESEC can also be integrated with in-house systems for publishing of reports/dashboards."
+      },
+      "consultant": {
+        "title": "Referral Consultants",
+        "description": "Looking for companies and individual consultants having reach to the top management of various companies. You will be offering an excellent investment decision making tool to reduce and optimize software costs on a continuous basis for these companies. Your role broadly would be to help us to present and demonstrate ESEC to the decision makers. Most of the times in principle decisions are taken by the senior management after looking at the value proposition of ESEC."
+      }
+    },
+    "benefits": {
+      "title": "Why Partner with ESEC?",
+      "subtitle": "Grow your business with attractive benefits and comprehensive support",
+      "commission": {
+        "title": "Attractive Commissions",
+        "description": "In all the above models, you will earn attractive commissions for a total period of 3 years (subject to subscription of renewal of ESEC).",
+        "stats": "3 Years Commission Period"
+      },
+      "support": {
+        "title": "Complete Support",
+        "description": "Installation, training and post-sales support will be provided by the ESEC team.",
+        "stats": "Full Service Coverage"
+      }
+    },
+    "cta": {
+      "title": "Become a Partner",
+      "description": "Join our partner ecosystem and help organizations optimize their software and hardware assets. Earn attractive commissions while being part of our rapid growth journey.",
+      "apply": "Apply Now",
+      "contact": "Contact Us"
+    }
+  },
+  "footer": {
+    "description": "Engineering Software Expertise Capture - Intelligent software asset management solutions for modern enterprises.",
+    "isoTitle1": "ISO/IEC 27001:2022",
+    "isoSubtitle1": "ISMS",
+    "isoTitle2": "ISO/IEC 27701:2019",
+    "isoSubtitle2": "PIMS (GDPR)",
+    "solutions": {
+      "title": "Solutions",
+      "licenseManagement": "License Management",
+      "assetTracking": "Asset Tracking",
+      "compliance": "Compliance & Audit",
+      "costOptimization": "Cost Optimization"
+    },
+    "resources": {
+      "title": "Resources",
+      "documentation": "Documentation",
+      "caseStudies": "Case Studies",
+      "blog": "Blog",
+      "support": "Support"
+    },
+    "company": {
+      "title": "Company",
+      "aboutUs": "About Us",
+      "partners": "Partners",
+      "careers": "Careers",
+      "contact": "Contact"
+    },
+    "offices": {
+      "title": "Our Offices",
+      "indiaTitle": "India Offices",
+      "tuticorin": "Tuticorin - Operations Office",
+      "chennai": "Chennai - Branch Office",
+      "delhi": "Delhi - Registered Office",
+      "usTitle": "US Office",
+      "usName": "Nibana Solutions Inc.",
+      "usLocation": "Delaware, USA"
+    },
+    "copyright": "ESEC. All rights reserved. Engineering Software Expertise Capture.",
+    "privacy": "Privacy Policy",
+    "security": "Security",
+    "terms": "Terms of Service"
+  },
+  "accessibility": {
+    "title": "Accessibility Settings",
+    "zoom": "Zoom Level",
+    "fontSize": "Font Size",
+    "language": "Language",
+    "highContrast": "High Contrast",
+    "reduceMotion": "Reduce Motion",
+    "reset": "Reset Settings",
+    "close": "Close",
+    "languages": {
+      "en": "English",
+      "ja": "日本語",
+      "fr": "Français",
+      "de": "Deutsch"
+    }
+  },
+  "cookie": {
+    "title": "We value your privacy",
+    "description": "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.",
+    "accept": "Accept All",
+    "decline": "Decline"
+  }
+}

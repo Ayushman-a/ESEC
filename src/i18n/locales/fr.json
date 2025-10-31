@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "solutions": "Solutions",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "resources": "Ressources",
+    "about": "À propos",
+    "partners": "Partenaires",
+    "contact": "Contact",
+    "demo": "Démo",
+    "login": "Connexion",
+    "requestDemo": "Demander une démo",
+    "menu": {
+      "features": "Fonctionnalités",
+      "company": "Entreprise",
+      "sam": "Gestion des actifs logiciels",
+      "compliance": "Conformité et audit",
+      "project": "Gestion de projet et coûts",
+      "alerts": "Alertes, personnalisation et intégrations",
+      "aboutUs": "À propos de nous",
+      "partners": "Partenaires",
+      "careers": "Carrières",
+      "contact": "Contact"
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "LOGICIEL D'ENTREPRISE",
+      "title": "Optimisez vos actifs logiciels",
+      "subtitle": "Solution complète de gestion des actifs logiciels pour les entreprises",
+      "cta": "Commencer",
+      "learnMore": "En savoir plus"
+    }
+  },
+  "pricing": {
+    "badge": "TARIFICATION TRANSPARENTE - Aucun coût caché",
+    "scrollMessage": "Faites défiler vers le bas pour voir les inclusions et l'offre de remboursement spéciale.",
+    "title": "Un prix basé sur les utilisateurs réels",
+    "roi": {
+      "title": "ROI de 5X à 25+X en 2 ans",
+      "subtitle": "Meilleur rapport qualité-prix",
+      "description": "De nombreux clients ont bénéficié d'un ROI de 5X à 25+X dans les 2 ans suivant le déploiement d'ESEC"
+    },
+    "india": {
+      "badge": "Tarification Inde",
+      "basePrice": "Prix de base annuel",
+      "perUser": "Mois/Utilisateur",
+      "billedAnnually": "Facturé annuellement",
+      "included": "Inclus",
+      "location": "Serveurs ESEC situés en Inde. Utilisateurs et logiciels dans le monde entier",
+      "specialOffers": "Offres spéciales",
+      "smeDiscount": "20% de réduction pour les petites et micro-entreprises enregistrées (PME)",
+      "volumeDiscount": "Remises volumiques attractives pour plus de 500 utilisateurs",
+      "cta": "Obtenir les tarifs Inde"
+    },
+    "international": {
+      "badge": "Tarification Internationale",
+      "basePrice": "Prix de base annuel",
+      "perUser": "Mois/Utilisateur",
+      "billedAnnually": "Facturé annuellement",
+      "included": "Inclus",
+      "location": "Serveurs ESEC situés hors de l'Inde",
+      "specialOffers": "Offres spéciales",
+      "smeDiscount": "20% de réduction pour les PME enregistrées avec un chiffre d'affaires inférieur à 100 M$ US",
+      "volumeDiscount": "Remises volumiques attractives pour plus de 500 utilisateurs",
+      "cta": "Obtenir les tarifs internationaux"
+    },
+    "included": {
+      "title": "Les tarifs Inde et International incluent...",
+      "subtitle": "Tout ce dont vous avez besoin dans un forfait transparent"
+    },
+    "volumeDiscounts": {
+      "title": "Remises volumiques et licences de site",
+      "subtitle": "Grandissez avec nous et économisez davantage",
+      "volume": {
+        "title": "Remises volumiques (500+ utilisateurs)",
+        "description": "Pour des remises volumiques attractives au-delà de 500 utilisateurs et des contrats pluriannuels, veuillez contacter l'équipe commerciale"
+      },
+      "enterprise": {
+        "title": "Licence de site d'entreprise (15 000+ utilisateurs)",
+        "description": "Pour des tarifs spéciaux de licence de site d'entreprise au-delà de 15 000 utilisateurs, veuillez contacter l'équipe commerciale"
+      }
+    },
+    "refund": {
+      "badge": "Offre de remboursement spéciale",
+      "subtitle": "Vous n'en avez pas besoin mais quand même... nous voulons assurer...",
+      "title": "Remboursement de 75% dans les 45 jours",
+      "description": "75% du montant total sera remboursé si vous n'êtes pas satisfait dans les 45 jours",
+      "minimum": "Minimum de 1,5 lakh de roupies ou 2 500 $ US à conserver"
+    },
+    "cta": {
+      "title": "Prêt à optimiser vos coûts logiciels ?",
+      "subtitle": "Commencez avec ESEC aujourd'hui et bénéficiez d'un ROI garanti dans les 2 ans",
+      "demo": "Demander une démo",
+      "proposal": "Demander une proposition"
+    }
+  },
+  "partners": {
+    "badge": "PARTENAIRES",
+    "title": "Faites partie de notre croissance",
+    "subtitle": "ESEC est utilisé par certaines des grandes entreprises de diverses industries en Inde depuis plus de 6 ans et est maintenant prêt pour une croissance rapide. Nous vous invitons à venir faire partie de cette croissance.",
+    "opportunities": {
+      "title": "Opportunités de partenariat",
+      "subtitle": "Choisissez le modèle de partenariat qui convient le mieux à votre entreprise"
+    },
+    "types": {
+      "var": {
+        "title": "Revendeurs à valeur ajoutée",
+        "description": "Pour votre clientèle établie et vos clients potentiels, ESEC serait un excellent produit à valeur ajoutée à offrir. ESEC aidera à améliorer la productivité de l'utilisation des actifs logiciels et matériels et à optimiser l'achat de ces actifs. Au fil du temps, cela améliorera également votre coût de vente car les clients auront une clarté sur quand acheter, combien de licences acheter et quelles applications et modules logiciels acheter en fonction de l'utilisation réelle."
+      },
+      "si": {
+        "title": "Intégrateurs de systèmes / MSP",
+        "description": "En offrant ESEC à vos clients actuels et futurs, vous améliorerez vos offres de services et permettrez aux organisations d'économiser et d'optimiser directement les actifs logiciels et matériels de manière continue. ESEC peut également être intégré aux systèmes internes pour la publication de rapports/tableaux de bord."
+      },
+      "consultant": {
+        "title": "Consultants de référence",
+        "description": "À la recherche d'entreprises et de consultants individuels ayant accès à la haute direction de diverses entreprises. Vous offrirez un excellent outil de prise de décision d'investissement pour réduire et optimiser les coûts logiciels de manière continue pour ces entreprises. Votre rôle serait essentiellement de nous aider à présenter et démontrer ESEC aux décideurs. La plupart du temps, les décisions de principe sont prises par la haute direction après avoir examiné la proposition de valeur d'ESEC."
+      }
+    },
+    "benefits": {
+      "title": "Pourquoi devenir partenaire avec ESEC ?",
+      "subtitle": "Développez votre entreprise avec des avantages attractifs et un soutien complet",
+      "commission": {
+        "title": "Commissions attractives",
+        "description": "Dans tous les modèles ci-dessus, vous gagnerez des commissions attractives pour une période totale de 3 ans (sous réserve de l'abonnement au renouvellement d'ESEC).",
+        "stats": "Période de commission de 3 ans"
+      },
+      "support": {
+        "title": "Soutien complet",
+        "description": "L'installation, la formation et le support après-vente seront fournis par l'équipe ESEC.",
+        "stats": "Couverture complète du service"
+      }
+    },
+    "cta": {
+      "title": "Devenir partenaire",
+      "description": "Rejoignez notre écosystème de partenaires et aidez les organisations à optimiser leurs actifs logiciels et matériels. Gagnez des commissions attractives tout en faisant partie de notre parcours de croissance rapide.",
+      "apply": "Postuler maintenant",
+      "contact": "Nous contacter"
+    }
+  },
+  "footer": {
+    "description": "Plateforme d'optimisation des coûts logiciels et d'ingénierie d'entreprise aidant les organisations à maximiser leurs investissements logiciels.",
+    "quickLinks": "Liens rapides",
+    "company": "Entreprise",
+    "legal": "Juridique",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "rights": "Tous droits réservés."
+  },
+  "accessibility": {
+    "title": "Paramètres d'accessibilité",
+    "zoom": "Niveau de zoom",
+    "fontSize": "Taille de la police",
+    "language": "Langue",
+    "highContrast": "Contraste élevé",
+    "reduceMotion": "Réduire les animations",
+    "reset": "Réinitialiser les paramètres",
+    "close": "Fermer",
+    "languages": {
+      "en": "English",
+      "ja": "日本語",
+      "fr": "Français",
+      "de": "Deutsch"
+    }
+  },
+  "cookie": {
+    "title": "Nous valorisons votre vie privée",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, servir du contenu personnalisé et analyser notre trafic. En cliquant sur « Tout accepter », vous consentez à notre utilisation des cookies.",
+    "accept": "Tout accepter",
+    "decline": "Refuser"
+  }
+}

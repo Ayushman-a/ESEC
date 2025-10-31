@@ -3,6 +3,7 @@ import { Box, Button, Container, Grid, Paper, Stack, Typography } from '@mui/mat
 import { Icon } from '@iconify/react'
 import { useNavigate } from 'react-router-dom'
 import { useColors } from '../theme/useColors'
+import { useTranslation } from 'react-i18next'
 
 const includedFeatures = [
   {
@@ -57,6 +58,7 @@ const includedFeatures = [
 export default function Pricing() {
   const navigate = useNavigate()
   const colors = useColors()
+  const { t } = useTranslation()
 
   return (
     <Box sx={{ py: { xs: 8, md: 12 } }}>
@@ -79,12 +81,16 @@ export default function Pricing() {
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>
-              TRANSPARENT PRICING - No Hidden Costs
+              {t('pricing.badge')}
             </Typography>
           </Box>
 
+          <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 800, fontWeight: 600 }}>
+            {t('pricing.scrollMessage')}
+          </Typography>
+
           <Typography variant="h2" sx={{ fontSize: { xs: 32, md: 52 } }}>
-            One Price Based on Actual Users
+            {t('pricing.title')}
           </Typography>
 
           {/* <Typography variant="h5" sx={{ maxWidth: 800, mx: 'auto', fontWeight: 600 }}>

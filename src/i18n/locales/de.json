@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "solutions": "Lösungen",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "resources": "Ressourcen",
+    "about": "Über uns",
+    "partners": "Partner",
+    "contact": "Kontakt",
+    "demo": "Demo",
+    "login": "Anmelden",
+    "requestDemo": "Demo anfordern",
+    "menu": {
+      "features": "Funktionen",
+      "company": "Unternehmen",
+      "sam": "Software-Asset-Management",
+      "compliance": "Compliance & Audit",
+      "project": "Projektmanagement & Kostenrechnung",
+      "alerts": "Warnungen, Anpassung und Integrationen",
+      "aboutUs": "Über uns",
+      "partners": "Partner",
+      "careers": "Karriere",
+      "contact": "Kontakt"
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "UNTERNEHMENSSOFTWARE",
+      "title": "Optimieren Sie Ihre Software-Assets",
+      "subtitle": "Umfassende Software-Asset-Management-Lösung für Unternehmen",
+      "cta": "Loslegen",
+      "learnMore": "Mehr erfahren"
+    }
+  },
+  "pricing": {
+    "badge": "TRANSPARENTE PREISGESTALTUNG - Keine versteckten Kosten",
+    "scrollMessage": "Scrollen Sie nach unten, um Inklusivleistungen und das spezielle Rückerstattungsangebot zu sehen.",
+    "title": "Ein Preis basierend auf tatsächlichen Benutzern",
+    "roi": {
+      "title": "5X bis 25+X ROI in 2 Jahren",
+      "subtitle": "Bestes Preis-Leistungs-Verhältnis",
+      "description": "Viele Kunden profitierten innerhalb von 2 Jahren nach der ESEC-Bereitstellung von einem ROI von 5X bis 25+X"
+    },
+    "india": {
+      "badge": "Indien-Preise",
+      "basePrice": "Jährlicher Grundpreis",
+      "perUser": "Monat/Benutzer",
+      "billedAnnually": "Jährlich abgerechnet",
+      "included": "Inbegriffen",
+      "location": "ESEC-Server befinden sich in Indien. Benutzer und Software weltweit",
+      "specialOffers": "Sonderangebote",
+      "smeDiscount": "20% Rabatt für registrierte Klein- und Kleinstunternehmen (KMU)",
+      "volumeDiscount": "Attraktive Mengenrabatte für über 500 Benutzer",
+      "cta": "Indien-Preise erhalten"
+    },
+    "international": {
+      "badge": "Internationale Preise",
+      "basePrice": "Jährlicher Grundpreis",
+      "perUser": "Monat/Benutzer",
+      "billedAnnually": "Jährlich abgerechnet",
+      "included": "Inbegriffen",
+      "location": "ESEC-Server befinden sich außerhalb Indiens",
+      "specialOffers": "Sonderangebote",
+      "smeDiscount": "20% Rabatt für registrierte KMU mit einem Umsatz unter 100 Mio. USD",
+      "volumeDiscount": "Attraktive Mengenrabatte für über 500 Benutzer",
+      "cta": "Internationale Preise erhalten"
+    },
+    "included": {
+      "title": "Indien- und internationale Preise beinhalten...",
+      "subtitle": "Alles, was Sie brauchen, in einem transparenten Paket"
+    },
+    "volumeDiscounts": {
+      "title": "Mengenrabatte und Standortlizenzen",
+      "subtitle": "Wachsen Sie mit uns und sparen Sie mehr",
+      "volume": {
+        "title": "Mengenrabatte (500+ Benutzer)",
+        "description": "Für attraktive Mengenrabatte ab 500 Benutzern und mehrjährige Verträge wenden Sie sich bitte an das Vertriebsteam"
+      },
+      "enterprise": {
+        "title": "Unternehmensstandortlizenz (15.000+ Benutzer)",
+        "description": "Für spezielle Unternehmensstandortlizenzpreise ab 15.000 Benutzern wenden Sie sich bitte an das Vertriebsteam"
+      }
+    },
+    "refund": {
+      "badge": "Spezielles Rückerstattungsangebot",
+      "subtitle": "Sie brauchen es nicht, aber trotzdem... wir möchten sicherstellen...",
+      "title": "75% Rückerstattung innerhalb von 45 Tagen",
+      "description": "75% des Gesamtbetrags werden zurückerstattet, wenn Sie innerhalb von 45 Tagen nicht zufrieden sind",
+      "minimum": "Mindestens 1,5 Lakh Rupien oder 2.500 USD werden einbehalten"
+    },
+    "cta": {
+      "title": "Bereit, Ihre Softwarekosten zu optimieren?",
+      "subtitle": "Starten Sie noch heute mit ESEC und erleben Sie garantierten ROI innerhalb von 2 Jahren",
+      "demo": "Demo anfordern",
+      "proposal": "Angebot anfordern"
+    }
+  },
+  "partners": {
+    "badge": "PARTNER",
+    "title": "Werden Sie Teil unseres Wachstums",
+    "subtitle": "ESEC wird seit über 6 Jahren von einigen großen Unternehmen in verschiedenen Branchen in Indien verwendet und steht nun vor einem rasanten Wachstum. Wir laden Sie ein, Teil dieses Wachstums zu werden.",
+    "opportunities": {
+      "title": "Partnerschaftsmöglichkeiten",
+      "subtitle": "Wählen Sie das Partnerschaftsmodell, das am besten zu Ihrem Unternehmen passt"
+    },
+    "types": {
+      "var": {
+        "title": "Value Added Resellers",
+        "description": "Für Ihren etablierten Kundenstamm und potenzielle Kunden wäre ESEC ein hervorragendes Mehrwertprodukt zum Anbieten. ESEC hilft, die Produktivität der Software- und Hardware-Asset-Nutzung zu verbessern und den Kauf dieser Assets zu optimieren. Im Laufe der Zeit werden auch Ihre Verkaufskosten verbessert, da Kunden Klarheit darüber haben, wann sie kaufen, wie viele Lizenzen sie kaufen und welche Softwareanwendungen und -module sie basierend auf der tatsächlichen Nutzung kaufen sollen."
+      },
+      "si": {
+        "title": "Systemintegratoren / MSPs",
+        "description": "Durch das Anbieten von ESEC an Ihre aktuellen und zukünftigen Kunden verbessern Sie Ihr Serviceangebot und ermöglichen es Organisationen, Software- und Hardware-Assets kontinuierlich direkt zu sparen und zu optimieren. ESEC kann auch in interne Systeme zur Veröffentlichung von Berichten/Dashboards integriert werden."
+      },
+      "consultant": {
+        "title": "Empfehlungsberater",
+        "description": "Suche nach Unternehmen und einzelnen Beratern mit Zugang zum Top-Management verschiedener Unternehmen. Sie bieten ein hervorragendes Investitionsentscheidungstool, um Softwarekosten kontinuierlich zu reduzieren und zu optimieren. Ihre Rolle wäre im Wesentlichen, uns zu helfen, ESEC den Entscheidungsträgern zu präsentieren und zu demonstrieren. Meistens werden grundsätzliche Entscheidungen vom Senior Management getroffen, nachdem sie das Wertversprechen von ESEC gesehen haben."
+      }
+    },
+    "benefits": {
+      "title": "Warum Partner mit ESEC werden?",
+      "subtitle": "Wachsen Sie Ihr Geschäft mit attraktiven Vorteilen und umfassender Unterstützung",
+      "commission": {
+        "title": "Attraktive Provisionen",
+        "description": "In allen oben genannten Modellen verdienen Sie attraktive Provisionen für einen Gesamtzeitraum von 3 Jahren (vorbehaltlich des Abonnements zur Verlängerung von ESEC).",
+        "stats": "3-jähriger Provisionszeitraum"
+      },
+      "support": {
+        "title": "Vollständige Unterstützung",
+        "description": "Installation, Schulung und After-Sales-Support werden vom ESEC-Team bereitgestellt.",
+        "stats": "Vollständige Serviceabdeckung"
+      }
+    },
+    "cta": {
+      "title": "Partner werden",
+      "description": "Treten Sie unserem Partnerökosystem bei und helfen Sie Organisationen, ihre Software- und Hardware-Assets zu optimieren. Verdienen Sie attraktive Provisionen und werden Sie Teil unserer rasanten Wachstumsreise.",
+      "apply": "Jetzt bewerben",
+      "contact": "Kontaktieren Sie uns"
+    }
+  },
+  "footer": {
+    "description": "Unternehmens-Software- und Engineering-Kostenoptimierungsplattform, die Organisationen hilft, ihre Softwareinvestitionen zu maximieren.",
+    "quickLinks": "Schnelllinks",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "accessibility": {
+    "title": "Barrierefreiheitseinstellungen",
+    "zoom": "Zoomstufe",
+    "fontSize": "Schriftgröße",
+    "language": "Sprache",
+    "highContrast": "Hoher Kontrast",
+    "reduceMotion": "Bewegung reduzieren",
+    "reset": "Einstellungen zurücksetzen",
+    "close": "Schließen",
+    "languages": {
+      "en": "English",
+      "ja": "日本語",
+      "fr": "Français",
+      "de": "Deutsch"
+    }
+  },
+  "cookie": {
+    "title": "Wir schätzen Ihre Privatsphäre",
+    "description": "Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern, personalisierte Inhalte bereitzustellen und unseren Traffic zu analysieren. Durch Klicken auf 'Alle akzeptieren' stimmen Sie unserer Verwendung von Cookies zu.",
+    "accept": "Alle akzeptieren",
+    "decline": "Ablehnen"
+  }
+}

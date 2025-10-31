@@ -4,28 +4,29 @@ import { Icon } from '@iconify/react'
 import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const partnerTypes = [
   {
     icon: 'mdi:store',
     title: 'Value Added Resellers',
-    description: 'For your established customer base, ESEC would be an excellent value-added product to offer. ESEC will help to enhance the productivity of software and hardware assets utilization and optimize the purchase of these assets.',
+    description: 'For your established customer base and potential customers, ESEC would be an excellent value-added product to offer. ESEC will help to enhance the productivity of software and hardware assets utilization and optimize the purchase of these assets. Overtime it will improve your cost of sales too as customers will have clarity on when to buy and how many licenses to buy and what software applications and modules to buy based on actual utilization.',
     color: '#2563eb',
-    highlights: ['Established Customer Base', 'Enhance Asset Productivity', 'Optimize Purchases']
+    highlights: ['Established Customer Base', 'Enhance Asset Productivity', 'Improve Cost of Sales']
   },
   {
     icon: 'mdi:cog-box',
-    title: 'System Integrators',
-    description: 'By offering ESEC to your current and future customers, you will enhance your service offerings and enable organizations to directly save and optimize software and hardware assets on a continuous basis.',
+    title: 'System Integrators / MSPs',
+    description: 'By offering ESEC to your current and future customers, you will enhance your service offerings and enable organizations to directly save and optimize software and hardware assets on a continuous basis. ESEC can also be integrated with in-house systems for publishing of reports/dashboards.',
     color: '#7c3aed',
-    highlights: ['Enhanced Service Offerings', 'Continuous Optimization', 'Direct Cost Savings']
+    highlights: ['Enhanced Service Offerings', 'Continuous Optimization', 'System Integration']
   },
   {
     icon: 'mdi:account-tie',
     title: 'Referral Consultants',
-    description: 'Looking for individual consultants having reach to the top management of various companies. Your role would be to help us to present and demonstrate ESEC to the decision makers. Most of the times in principle decisions are taken by the senior management after looking at the value proposition of ESEC.',
+    description: 'Looking for companies and individual consultants having reach to the top management of various companies. You will be offering an excellent investment decision making tool to reduce and optimize software costs on a continuous basis for these companies. Your role broadly would be to help us to present and demonstrate ESEC to the decision makers. Most of the times in principle decisions are taken by the senior management after looking at the value proposition of ESEC.',
     color: '#dc2626',
-    highlights: ['Top Management Access', 'Presentation Support', 'Strategic Decision Making']
+    highlights: ['Top Management Access', 'Investment Decision Tool', 'Strategic Presentation Support']
   }
 ]
 
@@ -33,8 +34,8 @@ const benefits = [
   {
     icon: 'mdi:cash-multiple',
     title: 'Attractive Commissions',
-    description: 'Earn attractive commissions for 3 years after the initial sale and for subsequent annual renewals for 2 years.',
-    stats: '3 Years + 2 Years Renewals'
+    description: 'In all the above models, you will earn attractive commissions for a total period of 3 years (subject to subscription of renewal of ESEC).',
+    stats: '3 Years Commission Period'
   },
   {
     icon: 'mdi:tools',
@@ -60,6 +61,7 @@ export default function Partners() {
   const colors = useColors()
   const { mode } = useThemeMode()
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   return (
     <Box sx={{ py: { xs: 6, md: 10 } }}>
@@ -87,7 +89,7 @@ export default function Partners() {
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>
-              PARTNERS
+              {t('partners.badge')}
             </Typography>
           </Box>
 
@@ -99,11 +101,11 @@ export default function Partners() {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            Be a Part of Our Growth
+            {t('partners.title')}
           </Typography>
 
           <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.7 }}>
-            ESEC is being used by leading companies across diverse industries in India for over 6 years and is now poised for rapid growth. Join us on this journey.
+            {t('partners.subtitle')}
           </Typography>
         </Stack>
       </Container>

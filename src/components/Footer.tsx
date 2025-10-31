@@ -3,18 +3,44 @@ import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
 import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
+import { useTranslation } from 'react-i18next'
 import esecLogo from '../assets/images/new-logo.png'
 import esecDarkLogo from '../assets/images/esec_darklogo.png'
-
-const cols = [
-  { title: 'Solutions', items: ['License Management', 'Asset Tracking', 'Compliance & Audit', 'Cost Optimization'] },
-  { title: 'Resources', items: ['Documentation', 'Case Studies', 'Blog', 'Support'] },
-  { title: 'Company', items: ['About Us', 'Partners', 'Careers', 'Contact'] },
-]
 
 export default function Footer() {
   const colors = useColors()
   const { mode } = useThemeMode()
+  const { t } = useTranslation()
+
+  const cols = [
+    {
+      title: t('footer.solutions.title'),
+      items: [
+        t('footer.solutions.licenseManagement'),
+        t('footer.solutions.assetTracking'),
+        t('footer.solutions.compliance'),
+        t('footer.solutions.costOptimization')
+      ]
+    },
+    {
+      title: t('footer.resources.title'),
+      items: [
+        t('footer.resources.documentation'),
+        t('footer.resources.caseStudies'),
+        t('footer.resources.blog'),
+        t('footer.resources.support')
+      ]
+    },
+    {
+      title: t('footer.company.title'),
+      items: [
+        t('footer.company.aboutUs'),
+        t('footer.company.partners'),
+        t('footer.company.careers'),
+        t('footer.company.contact')
+      ]
+    },
+  ]
 
   return (
     <Box component="footer" sx={{
@@ -47,7 +73,7 @@ export default function Footer() {
               }}
             />
             <Typography variant="body2" color="text.secondary" sx={{ mt: 2, lineHeight: 1.7 }}>
-              Engineering Software Expertise Capture - Intelligent software asset management solutions for modern enterprises.
+              {t('footer.description')}
             </Typography>
 
             {/* ISO Certifications */}
@@ -58,11 +84,11 @@ export default function Footer() {
                   color: colors.text.primary,
                   fontWeight: 600
                 }}>
-                  ISO/IEC 27001:2022
+                  {t('footer.isoTitle1')}
                 </Typography>
               </Stack>
               <Typography variant="caption" color="text.secondary" sx={{ pl: 3.5 }}>
-                ISMS
+                {t('footer.isoSubtitle1')}
               </Typography>
 
               <Stack direction="row" spacing={1} alignItems="center" sx={{ mt: 1 }}>
@@ -71,11 +97,11 @@ export default function Footer() {
                   color: colors.text.primary,
                   fontWeight: 600
                 }}>
-                  ISO/IEC 27701:2019
+                  {t('footer.isoTitle2')}
                 </Typography>
               </Stack>
               <Typography variant="caption" color="text.secondary" sx={{ pl: 3.5 }}>
-                PIMS (GDPR)
+                {t('footer.isoSubtitle2')}
               </Typography>
             </Stack>
 
@@ -169,7 +195,7 @@ export default function Footer() {
               color: colors.primary,
               fontWeight: 700,
               letterSpacing: '0.1em'
-            }}>Our Offices</Typography>
+            }}>{t('footer.offices.title')}</Typography>
 
             <Stack spacing={2.5} sx={{ mt: 2 }}>
             <Box>
@@ -178,7 +204,7 @@ export default function Footer() {
                   fontWeight: 600,
                   mb: 0.5
                 }}>
-                  India Offices
+                  {t('footer.offices.indiaTitle')}
                 </Typography>
                 <Stack spacing={0.8}>
                   <Typography variant="body2" sx={{
@@ -186,21 +212,21 @@ export default function Footer() {
                     lineHeight: 1.6,
                     fontSize: '0.875rem'
                   }}>
-                    <strong>Tuticorin</strong> - Operations Office
+                    {t('footer.offices.tuticorin')}
                   </Typography>
                   <Typography variant="body2" sx={{
                     color: colors.text.secondary,
                     lineHeight: 1.6,
                     fontSize: '0.875rem'
                   }}>
-                    <strong>Chennai</strong> - Branch Office
+                    {t('footer.offices.chennai')}
                   </Typography>
                   <Typography variant="body2" sx={{
                     color: colors.text.secondary,
                     lineHeight: 1.6,
                     fontSize: '0.875rem'
                   }}>
-                    <strong>Delhi</strong> - Registered Office
+                    {t('footer.offices.delhi')}
                   </Typography>
                 </Stack>
               </Box>
@@ -210,15 +236,15 @@ export default function Footer() {
                   fontWeight: 600,
                   mb: 0.5
                 }}>
-                  US Office
+                  {t('footer.offices.usTitle')}
                 </Typography>
                 <Typography variant="body2" sx={{
                   color: colors.text.secondary,
                   lineHeight: 1.6,
                   fontSize: '0.875rem'
                 }}>
-                  Nibana Solutions Inc.<br />
-                  Delaware, USA
+                  {t('footer.offices.usName')}<br />
+                  {t('footer.offices.usLocation')}
                 </Typography>
               </Box>
             </Stack>
@@ -237,24 +263,24 @@ export default function Footer() {
           }}
         >
           <Typography variant="caption" color="text.secondary">
-            © {new Date().getFullYear()} ESEC. All rights reserved. Engineering Software Expertise Capture.
+            © {new Date().getFullYear()} {t('footer.copyright')}
           </Typography>
           <Stack direction="row" spacing={3}>
             <Link href="#" underline="none" variant="caption" sx={{
               color: 'text.secondary',
               transition: 'color 0.2s ease',
               '&:hover': { color: colors.primary }
-            }}>Privacy Policy</Link>
+            }}>{t('footer.privacy')}</Link>
             <Link href="#" underline="none" variant="caption" sx={{
               color: 'text.secondary',
               transition: 'color 0.2s ease',
               '&:hover': { color: colors.primary }
-            }}>Security</Link>
+            }}>{t('footer.security')}</Link>
             <Link href="#" underline="none" variant="caption" sx={{
               color: 'text.secondary',
               transition: 'color 0.2s ease',
               '&:hover': { color: colors.primary }
-            }}>Terms of Service</Link>
+            }}>{t('footer.terms')}</Link>
           </Stack>
         </Stack>
       </Container>
