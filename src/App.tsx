@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import CookieConsent from './components/CookieConsent'
+import AccessibilityToolbar from './components/AccessibilityToolbar'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Solutions from './pages/Solutions'
@@ -33,6 +35,8 @@ export default function App() {
         </Routes>
       </Box>
       <Footer />
+      <CookieConsent />
+      <AccessibilityToolbar />
     </Box>
   )
 }

@@ -4,23 +4,9 @@ import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import { useThemeMode } from '../ThemeContext'
 import { useColors } from '../theme/useColors'
+import { useTranslation } from 'react-i18next'
 import esecLogo from '../assets/images/new-logo.png'
 import esecDarkLogo from '../assets/images/esec_darklogo.png'
-
-const menu = {
-  Features: [
-    { label: 'Software Asset Management', to: '/features#sam' },
-    { label: 'Compliance & Audit', to: '/features#compliance' },
-    { label: 'Project Management & Costing', to: '/features#project' },
-    { label: 'Alerts, Customization and Integrations', to: '/features#alerts' },
-  ],
-  Company: [
-    { label: 'About Us', to: '/about' },
-    { label: 'Partners', to: '/partners' },
-    { label: 'Careers', to: '/about#careers' },
-    { label: 'Contact', to: '/contact' },
-  ]
-}
 
 export default function Navbar() {
   const [anchorEls, setAnchorEls] = React.useState<Record<string, null | HTMLElement>>({
@@ -29,7 +15,23 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const navigate = useNavigate()
   const { mode, toggleTheme } = useThemeMode()
-  const colors = useColors() // ✨ Use centralized colors
+  const colors = useColors()
+  const { t } = useTranslation()
+
+  const menu = {
+    Features: [
+      { label: t('nav.menu.sam'), to: '/features#sam' },
+      { label: t('nav.menu.compliance'), to: '/features#compliance' },
+      { label: t('nav.menu.project'), to: '/features#project' },
+      { label: t('nav.menu.alerts'), to: '/features#alerts' },
+    ],
+    Company: [
+      { label: t('nav.menu.aboutUs'), to: '/about' },
+      { label: t('nav.menu.partners'), to: '/partners' },
+      { label: t('nav.menu.careers'), to: '/about#careers' },
+      { label: t('nav.menu.contact'), to: '/contact' },
+    ]
+  }
 
   const openMenu = (key: string, target: HTMLElement) => {
     setAnchorEls(prev => ({ ...prev, [key]: target }))
@@ -65,7 +67,7 @@ export default function Navbar() {
                   onClick={(e) => openMenu(key, e.currentTarget)}
                   endIcon={<Icon icon="mdi:chevron-down" />}
                 >
-                  {key}
+                  {t(`nav.menu.${key.toLowerCase()}`)}
                 </Button>
                 <Menu
                   anchorEl={anchorEls[key]}
@@ -111,9 +113,9 @@ export default function Navbar() {
                 </Menu>
               </Box>
             ))}
-            <Button component={RouterLink} to="/pricing">Pricing</Button>
-            <Button component={RouterLink} to="/partners">Partners</Button>
-            <Button component={RouterLink} to="/contact">Demo</Button>
+            <Button component={RouterLink} to="/pricing">{t('nav.pricing')}</Button>
+            <Button component={RouterLink} to="/partners">{t('nav.partners')}</Button>
+            <Button component={RouterLink} to="/contact">{t('nav.demo')}</Button>
           </Box>
 
           <Box flex={1} />
@@ -134,10 +136,10 @@ export default function Navbar() {
               <Icon icon={mode === 'dark' ? 'mdi:white-balance-sunny' : 'mdi:moon-waning-crescent'} width="20" height="20" />
             </IconButton>
             <Button variant="outlined" onClick={() => navigate('/contact')}>
-              Login
+              {t('nav.login')}
             </Button>
             <Button variant="contained" onClick={() => navigate('/contact')} endIcon={<Icon icon="mdi:play-circle" />}>
-              Request Demo
+              {t('nav.requestDemo')}
             </Button>
           </Box>
 
@@ -163,7 +165,7 @@ export default function Navbar() {
           <Box sx={{ display: { xs: 'block', md: 'none' }, pb: 2 }}>
             {Object.entries(menu).map(([k, items]) => (
               <Box key={k} sx={{ px: 2, py: 1 }}>
-                <Typography variant="overline" color="text.secondary">{k}</Typography>
+                <Typography variant="overline" color="text.secondary">{t(`nav.menu.${k.toLowerCase()}`)}</Typography>
                 {items.map((it) => (
                   <Button key={it.to} component={RouterLink} to={it.to} fullWidth onClick={() => setMobileOpen(false)} sx={{ justifyContent: 'flex-start' }}>
                     {it.label}
@@ -172,8 +174,8 @@ export default function Navbar() {
               </Box>
             ))}
             <Box sx={{ px: 2, display:'grid', gap: 1 }}>
-              <Button variant="outlined" onClick={() => { setMobileOpen(false); navigate('/contact') }}>Login</Button>
-              <Button variant="contained" onClick={() => { setMobileOpen(false); navigate('/contact') }}>Request Demo</Button>
+              <Button variant="outlined" onClick={() => { setMobileOpen(false); navigate('/contact') }}>{t('nav.login')}</Button>
+              <Button variant="contained" onClick={() => { setMobileOpen(false); navigate('/contact') }}>{t('nav.requestDemo')}</Button>
             </Box>
           </Box>
         )}

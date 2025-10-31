@@ -1,0 +1,152 @@
+{
+  "hero": {
+    "engineeringSoftware": "Engineering Software",
+    "nonEngineeringSoftware": "Non-Engineering Software",
+    "badge": "DEVELOPED IN INDIA FOR THE WORLD",
+    "title": "Reduce Software Assets Cost and Optimize Utilization ongoing basis",
+    "subtitle": "Are you worried about escalating Software Asset costs and complex license models? ESEC will Reduce and Optimize your costs...",
+    "guaranteed": "GUARANTEED",
+    "requestDemo": "Request Demo",
+    "viewPricing": "View Pricing",
+    "roi": {
+      "value": "5X to 25+X ROI",
+      "period": "In 2 Years",
+      "guarantee": "Guaranteed"
+    },
+    "users": {
+      "value": "50 to 100,000+",
+      "label": "Users",
+      "note": "Highly Scalable"
+    },
+    "pricing": {
+      "value": "One Price - All features",
+      "note1": "User Count Based only",
+      "note2": "Transparent Pricing"
+    },
+    "software": {
+      "value": "Engineering & Non-Engineering",
+      "label": "Software Assets",
+      "note": "All types of Licenses"
+    },
+    "certificates": {
+      "value": "Global",
+      "label": "Certificates",
+      "note": "GDPR & ISMS"
+    }
+  },
+  "footer": {
+    "description": "Engineering Software Expertise Capture - Intelligent software asset management solutions for modern enterprises.",
+    "isoTitle1": "ISO/IEC 27001:2022",
+    "isoSubtitle1": "ISMS",
+    "isoTitle2": "ISO/IEC 27701:2019",
+    "isoSubtitle2": "PIMS (GDPR)",
+    "solutions": {
+      "title": "Solutions",
+      "items": {
+        "licenseManagement": "License Management",
+        "assetTracking": "Asset Tracking",
+        "compliance": "Compliance & Audit",
+        "costOptimization": "Cost Optimization"
+      }
+    },
+    "resources": {
+      "title": "Resources",
+      "items": {
+        "documentation": "Documentation",
+        "caseStudies": "Case Studies",
+        "blog": "Blog",
+        "support": "Support"
+      }
+    },
+    "company": {
+      "title": "Company",
+      "items": {
+        "aboutUs": "About Us",
+        "partners": "Partners",
+        "careers": "Careers",
+        "contact": "Contact"
+      }
+    },
+    "offices": {
+      "title": "Our Offices",
+      "india": {
+        "title": "India Offices",
+        "tuticorin": "Tuticorin - Operations Office",
+        "chennai": "Chennai - Branch Office",
+        "delhi": "Delhi - Registered Office"
+      },
+      "us": {
+        "title": "US Office",
+        "name": "Nibana Solutions Inc.",
+        "location": "Delaware, USA"
+      }
+    },
+    "copyright": "ESEC. All rights reserved. Engineering Software Expertise Capture.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "security": "Security",
+      "terms": "Terms of Service"
+    }
+  },
+  "about": {
+    "badge": "ABOUT NIBANA SOLUTIONS",
+    "title": "Predictive Analytics",
+    "titleLine2": "for Asset Management",
+    "subtitle": "Founded by seasoned professionals with extensive experience in manufacturing and services sectors, delivering ESEC - the next generation of software and hardware asset management.",
+    "companyTitle": "About Nibana Solutions",
+    "companyDescription1": "Nibana Solutions was started in April 2011 by seasoned professionals possessing extensive experience and deep knowledge of processes within both global and Indian organisations in the manufacturing and services sectors. ESEC is an advanced Predictive Analytics Software, developed ground up by Nibana Solutions since 2017. The platform is designed to be highly scalable, capable of managing tens of thousands of software (both Engineering and Non-engineering) and hardware assets across diverse industries, including Automotive, Heavy Machinery, Aerospace and Defence, High Technology, Consumer Electronics, Oil & Gas, Construction, Engineering, and Information Technology Services.",
+    "companyDescription2": "The development of ESEC is undertaken at Nibana Solutions' offices located in Tuticorin and Chennai. The software has received certification for ISO/IEC 27001:2022 (Information Security) and ISO/IEC 27701:2019 (Privacy Information Management System/GDPR), ensuring compliance with rigorous international standards.",
+    "industries": {
+      "title": "Industries",
+      "manufacturing": "Manufacturing",
+      "aerospace": "Aerospace",
+      "automotive": "Automotive",
+      "highTech": "High-Tech",
+      "oilGas": "Oil & Gas",
+      "itServices": "IT Services"
+    },
+    "stats": {
+      "founded": {
+        "value": "2011",
+        "label": "Founded"
+      },
+      "launched": {
+        "value": "2017",
+        "label": "ESEC Launched"
+      },
+      "certified": {
+        "value": "ISO Certified",
+        "label": "27001:2022 & 27701:2019"
+      },
+      "experience": {
+        "value": "60+",
+        "label": "Years Experience"
+      }
+    },
+    "approach": {
+      "title": "Our Approach",
+      "description": "ESEC gathers data from various software license servers, end points and hardware systems, providing secure, near real-time reports, dashboards, and alerts. ESEC is set up at the customer's location, where access to the information is limited to designated employees. ESEC delivers hundreds of reports and dashboards to help organisations efficiently manage software and hardware assets and make timely decisions. This ensures that productivity of the assets and the users are optimized to get the best ROI. Senior management often require customised reports and updates; our expert consultancy ensures these needs are met effectively. In addition, based on customer's requirement we add new features (if technically feasible) at no cost. This enables not only to meet the customer expectations but also enhance ESEC product capabilities on a continuous basis."
+    },
+    "leadership": {
+      "title": "Leadership Team",
+      "subtitle": "Led by industry veterans with 60+ years of combined experience",
+      "linkedin": "LinkedIn"
+    },
+    "cta": {
+      "title": "Ready to Optimize Your Assets?",
+      "description": "Join organizations worldwide that trust ESEC to maximize their software and hardware ROI",
+      "requestDemo": "Request a Demo",
+      "viewPricing": "View Pricing"
+    }
+  },
+  "contact": {
+    "title": "Contact Sales",
+    "subtitle": "Tell us a bit about your environment and we'll be in touch.",
+    "fields": {
+      "workEmail": "Work Email",
+      "company": "Company",
+      "message": "Message"
+    },
+    "submit": "Submit"
+  }
+}

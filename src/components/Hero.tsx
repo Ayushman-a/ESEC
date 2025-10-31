@@ -3,10 +3,13 @@ import { Box, Button, Container, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
 import { useNavigate } from 'react-router-dom'
 import { useColors } from '../theme/useColors'
+import { useTranslation } from 'react-i18next'
 
 export default function Hero() {
   const navigate = useNavigate()
   const colors = useColors()
+  const { t } = useTranslation()
+
   return (
     <Box sx={{ pt: { xs: 8, md: 4 }, pb: { xs: 10, md: 8 }, position: 'relative', overflow: 'hidden' }} className="hero-bg">
       <Container sx={{ position: 'relative', zIndex: 1 }}>
@@ -30,7 +33,7 @@ export default function Hero() {
                 }}
                 onClick={() => navigate('/services')}
               >
-                Engineering Software
+                {t('home.hero.engineeringSoftware')}
               </Typography>
               <Typography
                 variant="body2"
@@ -43,7 +46,7 @@ export default function Hero() {
                 }}
                 onClick={() => navigate('/services')}
               >
-                Non-Engineering Software
+                {t('home.hero.nonEngineeringSoftware')}
               </Typography>
             </Stack>
           </Stack>
@@ -65,7 +68,7 @@ export default function Hero() {
               fontWeight: 600,
               letterSpacing: '0.05em'
             }}>
-              DEVELOPED IN INDIA FOR THE WORLD
+              {t('home.hero.badge')}
             </Typography>
             <Icon icon="mdi:earth" color={colors.primary} width="16" height="16" />
           </Box>
@@ -77,14 +80,13 @@ export default function Hero() {
             fontWeight: 900,
             color: colors.primary,
           }}>
-            Reduce Software Assets Cost and Optimize Utilization ongoing basis
+            {t('home.hero.title')}
           </Typography>
 
           <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.6, fontSize: { xs: 16, md: 19 } }}>
-            Are you worried about escalating Software Asset costs and complex license models?
-            ESEC will Reduce and Optimize your costs... <strong style={{
+            {t('home.hero.subtitle')} <strong style={{
               color: colors.primary
-            }}>GUARANTEED</strong>
+            }}>{t('home.hero.guaranteed')}</strong>
           </Typography>
 
           <Stack direction={{ xs:'column', sm:'row' }} spacing={2} sx={{ pt: 2 }}>
@@ -95,7 +97,7 @@ export default function Hero() {
               onClick={() => navigate('/contact')}
               sx={{ px: 4, py: 1.5, fontSize: '1rem' }}
             >
-              Request Demo
+              {t('home.hero.requestDemo')}
             </Button>
             <Button
               variant="outlined"
@@ -104,7 +106,7 @@ export default function Hero() {
               onClick={() => navigate('/pricing')}
               sx={{ px: 4, py: 1.5, fontSize: '1rem' }}
             >
-              View Pricing
+              {t('home.hero.viewPricing')}
             </Button>
           </Stack>
 
@@ -134,19 +136,19 @@ export default function Hero() {
                   fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
                   textAlign: 'center',
                   lineHeight: 1.2
-                }}>5X to 25+X ROI</Typography>
+                }}>{t('home.hero.roi.value')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>In 2 Years</Typography>
+                }}>{t('home.hero.roi.period')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>Guaranteed</Typography>
+                }}>{t('home.hero.roi.guarantee')}</Typography>
               </Stack>
 
               <Stack alignItems="center" spacing={0.5} sx={{
@@ -159,19 +161,19 @@ export default function Hero() {
                   fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
                   textAlign: 'center',
                   lineHeight: 1.2
-                }}>50 to 100,000+</Typography>
+                }}>{t('home.hero.users.value')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>Users</Typography>
+                }}>{t('home.hero.users.label')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>Highly Scalable</Typography>
+                }}>{t('home.hero.users.note')}</Typography>
               </Stack>
 
               <Stack alignItems="center" spacing={0.5} sx={{
@@ -184,19 +186,19 @@ export default function Hero() {
                   fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
                   textAlign: 'center',
                   lineHeight: 1.2
-                }}>One Price - All features</Typography>
+                }}>{t('home.hero.pricing.value')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>User Count Based only</Typography>
+                }}>{t('home.hero.pricing.note1')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>Transparent Pricing</Typography>
+                }}>{t('home.hero.pricing.note2')}</Typography>
               </Stack>
 
               <Stack alignItems="center" spacing={0.5} sx={{
@@ -209,19 +211,19 @@ export default function Hero() {
                   fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
                   textAlign: 'center',
                   lineHeight: 1.2
-                }}>Engineering & Non-Engineering</Typography>
+                }}>{t('home.hero.software.value')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>Software Assets</Typography>
+                }}>{t('home.hero.software.label')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>All types of Licenses</Typography>
+                }}>{t('home.hero.software.note')}</Typography>
               </Stack>
 
               <Stack alignItems="center" spacing={0.5} sx={{
@@ -234,19 +236,19 @@ export default function Hero() {
                   fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
                   textAlign: 'center',
                   lineHeight: 1.2
-                }}>Global</Typography>
+                }}>{t('home.hero.certificates.value')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>Certificates</Typography>
+                }}>{t('home.hero.certificates.label')}</Typography>
                 <Typography variant="caption" sx={{
                   color: colors.text.secondary,
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   textAlign: 'center',
                   lineHeight: 1.4
-                }}>GDPR & ISMS</Typography>
+                }}>{t('home.hero.certificates.note')}</Typography>
               </Stack>
             </Stack>
           </Box>
