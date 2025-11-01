@@ -64,7 +64,7 @@ export default function Partners() {
   const { t } = useTranslation()
 
   return (
-    <Box sx={{ py: { xs: 6, md: 10 } }}>
+    <Box sx={{ py: { xs: 6, md: 6 } }}>
       {/* Hero Section */}
       <Container sx={{ mb: 8 }}>
         <Stack spacing={3} alignItems="center" textAlign="center">
@@ -107,6 +107,17 @@ export default function Partners() {
           <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.7 }}>
             {t('partners.subtitle')}
           </Typography>
+          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
+              <Button
+                variant="contained"
+                size="large"
+                onClick={() => navigate('/partner-request')}
+                endIcon={<Icon icon="mdi:arrow-right" />}
+                sx={{ px: 5, py: 1.75, fontSize: '1rem' }}
+              >
+                Apply Now
+              </Button>
+              </Box>
         </Stack>
       </Container>
 
@@ -305,20 +316,11 @@ export default function Partners() {
               <Button
                 variant="contained"
                 size="large"
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/partner-request')}
                 endIcon={<Icon icon="mdi:arrow-right" />}
                 sx={{ px: 5, py: 1.75, fontSize: '1rem' }}
               >
                 Apply Now
-              </Button>
-              <Button
-                variant="outlined"
-                size="large"
-                onClick={() => navigate('/contact')}
-                startIcon={<Icon icon="mdi:email" />}
-                sx={{ px: 5, py: 1.75, fontSize: '1rem' }}
-              >
-                Contact Us
               </Button>
             </Box>
           </Stack>

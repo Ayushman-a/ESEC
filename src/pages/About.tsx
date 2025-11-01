@@ -91,7 +91,7 @@ export default function About() {
   const navigate = useNavigate()
 
   return (
-    <Box sx={{ py: { xs: 6, md: 10 } }}>
+    <Box sx={{ py: { xs: 6, md: 6 } }}>
       {/* Hero Section */}
       <Container sx={{ mb: 8 }}>
         <Stack spacing={3} alignItems="center" textAlign="center" sx={{ mb: 6 }}>

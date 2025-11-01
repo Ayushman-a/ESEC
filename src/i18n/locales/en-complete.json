@@ -3,7 +3,7 @@
     "engineeringSoftware": "Engineering Software",
     "nonEngineeringSoftware": "Non-Engineering Software",
     "badge": "DEVELOPED IN INDIA FOR THE WORLD",
-    "title": "Reduce Software Assets Cost and Optimize Utilization ongoing basis",
+    "title": "Reduce Software Assets Cost and Optimize Utilization Continuously",
     "subtitle": "Are you worried about escalating Software Asset costs and complex license models? ESEC will Reduce and Optimize your costs...",
     "guaranteed": "GUARANTEED",
     "requestDemo": "Request Demo",
@@ -49,15 +49,7 @@
         "costOptimization": "Cost Optimization"
       }
     },
-    "resources": {
-      "title": "Resources",
-      "items": {
-        "documentation": "Documentation",
-        "caseStudies": "Case Studies",
-        "blog": "Blog",
-        "support": "Support"
-      }
-    },
+  
     "company": {
       "title": "Company",
       "items": {
@@ -71,8 +63,8 @@
       "title": "Our Offices",
       "india": {
         "title": "India Offices",
-        "tuticorin": "Tuticorin - Operations Office",
-        "chennai": "Chennai - Branch Office",
+        "tuticorin": "Tuticorin - Office",
+        "chennai": "Chennai - Office",
         "delhi": "Delhi - Registered Office"
       },
       "us": {

@@ -61,10 +61,10 @@ export default function Pricing() {
   const { t } = useTranslation()
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 } }}>
+    <Box sx={{ py: { xs: 8, md: 6 } }}>
       <Container>
         {/* Header */}
-        <Stack spacing={3} sx={{ mb: 8, textAlign: 'center', alignItems: 'center' }}>
+        <Stack spacing={1} sx={{ mb: 3, textAlign: 'center', alignItems: 'center' }}>
           <Box sx={{
             px: 2.5,
             py: 1,
@@ -194,7 +194,7 @@ export default function Pricing() {
                             }
                           }}
                         >
-                          Included
+                          What is included?
                         </Box>
                       </Typography>
                     </Stack>
@@ -223,7 +223,7 @@ export default function Pricing() {
                     <Stack direction="row" spacing={1} alignItems="flex-start">
                       <Icon icon="mdi:brightness-percent" color={colors.primary} width="18" height="18" />
                       <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                        20% discount for registered Small and Micro Companies (SMEs)
+                        20% discount for registered (MSMEs) - We are one of the MSMEs...<Icon icon="mdi:emoticon-happy" color={colors.primary} width="16" height="16" />
                       </Typography>
                     </Stack>
                     <Stack direction="row" spacing={1} alignItems="flex-start">
@@ -239,7 +239,7 @@ export default function Pricing() {
                   variant="outlined"
                   size="large"
                   fullWidth
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/pricing-proposal')}
                   sx={{ mt: 'auto', py: 1.5 }}
                   startIcon={<Icon icon="mdi:email" />}
                 >
@@ -315,7 +315,7 @@ export default function Pricing() {
                             }
                           }}
                         >
-                          Included
+                          What is included?
                         </Box>
                       </Typography>
                     </Stack>
@@ -344,7 +344,7 @@ export default function Pricing() {
                     <Stack direction="row" spacing={1} alignItems="flex-start">
                       <Icon icon="mdi:brightness-percent" color={colors.primary} width="18" height="18" />
                       <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                        20% discount for registered SMEs with revenue below US $100M
+                        20% discount for registered MSMEs with revenue below US $100M
                       </Typography>
                     </Stack>
                     <Stack direction="row" spacing={1} alignItems="flex-start">
@@ -360,7 +360,7 @@ export default function Pricing() {
                   variant="contained"
                   size="large"
                   fullWidth
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/pricing-proposal')}
                   sx={{ mt: 'auto', py: 1.5 }}
                   startIcon={<Icon icon="mdi:email" />}
                 >
@@ -588,7 +588,7 @@ export default function Pricing() {
               variant="outlined"
               size="large"
               endIcon={<Icon icon="mdi:file-document" />}
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate('/pricing-proposal')}
               sx={{ px: 5, py: 1.5, fontSize: '1rem' }}
             >
               Request Proposal

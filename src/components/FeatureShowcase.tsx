@@ -1,58 +1,66 @@
 import * as React from 'react'
-import { Box, Container, Grid, List, ListItemButton, ListItemIcon, ListItemText, Paper, Stack, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, List, ListItemButton, ListItemIcon, ListItemText, Paper, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
-import { UsageTrendChart, UtilizationBarChart, ReclaimAreaChart } from './RealCharts'
+import { useColors } from '../theme/useColors'
+import { useNavigate } from 'react-router-dom'
 
 type Feature = {
   key: string
   icon: string
   title: string
   blurb: string
-  visual: 'line' | 'bar' | 'area' | 'picture'
+  images: string[]
 }
-
-const HERO_IMG = "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600"
 
 const FEATURES: Feature[] = [
   {
-    key: 'realtime-usage',
+    key: 'cockpit-dashboard',
+    icon: 'mdi:view-dashboard',
+    title: 'Realtime Cockpit View - Summary Dashboard',
+    blurb: 'Utilization summary with Pie Chart/Bar/Grid view toggle options. Customizable per User/Enterprise/Division/Department/Project/Unit/Reservation Group/Country. All types of licenses viewable in one dashboard by time period.',
+    images: ['/graphs/image_0.png', '/graphs/image_1.png', '/graphs/image_2.png']
+  },
+  {
+    key: 'drill-down',
     icon: 'mdi:chart-line',
-    title: 'Real-time Usage',
-    blurb: 'See who uses what, when, and for how long. Pinpoint idle licenses and peak contention windows within minutes.',
-    visual: 'line'
+    title: 'Drill Down Views',
+    blurb: 'Detailed utilization trends by time period (7/15/30/90/180/365 days, YTD, Date Range) and by License Server(s), Heat Maps, License groups with comprehensive analytics.',
+    images: ['/graphs/image_3.png', '/graphs/image_4.png', '/graphs/image_5.png']
   },
   {
-    key: 'license-optimization',
-    icon: 'mdi:key-chain',
-    title: 'License Optimization',
-    blurb: 'Right-size expensive tools by reallocating underused seats while protecting mission-critical access for core teams.',
-    visual: 'bar'
-  },
-  {
-    key: 'harvest-reclaim',
-    icon: 'mdi:clock-fast',
-    title: 'Harvest & Reclaim',
-    blurb: 'Automatically harvest idle seats; show savings from reclaimed hours with policy-driven automation.',
-    visual: 'area'
-  },
-  {
-    key: 'compliance-audit',
-    icon: 'mdi:shield-check',
-    title: 'Compliance & Audit',
-    blurb: 'Centralize entitlements and usage trails to prepare evidence for vendor audits without the last-minute scramble.',
-    visual: 'picture'
+    key: 'predictability',
+    icon: 'mdi:crystal-ball',
+    title: 'Predictability of Future Need',
+    blurb: 'Comprehensive charts highlighting minimal software needed for future based on historical trends and usage patterns.',
+    images: ['/graphs/image_6.png']
   },
 ]
 
 export default function FeatureShowcase() {
   const [active, setActive] = React.useState(FEATURES[0])
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
+  const colors = useColors()
+  const navigate = useNavigate()
+
+  // Reset image index when active feature changes
+  React.useEffect(() => {
+    setCurrentImageIndex(0)
+  }, [active.key])
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % active.images.length)
+  }
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prev) => prev === 0 ? active.images.length - 1 : prev - 1)
+  }
 
   return (
-    <Box sx={{ py: { xs: 6, md: 10 } }}>
+    <Box >
       <Container>
-        <Stack spacing={1} sx={{ mb: 3 }}>
-          <Typography variant="h3">Explore key features</Typography>
-          <Typography color="text.secondary">Click a bullet to reveal details with a live chart or image.</Typography>
+        <Stack spacing={1} sx={{ mb: 0 }}>
+          <Typography variant="h3">Explore few Key Reports/Dashboards</Typography>
+          <Typography color="text.secondary">Click a report to reveal dashboard screenshots and detailed views.</Typography>
         </Stack>
 
         <Grid container spacing={3}>
@@ -81,30 +89,172 @@ export default function FeatureShowcase() {
                 <Typography variant="h5">{active.title}</Typography>
                 <Typography color="text.secondary">{active.blurb}</Typography>
 
-                <Box sx={{ mt: 1 }}>
-                  {active.visual === 'line' && <UsageTrendChart />}
-                  {active.visual === 'bar' && <UtilizationBarChart />}
-                  {active.visual === 'area' && <ReclaimAreaChart />}
-                  {active.visual === 'picture' && (
+                <Box sx={{
+                  mt: 1,
+                  position: 'relative',
+                  minHeight: '450px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-start'
+                }}>
+                  {/* Dashboard Image Container with Fixed Height */}
+                  <Box sx={{
+                    height: '450px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: 2,
+                    border: `1px solid ${colors.border.secondary}`,
+                    boxShadow: colors.shadow.subtle,
+                    bgcolor: colors.background.surface,
+                    overflow: 'hidden',
+                    position: 'relative'
+                  }}>
                     <Box
+                      component="img"
+                      src={active.images[currentImageIndex]}
+                      alt={`${active.title} - Image ${currentImageIndex + 1}`}
                       sx={{
-                        width: '100%',
-                        height: 220,
-                        borderRadius: 2,
-                        overflow: 'hidden',
-                        border: '1px solid rgba(2,6,23,0.06)',
-                        backgroundImage: `url(${HERO_IMG})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain'
                       }}
-                      title="Royalty-free Pexels image"
                     />
+
+                    {/* Navigation Arrows */}
+                    {active.images.length > 1 && (
+                      <>
+                        <Box
+                          onClick={handlePrevImage}
+                          sx={{
+                            position: 'absolute',
+                            left: 8,
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            width: 36,
+                            height: 36,
+                            borderRadius: '50%',
+                            background: 'rgba(0, 0, 0, 0.6)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease',
+                            zIndex: 10,
+                            '&:hover': {
+                              background: 'rgba(0, 0, 0, 0.8)',
+                              transform: 'translateY(-50%) scale(1.1)'
+                            }
+                          }}
+                        >
+                          <Icon icon="mdi:chevron-left" color="white" width="24" height="24" />
+                        </Box>
+                        <Box
+                          onClick={handleNextImage}
+                          sx={{
+                            position: 'absolute',
+                            right: 8,
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            width: 36,
+                            height: 36,
+                            borderRadius: '50%',
+                            background: 'rgba(0, 0, 0, 0.6)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease',
+                            zIndex: 10,
+                            '&:hover': {
+                              background: 'rgba(0, 0, 0, 0.8)',
+                              transform: 'translateY(-50%) scale(1.1)'
+                            }
+                          }}
+                        >
+                          <Icon icon="mdi:chevron-right" color="white" width="24" height="24" />
+                        </Box>
+                      </>
+                    )}
+                  </Box>
+
+                  {/* Image Counter and Dots */}
+                  {active.images.length > 1 && (
+                    <Box sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 1.5,
+                      mt: 2
+                    }}>
+                      <Typography variant="caption" color="text.secondary">
+                        {currentImageIndex + 1} / {active.images.length}
+                      </Typography>
+                      <Box sx={{ display: 'flex', gap: 0.75 }}>
+                        {active.images.map((_, index) => (
+                          <Box
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            sx={{
+                              width: 8,
+                              height: 8,
+                              borderRadius: '50%',
+                              background: index === currentImageIndex ? colors.primary : colors.border.secondary,
+                              cursor: 'pointer',
+                              transition: 'all 0.2s ease',
+                              '&:hover': {
+                                transform: 'scale(1.2)',
+                                background: colors.primary
+                              }
+                            }}
+                          />
+                        ))}
+                      </Box>
+                    </Box>
                   )}
                 </Box>
               </Stack>
             </Paper>
           </Grid>
         </Grid>
+
+        {/* CTA Buttons */}
+        <Box sx={{ mt: 6, textAlign: 'center' }}>
+          <Stack
+            direction={{ xs: 'column', sm: 'row' }}
+            spacing={2}
+            justifyContent="center"
+            sx={{ flexWrap: 'wrap', gap: 2 }}
+          >
+            <Button
+              variant="contained"
+              size="large"
+              onClick={() => navigate('/contact')}
+              endIcon={<Icon icon="mdi:play-circle" />}
+              sx={{ px: 4, py: 1.5 }}
+            >
+              Demo/Sales Request
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              onClick={() => navigate('/pricing-proposal')}
+              endIcon={<Icon icon="mdi:file-document-edit" />}
+              sx={{ px: 4, py: 1.5 }}
+            >
+              Proposal Request
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              onClick={() => navigate('/pricing')}
+              endIcon={<Icon icon="mdi:currency-usd" />}
+              sx={{ px: 4, py: 1.5 }}
+            >
+              View Pricing
+            </Button>
+          </Stack>
+        </Box>
       </Container>
     </Box>
   )

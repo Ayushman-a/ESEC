@@ -115,7 +115,7 @@ export default function Navbar() {
             ))}
             <Button component={RouterLink} to="/pricing">{t('nav.pricing')}</Button>
             <Button component={RouterLink} to="/partners">{t('nav.partners')}</Button>
-            <Button component={RouterLink} to="/contact">{t('nav.demo')}</Button>
+            {/* <Button component={RouterLink} to="/contact">{t('nav.demo')}</Button> */}
           </Box>
 
           <Box flex={1} />

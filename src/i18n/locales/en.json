@@ -30,7 +30,7 @@
       "engineeringSoftware": "Engineering Software",
       "nonEngineeringSoftware": "Non-Engineering Software",
       "badge": "DEVELOPED IN INDIA FOR THE WORLD",
-      "title": "Reduce Software Assets Cost and Optimize Utilization ongoing basis",
+      "title": "Reduce Software Assets Cost and Optimize Utilization Continuously",
       "subtitle": "Are you worried about escalating Software Asset costs and complex license models? ESEC will Reduce and Optimize your costs...",
       "guaranteed": "GUARANTEED",
       "requestDemo": "Request Demo",
@@ -63,8 +63,8 @@
     }
   },
   "pricing": {
-    "badge": "TRANSPARENT PRICING - No Hidden Costs",
-    "scrollMessage": "Scroll down to see inclusions and special refund offer.",
+    "badge": "TRANSPARENT PRICING - NO HIDDEN COSTS",
+    "scrollMessage": "Scroll down to see Inclusions, MSMEs and Special Refund Offer.",
     "title": "One Price Based on Actual Users",
     "roi": {
       "title": "5X to 25+X ROI in 2 Years",
@@ -197,9 +197,10 @@
     },
     "offices": {
       "title": "Our Offices",
+      "india1": "Nibana Solutions Pvt.",
       "indiaTitle": "India Offices",
-      "tuticorin": "Tuticorin - Operations Office",
-      "chennai": "Chennai - Branch Office",
+      "tuticorin": "Tuticorin - Office",
+      "chennai": "Chennai - Office",
       "delhi": "Delhi - Registered Office",
       "usTitle": "US Office",
       "usName": "Nibana Solutions Inc.",

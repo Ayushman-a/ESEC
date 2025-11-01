@@ -44,51 +44,6 @@ export default function TrustBar() {
 
   return (
     <Container sx={{ mt: 4 }}>
-      <Paper elevation={0} sx={{
-        p: 4,
-        borderRadius: 4,
-        background: colors.background.paper,
-        backdropFilter: 'blur(20px)',
-        border: `1px solid ${colors.border.secondary}`,
-        position: 'relative',
-        overflow: 'hidden',
-        boxShadow: colors.shadow.subtle,
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '2px',
-          background: `linear-gradient(90deg, transparent, ${colors.primary}, ${colors.primary}, transparent)`,
-        }
-      }}>
-        <Grid container spacing={3}>
-          {stats.map((s) => (
-            <Grid key={s.label} item xs={12} md={4}>
-              <Stack alignItems="center" spacing={1}>
-                <Typography variant="h3" sx={{
-                  fontWeight: 900,
-                  background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.primary}80 100%)`,
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}>{s.value}</Typography>
-                <Typography
-                  color="text.secondary"
-                  sx={{
-                    fontSize: '0.95rem',
-                    fontWeight: 500
-                  }}
-                >
-                  {s.label}
-                </Typography>
-              </Stack>
-            </Grid>
-          ))}
-        </Grid>
-      </Paper>
-
       <Stack spacing={3} sx={{ mt: 8 }}>
         <Typography variant="overline" textAlign="center" sx={{
           letterSpacing: '0.1em',
@@ -126,7 +81,7 @@ export default function TrustBar() {
           <Box sx={{
             display: 'flex',
             gap: 4,
-            animation: `${scroll} 30s linear infinite`,
+            animation: `${scroll} 10s linear infinite`,
             '&:hover': {
               animationPlayState: 'paused'
             }

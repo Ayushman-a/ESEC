@@ -1,10 +1,17 @@
 import * as React from 'react'
-import { Box, Button, Container, Grid, Paper, Stack, TextField, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, Paper, Stack, TextField, Typography, MenuItem } from '@mui/material'
 import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { Icon } from '@iconify/react'
 
-export default function Contact() {
+const partnershipTypes = [
+  { value: 'var', label: 'VAR (Value Added Reseller)' },
+  { value: 'si', label: 'SI (System Integrator)' },
+  { value: 'msp', label: 'MSP (Managed Service Provider)' },
+  { value: 'referral', label: 'Referral Consultant' }
+]
+
+export default function PartnerRequest() {
   const colors = useColors()
   const { mode } = useThemeMode()
 
@@ -31,14 +38,14 @@ export default function Contact() {
                 fontWeight: 600,
                 letterSpacing: '0.05em'
               }}>
-                REQUEST A DEMO
+                PARTNERSHIP REQUEST
               </Typography>
             </Box>
             <Typography variant="h3" sx={{ fontWeight: 800 }}>
-              Company Details and Deliverables Expected
+              Partnership Request Form
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: '1.1rem' }}>
-              Tell us about your organization and we'll schedule a personalized demo
+              Join our partner ecosystem and grow together with ESEC
             </Typography>
           </Stack>
 
@@ -51,10 +58,10 @@ export default function Contact() {
             border: `1px solid ${colors.border.secondary}`,
           }}>
             <Stack spacing={3}>
-              {/* Company Information Section */}
+              {/* Company & Contact Information Section */}
               <Box>
                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, color: colors.primary }}>
-                  Company Information
+                  Company & Contact Information
                 </Typography>
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
@@ -75,17 +82,27 @@ export default function Contact() {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
-                      label="Department / Division"
+                      label="Designation"
                       fullWidth
+                      required
                       variant="outlined"
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12}>
                     <TextField
-                      label="Designation"
+                      label="Applying for"
                       fullWidth
+                      required
+                      select
                       variant="outlined"
-                    />
+                      helperText="Select the partnership type you're applying for"
+                    >
+                      {partnershipTypes.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
@@ -124,25 +141,35 @@ export default function Contact() {
                 </Grid>
               </Box>
 
-              {/* Software & User Details Section */}
+              {/* Business Information Section */}
               <Box>
                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, color: colors.primary }}>
-                  Software & User Details
+                  Business Information
                 </Typography>
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <TextField
-                      label="Key Software to be Optimized - List of Engineering and Non-Engineering"
+                      label="Areas / Industries like to address"
+                      fullWidth
+                      multiline
+                      minRows={2}
+                      variant="outlined"
+                      placeholder="List the industries or areas you specialize in..."
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      label="What Products/Solutions you offer currently - Software / Hardware"
                       fullWidth
                       multiline
                       minRows={3}
                       variant="outlined"
-                      placeholder="Please list the key software applications you want to optimize..."
+                      placeholder="Describe your current product and solution offerings..."
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
-                      label="Total Number of Software Applications"
+                      label="Total Number of Customers you have now"
                       fullWidth
                       type="number"
                       variant="outlined"
@@ -150,30 +177,19 @@ export default function Contact() {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
-                      label="Total Number of Unique Users (Employees plus Contractors)"
+                      label="Industries you operate now"
                       fullWidth
-                      type="number"
                       variant="outlined"
+                      placeholder="e.g., Manufacturing, IT, Healthcare"
                     />
                   </Grid>
-                </Grid>
-              </Box>
-
-              {/* Demo Scheduling Section */}
-              <Box>
-                <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, color: colors.primary }}>
-                  Demo Scheduling
-                </Typography>
-                <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <TextField
-                      label="Demo dates - Please mention 2-3 alternate dates and time"
+                      label="Total Number of Employees and Sales Team No."
                       fullWidth
-                      multiline
-                      minRows={4}
                       variant="outlined"
-                      placeholder="Please provide 2-3 alternate dates and preferred times for the demo..."
-                      helperText="Please note demo can be given online between 10 am to 10 pm, India time (IST)"
+                      helperText="Not applicable if you are an Independent Consultant"
+                      placeholder="e.g., Total Employees: 50, Sales Team: 10"
                     />
                   </Grid>
                 </Grid>
@@ -192,7 +208,7 @@ export default function Contact() {
                     fontWeight: 600
                   }}
                 >
-                  Submit Demo Request
+                  Submit Partnership Request
                 </Button>
               </Box>
             </Stack>
