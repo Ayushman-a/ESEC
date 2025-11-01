@@ -14,8 +14,8 @@ export default function Home() {
       <TrustBar />
       <FeaturesSection />
       <FeatureShowcase />
-      <ResourceCards />
-      <CTA />
+      {/* <ResourceCards /> */}
+      {/* <CTA /> */}
     </Box>
   )
 }

@@ -1,12 +1,13 @@
 import * as React from 'react'
-import { Box, Button, Container, Grid, Paper, Stack, TextField, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, Paper, Stack, TextField, Typography, MenuItem } from '@mui/material'
 import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { Icon } from '@iconify/react'
 
-export default function Contact() {
+export default function PricingProposal() {
   const colors = useColors()
   const { mode } = useThemeMode()
+  const [isMSME, setIsMSME] = React.useState('')
 
   return (
     <Box sx={{ py: { xs: 6, md: 10 } }}>
@@ -25,20 +26,20 @@ export default function Contact() {
               gap: 1,
               mx: 'auto'
             }}>
-              <Icon icon="mdi:handshake" color={colors.primary} width="16" height="16" />
+              <Icon icon="mdi:file-document-edit" color={colors.primary} width="16" height="16" />
               <Typography variant="caption" sx={{
                 color: colors.primary,
                 fontWeight: 600,
                 letterSpacing: '0.05em'
               }}>
-                REQUEST A DEMO
+                PRICING PROPOSAL REQUEST
               </Typography>
             </Box>
             <Typography variant="h3" sx={{ fontWeight: 800 }}>
-              Company Details and Deliverables Expected
+              Company Details for Proposal
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: '1.1rem' }}>
-              Tell us about your organization and we'll schedule a personalized demo
+              Share your details and we'll provide a customized pricing proposal
             </Typography>
           </Stack>
 
@@ -65,6 +66,52 @@ export default function Contact() {
                       variant="outlined"
                     />
                   </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      label="MSME registered company"
+                      fullWidth
+                      required
+                      select
+                      variant="outlined"
+                      value={isMSME}
+                      onChange={(e) => setIsMSME(e.target.value)}
+                      helperText="Are you a registered MSME/SME company?"
+                    >
+                      <MenuItem value="yes">Yes</MenuItem>
+                      <MenuItem value="no">No</MenuItem>
+                    </TextField>
+                  </Grid>
+                  {isMSME === 'yes' && (
+                    <>
+                      <Grid item xs={12}>
+                        <TextField
+                          label="UDYAM Registration number (for Indian companies)"
+                          fullWidth
+                          variant="outlined"
+                          helperText="Enter your UDYAM registration number if you're an Indian company"
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          label="For Non-Indian companies - Local Certified proof of being an MSME"
+                          fullWidth
+                          multiline
+                          minRows={2}
+                          variant="outlined"
+                          helperText="Please describe your MSME certification/proof for non-Indian companies"
+                        />
+                      </Grid>
+                    </>
+                  )}
+                </Grid>
+              </Box>
+
+              {/* Contact Information Section */}
+              <Box>
+                <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, color: colors.primary }}>
+                  Contact Information
+                </Typography>
+                <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
                     <TextField
                       label="Name of the Contact Person"
@@ -84,6 +131,7 @@ export default function Contact() {
                     <TextField
                       label="Designation"
                       fullWidth
+                      required
                       variant="outlined"
                     />
                   </Grid>
@@ -98,7 +146,7 @@ export default function Contact() {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
-                      label="Work Contact Number"
+                      label="Work Contact No"
                       fullWidth
                       required
                       type="tel"
@@ -132,17 +180,17 @@ export default function Contact() {
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <TextField
-                      label="Key Software to be Optimized - List of Engineering and Non-Engineering"
+                      label="Key Software to be Optimized - List of Engineering and Non-Engineering Software"
                       fullWidth
                       multiline
-                      minRows={3}
+                      minRows={4}
                       variant="outlined"
                       placeholder="Please list the key software applications you want to optimize..."
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
-                      label="Total Number of Software Applications"
+                      label="Total No of Software Applications"
                       fullWidth
                       type="number"
                       variant="outlined"
@@ -150,7 +198,7 @@ export default function Contact() {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
-                      label="Total Number of Unique Users (Employees plus Contractors)"
+                      label="Total No of Unique Users (Employees plus Contractors)"
                       fullWidth
                       type="number"
                       variant="outlined"
@@ -159,21 +207,20 @@ export default function Contact() {
                 </Grid>
               </Box>
 
-              {/* Demo Scheduling Section */}
+              {/* Project Timeline Section */}
               <Box>
                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, color: colors.primary }}>
-                  Demo Scheduling
+                  Project Timeline
                 </Typography>
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <TextField
-                      label="Demo dates - Please mention 2-3 alternate dates and time"
+                      label="Timeframe of Purchase and Start of the Project"
                       fullWidth
                       multiline
-                      minRows={4}
+                      minRows={2}
                       variant="outlined"
-                      placeholder="Please provide 2-3 alternate dates and preferred times for the demo..."
-                      helperText="Please note demo can be given online between 10 am to 10 pm, India time (IST)"
+                      placeholder="e.g., Planning to purchase in Q1 2025 and start implementation in Q2 2025"
                     />
                   </Grid>
                 </Grid>
@@ -192,7 +239,7 @@ export default function Contact() {
                     fontWeight: 600
                   }}
                 >
-                  Submit Demo Request
+                  Submit Proposal Request
                 </Button>
               </Box>
             </Stack>

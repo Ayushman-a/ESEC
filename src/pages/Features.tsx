@@ -171,7 +171,7 @@ const features = [
       },
       {
         icon: 'mdi:connection',
-        title: 'Integration with LDAP, HR Systems, ERP, Power BI',
+        title: 'Integration with LDAP, HR Systems, ERP, Power BI, ITAM, etc.',
         description: 'Through REST APIs, integrate with various internal systems to send and receive data. Publish reports in Power BI, sync with HR systems, connect to ERP platforms, and integrate with LDAP for user management.'
       },
       {

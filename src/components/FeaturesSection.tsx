@@ -56,7 +56,7 @@ const features = [
     description: 'Stay informed with scheduled email alerts, integrate with enterprise systems through REST APIs, and get rapid customization.',
     highlights: [
       'Automated email alerts for key events',
-      'REST API integration with LDAP, HR, ERP, Power BI',
+      'REST API integration with LDAP, HR, ERP, Power BI, ITAM, etc.',
       'Rapid custom report development (2-3 days)',
       'Flexible alerting and monitoring'
     ],
@@ -70,7 +70,7 @@ export default function FeaturesSection() {
   const navigate = useNavigate()
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 } }}>
+    <Box sx={{ py: { xs: 8, md: 4 } }}>
       <Container>
         {/* Header */}
         <Stack spacing={2} sx={{ mb: 6, textAlign: 'center' }}>
@@ -96,9 +96,6 @@ export default function FeaturesSection() {
           </Box>
           <Typography variant="h2" sx={{ fontSize: { xs: 32, md: 48 }, fontWeight: 800 }}>
             Powerful Features for Complete Control
-          </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 800, mx: 'auto' }}>
-            Four comprehensive categories covering all aspects of software asset management, compliance, project tracking, and integrations
           </Typography>
         </Stack>
 

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Box, Container, Grid, Link, Stack, Typography } from '@mui/material'
+import { Link as RouterLink } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
@@ -16,28 +17,28 @@ export default function Footer() {
     {
       title: t('footer.solutions.title'),
       items: [
-        t('footer.solutions.licenseManagement'),
-        t('footer.solutions.assetTracking'),
-        t('footer.solutions.compliance'),
-        t('footer.solutions.costOptimization')
+        { label: t('nav.menu.sam'), to: '/features#sam' },
+        { label: t('nav.menu.compliance'), to: '/features#compliance' },
+        { label: t('nav.menu.project'), to: '/features#project' },
+        { label: t('nav.menu.alerts'), to: '/features#alerts' },
       ]
     },
-    {
-      title: t('footer.resources.title'),
-      items: [
-        t('footer.resources.documentation'),
-        t('footer.resources.caseStudies'),
-        t('footer.resources.blog'),
-        t('footer.resources.support')
-      ]
-    },
+    // {
+    //   title: t('footer.resources.title'),
+    //   items: [
+    //     { label: t('footer.resources.documentation'), to: '#' },
+    //     { label: t('footer.resources.caseStudies'), to: '#' },
+    //     { label: t('footer.resources.blog'), to: '#' },
+    //     { label: t('footer.resources.support'), to: '#' }
+    //   ]
+    // },
     {
       title: t('footer.company.title'),
       items: [
-        t('footer.company.aboutUs'),
-        t('footer.company.partners'),
-        t('footer.company.careers'),
-        t('footer.company.contact')
+        { label: t('footer.company.aboutUs'), to: '/about' },
+        { label: t('footer.company.partners'), to: '/partners' },
+        { label: t('footer.company.careers'), to: '/about#careers' },
+        { label: t('footer.company.contact'), to: '/contact' }
       ]
     },
   ]
@@ -73,7 +74,7 @@ export default function Footer() {
               }}
             />
             <Typography variant="body2" color="text.secondary" sx={{ mt: 2, lineHeight: 1.7 }}>
-              {t('footer.description')}
+              Global Certificates
             </Typography>
 
             {/* ISO Certifications */}
@@ -106,7 +107,7 @@ export default function Footer() {
             </Stack>
 
             <Stack direction="row" spacing={2} sx={{ mt: 3 }}>
-              <Box sx={{
+              {/* <Box sx={{
                 width: 36,
                 height: 36,
                 borderRadius: 2,
@@ -122,7 +123,7 @@ export default function Footer() {
                 }
               }}>
                 <Icon icon="mdi:twitter" color={colors.primary} width="18" height="18" />
-              </Box>
+              </Box> */}
               <Box sx={{
                 width: 36,
                 height: 36,
@@ -140,7 +141,7 @@ export default function Footer() {
               }}>
                 <Icon icon="mdi:linkedin" color={colors.primary} width="18" height="18" />
               </Box>
-              <Box sx={{
+              {/* <Box sx={{
                 width: 36,
                 height: 36,
                 borderRadius: 2,
@@ -156,13 +157,13 @@ export default function Footer() {
                 }
               }}>
                 <Icon icon="mdi:github" color={colors.primary} width="18" height="18" />
-              </Box>
+              </Box> */}
             </Stack>
           </Grid>
 
           {/* Navigation Columns */}
           {cols.map((c) => (
-            <Grid key={c.title} item xs={12} sm={4} md={2}>
+            <Grid key={c.title} item xs={12} sm={6} md={3}>
               <Typography variant="overline" sx={{
                 color: colors.primary,
                 fontWeight: 700,
@@ -171,8 +172,9 @@ export default function Footer() {
               <Stack sx={{ mt: 2 }} spacing={1.5}>
                 {c.items.map((i) => (
                   <Link
-                    key={i}
-                    href="#"
+                    key={i.label}
+                    component={RouterLink}
+                    to={i.to}
                     underline="none"
                     color="text.secondary"
                     sx={{
@@ -183,7 +185,7 @@ export default function Footer() {
                         paddingLeft: '4px'
                       }
                     }}
-                  >{i}</Link>
+                  >{i.label}</Link>
                 ))}
               </Stack>
             </Grid>
@@ -198,7 +200,7 @@ export default function Footer() {
             }}>{t('footer.offices.title')}</Typography>
 
             <Stack spacing={2.5} sx={{ mt: 2 }}>
-            <Box>
+              <Box>
                 <Typography variant="body2" sx={{
                   color: colors.text.primary,
                   fontWeight: 600,
@@ -207,6 +209,13 @@ export default function Footer() {
                   {t('footer.offices.indiaTitle')}
                 </Typography>
                 <Stack spacing={0.8}>
+                <Typography variant="body2" sx={{
+                    color: colors.text.secondary,
+                    lineHeight: 1.6,
+                    fontSize: '0.875rem'
+                  }}>
+                    {t('footer.offices.india1')}
+                  </Typography>
                   <Typography variant="body2" sx={{
                     color: colors.text.secondary,
                     lineHeight: 1.6,
@@ -252,7 +261,7 @@ export default function Footer() {
         </Grid>
 
         <Stack
-          direction={{ xs:'column', sm:'row' }}
+          direction={{ xs: 'column', sm: 'row' }}
           justifyContent="space-between"
           alignItems="center"
           sx={{

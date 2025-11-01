@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Button, Container, Stack, Typography } from '@mui/material'
+import { Box, Button, Container, Paper, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
 import { useNavigate } from 'react-router-dom'
 import { useColors } from '../theme/useColors'
@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <Box sx={{ pt: { xs: 8, md: 4 }, pb: { xs: 10, md: 8 }, position: 'relative', overflow: 'hidden' }} className="hero-bg">
       <Container sx={{ position: 'relative', zIndex: 1 }}>
-        <Stack spacing={3} alignItems="center" textAlign="center">
+        <Stack spacing={2} alignItems="center" textAlign="center">
           {/* Navigation Links */}
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
@@ -74,7 +74,7 @@ export default function Hero() {
           </Box>
 
           <Typography variant="h1" sx={{
-            fontSize: { xs: 40, md: 64 },
+            fontSize: { xs: 30, md: 30 },
             lineHeight: 1.1,
             maxWidth: 1100,
             fontWeight: 900,
@@ -83,13 +83,13 @@ export default function Hero() {
             {t('home.hero.title')}
           </Typography>
 
-          <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.6, fontSize: { xs: 16, md: 19 } }}>
+          <Typography variant="h5" color="text.secondary" sx={{ gap: 3, maxWidth: 800, lineHeight: 1.6, fontSize: { xs: 16, md: 19 } }}>
             {t('home.hero.subtitle')} <strong style={{
               color: colors.primary
             }}>{t('home.hero.guaranteed')}</strong>
           </Typography>
 
-          <Stack direction={{ xs:'column', sm:'row' }} spacing={2} sx={{ pt: 2 }}>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 2 }}>
             <Button
               variant="contained"
               size="large"
@@ -109,149 +109,168 @@ export default function Hero() {
               {t('home.hero.viewPricing')}
             </Button>
           </Stack>
-
-          <Box sx={{
-            pt: { xs: 4, md: 6 },
-            px: { xs: 3, md: 4 },
-            maxWidth: 1400,
-            mx: 'auto'
+          <Paper elevation={0} sx={{
+            p: 4,
+            borderRadius: 4,
+            background: colors.background.paper,
+            backdropFilter: 'blur(20px)',
+            border: `1px solid ${colors.border.secondary}`,
+            position: 'relative',
+            overflow: 'hidden',
+            boxShadow: colors.shadow.subtle,
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '2px',
+              background: `linear-gradient(90deg, transparent, ${colors.primary}, ${colors.primary}, transparent)`,
+            }
           }}>
-            <Stack
-              direction="row"
-              spacing={{ xs: 3, sm: 4, md: 5, lg: 6 }}
-              sx={{
-                justifyContent: 'center',
-                flexWrap: { xs: 'wrap', lg: 'nowrap' },
-                alignItems: 'flex-start',
-                rowGap: { xs: 4, sm: 5 }
-              }}
-            >
-              <Stack alignItems="center" spacing={0.5} sx={{
-                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
-                px: { xs: 1, sm: 2 }
-              }}>
-                <Typography sx={{
-                  color: colors.primary,
-                  fontWeight: 700,
-                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.2
-                }}>{t('home.hero.roi.value')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.roi.period')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.roi.guarantee')}</Typography>
-              </Stack>
+            <Box sx={{
+              pt: { xs: 4, md: 6 },
+              px: { xs: 3, md: 4 },
+              maxWidth: 1400,
+              mx: 'auto'
+            }}>
+              <Stack
+                direction="row"
+                spacing={{ xs: 3, sm: 4, md: 5, lg: 6 }}
+                sx={{
+                  justifyContent: 'center',
+                  flexWrap: { xs: 'wrap', lg: 'nowrap' },
+                  alignItems: 'flex-start',
+                  rowGap: { xs: 4, sm: 5 }
+                }}
+              >
+                <Stack alignItems="center" spacing={0.5} sx={{
+                  minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                  px: { xs: 1, sm: 2 }
+                }}>
+                  <Typography sx={{
+                    color: colors.primary,
+                    fontWeight: 700,
+                    fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.2
+                  }}>{t('home.hero.roi.value')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.roi.period')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.roi.guarantee')}</Typography>
+                </Stack>
 
-              <Stack alignItems="center" spacing={0.5} sx={{
-                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
-                px: { xs: 1, sm: 2 }
-              }}>
-                <Typography sx={{
-                  color: colors.primary,
-                  fontWeight: 700,
-                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.2
-                }}>{t('home.hero.users.value')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.users.label')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.users.note')}</Typography>
-              </Stack>
+                <Stack alignItems="center" spacing={0.5} sx={{
+                  minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                  px: { xs: 1, sm: 2 }
+                }}>
+                  <Typography sx={{
+                    color: colors.primary,
+                    fontWeight: 700,
+                    fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.2
+                  }}>{t('home.hero.users.value')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.users.label')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.users.note')}</Typography>
+                </Stack>
 
-              <Stack alignItems="center" spacing={0.5} sx={{
-                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
-                px: { xs: 1, sm: 2 }
-              }}>
-                <Typography sx={{
-                  color: colors.primary,
-                  fontWeight: 700,
-                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.2
-                }}>{t('home.hero.pricing.value')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.pricing.note1')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.pricing.note2')}</Typography>
-              </Stack>
+                <Stack alignItems="center" spacing={0.5} sx={{
+                  minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                  px: { xs: 1, sm: 2 }
+                }}>
+                  <Typography sx={{
+                    color: colors.primary,
+                    fontWeight: 700,
+                    fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.2
+                  }}>{t('home.hero.pricing.value')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.pricing.note1')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.pricing.note2')}</Typography>
+                </Stack>
 
-              <Stack alignItems="center" spacing={0.5} sx={{
-                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
-                px: { xs: 1, sm: 2 }
-              }}>
-                <Typography sx={{
-                  color: colors.primary,
-                  fontWeight: 700,
-                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.2
-                }}>{t('home.hero.software.value')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.software.label')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.software.note')}</Typography>
-              </Stack>
+                <Stack alignItems="center" spacing={0.5} sx={{
+                  minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                  px: { xs: 1, sm: 2 }
+                }}>
+                  <Typography sx={{
+                    color: colors.primary,
+                    fontWeight: 700,
+                    fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.2
+                  }}>{t('home.hero.software.value')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.software.label')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.software.note')}</Typography>
+                </Stack>
 
-              <Stack alignItems="center" spacing={0.5} sx={{
-                minWidth: { xs: '42%', sm: '30%', md: 'auto' },
-                px: { xs: 1, sm: 2 }
-              }}>
-                <Typography sx={{
-                  color: colors.primary,
-                  fontWeight: 700,
-                  fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.2
-                }}>{t('home.hero.certificates.value')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.certificates.label')}</Typography>
-                <Typography variant="caption" sx={{
-                  color: colors.text.secondary,
-                  fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
-                  textAlign: 'center',
-                  lineHeight: 1.4
-                }}>{t('home.hero.certificates.note')}</Typography>
+                <Stack alignItems="center" spacing={0.5} sx={{
+                  minWidth: { xs: '42%', sm: '30%', md: 'auto' },
+                  px: { xs: 1, sm: 2 }
+                }}>
+                  <Typography sx={{
+                    color: colors.primary,
+                    fontWeight: 700,
+                    fontSize: { xs: '0.95rem', sm: '1.05rem', md: '1.15rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.2
+                  }}>{t('home.hero.certificates.value')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.certificates.label')}</Typography>
+                  <Typography variant="caption" sx={{
+                    color: colors.text.secondary,
+                    fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
+                    textAlign: 'center',
+                    lineHeight: 1.4
+                  }}>{t('home.hero.certificates.note')}</Typography>
+                </Stack>
               </Stack>
-            </Stack>
-          </Box>
+            </Box>
+          </Paper>
         </Stack>
       </Container>
     </Box>
