@@ -376,11 +376,12 @@ export default function Pricing() {
           p: { xs: 3, md: 5 },
           border: `2px solid ${colors.border.secondary}`,
           background: colors.gradient.subtle,
+          scrollMarginTop: '100px',
         }}>
           <Stack spacing={4}>
             <Box sx={{ textAlign: 'center' }}>
               <Typography variant="h3" sx={{ mb: 2, fontWeight: 800 }}>
-                India and International Price Include...
+                Price Includes...
               </Typography>
               <Typography variant="body1" color="text.secondary">
                 Everything you need in one transparent package
@@ -582,7 +583,7 @@ export default function Pricing() {
               onClick={() => navigate('/contact')}
               sx={{ px: 5, py: 1.5, fontSize: '1rem' }}
             >
-              Request Demo
+              Demo/Sales Request
             </Button>
             <Button
               variant="outlined"

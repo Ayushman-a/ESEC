@@ -11,9 +11,10 @@
     "contact": "Contact",
     "demo": "Demo",
     "login": "Login",
-    "requestDemo": "Request Demo",
+    "requestDemo": "Demo/Sales Request",
     "menu": {
       "features": "Features",
+      "products": "Products",
       "company": "Company",
       "contacts": "Contacts",
       "sam": "Software Asset Management",
@@ -24,7 +25,7 @@
       "partners": "Partners",
       "careers": "Careers",
       "contact": "Contact",
-      "demoSalesRequest": "Demo Sales Request",
+      "demoSalesRequest": "Demo/Sales Request",
       "proposalRequest": "Proposal Request",
       "partnerRequest": "Partner Request"
     }
@@ -37,7 +38,7 @@
       "title": "Reduce Software Assets Cost and Optimize Utilization Continuously",
       "subtitle": "Are you worried about escalating Software Asset costs and complex license models? ESEC will Reduce and Optimize your costs...",
       "guaranteed": "GUARANTEED",
-      "requestDemo": "Request Demo",
+      "requestDemo": "Demo/Sales Request",
       "viewPricing": "View Pricing",
       "roi": {
         "value": "5X to 25+X ROI",
@@ -100,7 +101,7 @@
       "cta": "Get International Pricing"
     },
     "included": {
-      "title": "India and International Price Include...",
+      "title": "Price Includes...",
       "subtitle": "Everything you need in one transparent package"
     },
     "volumeDiscounts": {
@@ -125,7 +126,7 @@
     "cta": {
       "title": "Ready to optimize your software costs?",
       "subtitle": "Get started with ESEC today and experience guaranteed ROI within 2 years",
-      "demo": "Request Demo",
+      "demo": "Demo/Sales Request",
       "proposal": "Request Proposal"
     }
   },

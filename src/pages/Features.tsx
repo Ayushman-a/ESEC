@@ -556,7 +556,7 @@ export default function Features() {
                 endIcon={<Icon icon="mdi:play-circle" />}
                 sx={{ px: 4, py: 1.5 }}
               >
-                Request a Demo
+                Demo/Sales Request
               </Button>
               <Button
                 variant="outlined"

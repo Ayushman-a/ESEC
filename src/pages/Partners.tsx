@@ -35,7 +35,7 @@ const benefits = [
     icon: 'mdi:cash-multiple',
     title: 'Attractive Commissions',
     description: 'In all the above models, you will earn attractive commissions for a minimum period of 3 years (subject to subscription of renewal of ESEC).',
-    stats: 'Renewal of annual subscription for 3 Years'
+    stats: 'Minimum for 3 Years'
   },
   {
     icon: 'mdi:tools',

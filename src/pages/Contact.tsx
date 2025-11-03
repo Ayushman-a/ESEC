@@ -31,7 +31,7 @@ export default function Contact() {
                 fontWeight: 600,
                 letterSpacing: '0.05em'
               }}>
-                REQUEST A DEMO
+                Demo/Sales Request
               </Typography>
             </Box>
             <Typography variant="h3" sx={{ fontWeight: 800 }}>
