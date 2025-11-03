@@ -15,6 +15,7 @@
     "menu": {
       "features": "Funktionen",
       "company": "Unternehmen",
+      "contacts": "Kontakte",
       "sam": "Software-Asset-Management",
       "compliance": "Compliance & Audit",
       "project": "Projektmanagement & Kostenrechnung",
@@ -22,7 +23,10 @@
       "aboutUs": "Über uns",
       "partners": "Partner",
       "careers": "Karriere",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "demoSalesRequest": "Demo-/Verkaufsanfrage",
+      "proposalRequest": "Angebotsanfrage",
+      "partnerRequest": "Partnerschaftsanfrage"
     }
   },
   "home": {
@@ -142,12 +146,36 @@
   },
   "footer": {
     "description": "Unternehmens-Software- und Engineering-Kostenoptimierungsplattform, die Organisationen hilft, ihre Softwareinvestitionen zu maximieren.",
-    "quickLinks": "Schnelllinks",
-    "company": "Unternehmen",
-    "legal": "Rechtliches",
+    "isoTitle1": "ISO/IEC 27001:2022",
+    "isoSubtitle1": "ISMS",
+    "isoTitle2": "ISO/IEC 27701:2019",
+    "isoSubtitle2": "PIMS (GDPR)",
+    "solutions": {
+      "title": "Lösungen"
+    },
+    "company": {
+      "title": "Unternehmen",
+      "aboutUs": "Über uns",
+      "partners": "Partner",
+      "careers": "Karriere",
+      "contact": "Kontakt"
+    },
+    "offices": {
+      "title": "Unsere Büros",
+      "india1": "Nibana Solutions Private Limited.",
+      "indiaTitle": "Büros in Indien",
+      "tuticorin": "Tuticorin - Büro",
+      "chennai": "Chennai - Büro",
+      "delhi": "Delhi - Eingetragenes Büro",
+      "duns": "D&B D-U-N-S®Number: 87-122-1865",
+      "usTitle": "US-Büro",
+      "usName": "Nibana Solutions Inc.",
+      "usLocation": "Delaware, USA"
+    },
+    "copyright": "ESEC. Alle Rechte vorbehalten. Engineering Software Expertise Capture.",
     "privacy": "Datenschutzrichtlinie",
-    "terms": "Nutzungsbedingungen",
-    "rights": "Alle Rechte vorbehalten."
+    "security": "Sicherheit",
+    "terms": "Nutzungsbedingungen"
   },
   "accessibility": {
     "title": "Barrierefreiheitseinstellungen",

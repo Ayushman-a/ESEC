@@ -15,6 +15,7 @@
     "menu": {
       "features": "Features",
       "company": "Company",
+      "contacts": "Contacts",
       "sam": "Software Asset Management",
       "compliance": "Compliance & Audit",
       "project": "Project Management & Costing",
@@ -22,7 +23,10 @@
       "aboutUs": "About Us",
       "partners": "Partners",
       "careers": "Careers",
-      "contact": "Contact"
+      "contact": "Contact",
+      "demoSalesRequest": "Demo Sales Request",
+      "proposalRequest": "Proposal Request",
+      "partnerRequest": "Partner Request"
     }
   },
   "home": {
@@ -104,11 +108,11 @@
       "subtitle": "Scale with us and save more",
       "volume": {
         "title": "Volume Discounts (500+ Users)",
-        "description": "For attractive volume discounts above 500 users and multi-year contracts, please contact sales team"
+        "description": "Attractive volume discounts above 500 users and multi-year contracts"
       },
       "enterprise": {
         "title": "Enterprise Site Licensing (15,000+ Users)",
-        "description": "For special Enterprise Site licensing pricing above 15,000 users, please contact sales team"
+        "description": "Special Enterprise Site licensing pricing above 15,000 users"
       }
     },
     "refund": {
@@ -197,11 +201,12 @@
     },
     "offices": {
       "title": "Our Offices",
-      "india1": "Nibana Solutions Pvt.",
+      "india1": "Nibana Solutions Private Limited.",
       "indiaTitle": "India Offices",
       "tuticorin": "Tuticorin - Office",
       "chennai": "Chennai - Office",
       "delhi": "Delhi - Registered Office",
+      "duns": "D&B D-U-N-S®Number: 87-122-1865",
       "usTitle": "US Office",
       "usName": "Nibana Solutions Inc.",
       "usLocation": "Delaware, USA"

@@ -15,6 +15,7 @@
     "menu": {
       "features": "Fonctionnalités",
       "company": "Entreprise",
+      "contacts": "Contacts",
       "sam": "Gestion des actifs logiciels",
       "compliance": "Conformité et audit",
       "project": "Gestion de projet et coûts",
@@ -22,7 +23,10 @@
       "aboutUs": "À propos de nous",
       "partners": "Partenaires",
       "careers": "Carrières",
-      "contact": "Contact"
+      "contact": "Contact",
+      "demoSalesRequest": "Demande de démo/vente",
+      "proposalRequest": "Demande de proposition",
+      "partnerRequest": "Demande de partenariat"
     }
   },
   "home": {
@@ -142,12 +146,36 @@
   },
   "footer": {
     "description": "Plateforme d'optimisation des coûts logiciels et d'ingénierie d'entreprise aidant les organisations à maximiser leurs investissements logiciels.",
-    "quickLinks": "Liens rapides",
-    "company": "Entreprise",
-    "legal": "Juridique",
+    "isoTitle1": "ISO/IEC 27001:2022",
+    "isoSubtitle1": "ISMS",
+    "isoTitle2": "ISO/IEC 27701:2019",
+    "isoSubtitle2": "PIMS (GDPR)",
+    "solutions": {
+      "title": "Solutions"
+    },
+    "company": {
+      "title": "Entreprise",
+      "aboutUs": "À propos de nous",
+      "partners": "Partenaires",
+      "careers": "Carrières",
+      "contact": "Contact"
+    },
+    "offices": {
+      "title": "Nos bureaux",
+      "india1": "Nibana Solutions Private Limited.",
+      "indiaTitle": "Bureaux en Inde",
+      "tuticorin": "Tuticorin - Bureau",
+      "chennai": "Chennai - Bureau",
+      "delhi": "Delhi - Bureau enregistré",
+      "duns": "D&B D-U-N-S®Number: 87-122-1865",
+      "usTitle": "Bureau aux États-Unis",
+      "usName": "Nibana Solutions Inc.",
+      "usLocation": "Delaware, États-Unis"
+    },
+    "copyright": "ESEC. Tous droits réservés. Engineering Software Expertise Capture.",
     "privacy": "Politique de confidentialité",
-    "terms": "Conditions d'utilisation",
-    "rights": "Tous droits réservés."
+    "security": "Sécurité",
+    "terms": "Conditions d'utilisation"
   },
   "accessibility": {
     "title": "Paramètres d'accessibilité",
