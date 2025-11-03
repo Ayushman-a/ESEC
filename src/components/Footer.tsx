@@ -237,6 +237,13 @@ export default function Footer() {
                   }}>
                     {t('footer.offices.delhi')}
                   </Typography>
+                  <Typography variant="body2" sx={{
+                    color: colors.text.secondary,
+                    lineHeight: 1.6,
+                    fontSize: '0.875rem'
+                  }}>
+                    {t('footer.offices.duns')}
+                  </Typography>
                 </Stack>
               </Box>
               <Box>

@@ -15,6 +15,7 @@
     "menu": {
       "features": "機能",
       "company": "会社",
+      "contacts": "お問い合わせ",
       "sam": "ソフトウェア資産管理",
       "compliance": "コンプライアンスと監査",
       "project": "プロジェクト管理とコスティング",
@@ -22,7 +23,10 @@
       "aboutUs": "会社概要",
       "partners": "パートナー",
       "careers": "採用情報",
-      "contact": "お問い合わせ"
+      "contact": "お問い合わせ",
+      "demoSalesRequest": "デモ・営業リクエスト",
+      "proposalRequest": "提案リクエスト",
+      "partnerRequest": "パートナーシップリクエスト"
     }
   },
   "home": {
@@ -142,12 +146,36 @@
   },
   "footer": {
     "description": "組織のソフトウェア投資を最大化するエンタープライズソフトウェアおよびエンジニアリングコスト最適化プラットフォーム。",
-    "quickLinks": "クイックリンク",
-    "company": "会社",
-    "legal": "法的情報",
+    "isoTitle1": "ISO/IEC 27001:2022",
+    "isoSubtitle1": "ISMS",
+    "isoTitle2": "ISO/IEC 27701:2019",
+    "isoSubtitle2": "PIMS (GDPR)",
+    "solutions": {
+      "title": "ソリューション"
+    },
+    "company": {
+      "title": "会社",
+      "aboutUs": "会社概要",
+      "partners": "パートナー",
+      "careers": "採用情報",
+      "contact": "お問い合わせ"
+    },
+    "offices": {
+      "title": "オフィス所在地",
+      "india1": "Nibana Solutions Private Limited.",
+      "indiaTitle": "インドオフィス",
+      "tuticorin": "Tuticorin - オフィス",
+      "chennai": "Chennai - オフィス",
+      "delhi": "Delhi - 登記オフィス",
+      "duns": "D&B D-U-N-S®Number: 87-122-1865",
+      "usTitle": "米国オフィス",
+      "usName": "Nibana Solutions Inc.",
+      "usLocation": "Delaware, USA"
+    },
+    "copyright": "ESEC. 全著作権所有。Engineering Software Expertise Capture.",
     "privacy": "プライバシーポリシー",
-    "terms": "利用規約",
-    "rights": "全著作権所有。"
+    "security": "セキュリティ",
+    "terms": "利用規約"
   },
   "accessibility": {
     "title": "アクセシビリティ設定",

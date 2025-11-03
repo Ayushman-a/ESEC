@@ -484,7 +484,7 @@ export default function Pricing() {
                       </Typography>
                     </Stack>
                     <Typography variant="body2" color="text.secondary">
-                      For attractive volume discounts above 500 users and multi-year contracts, please contact sales team
+                      Attractive volume discounts above 500 users and multi-year contracts.
                     </Typography>
                   </Stack>
                 </Box>
@@ -506,7 +506,7 @@ export default function Pricing() {
                       </Typography>
                     </Stack>
                     <Typography variant="body2" color="text.secondary">
-                      For special Enterprise Site licensing pricing above 15,000 users, please contact sales team
+                     Special Enterprise Site licensing pricing above 15,000 users
                     </Typography>
                   </Stack>
                 </Box>

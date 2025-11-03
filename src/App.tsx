@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import BackToTopButton from './components/BackToTopButton'
 import CookieConsent from './components/CookieConsent'
 import AccessibilityToolbar from './components/AccessibilityToolbar'
 import Home from './pages/Home'
@@ -41,6 +42,7 @@ export default function App() {
       <Footer />
       <CookieConsent />
       <AccessibilityToolbar />
+      <BackToTopButton />
     </Box>
   )
 }
