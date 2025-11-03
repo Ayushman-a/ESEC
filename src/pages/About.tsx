@@ -468,7 +468,7 @@ export default function About() {
                 endIcon={<Icon icon="mdi:arrow-right" />}
                 sx={{ px: 4, py: 1.5 }}
               >
-                Request a Demo
+                Demo/Sales Request
               </Button>
               <Button
                 variant="outlined"

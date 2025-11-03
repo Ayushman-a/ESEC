@@ -10,7 +10,7 @@ import esecDarkLogo from '../assets/images/esec_darklogo.png'
 
 export default function Navbar() {
   const [anchorEls, setAnchorEls] = React.useState<Record<string, null | HTMLElement>>({
-    Features: null, Company: null, Contacts: null
+    Products: null, Company: null, Contacts: null
   })
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const navigate = useNavigate()
@@ -19,7 +19,7 @@ export default function Navbar() {
   const { t } = useTranslation()
 
   const menu = {
-    Features: [
+    Products: [
       { label: t('nav.menu.sam'), to: '/features#sam' },
       { label: t('nav.menu.compliance'), to: '/features#compliance' },
       { label: t('nav.menu.project'), to: '/features#project' },
@@ -65,6 +65,7 @@ export default function Navbar() {
           </Box>
 
           <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 4, gap: 1 }}>
+            <Button component={RouterLink} to="/">{t('nav.home')}</Button>
             {Object.keys(menu).map((key) => (
               <Box key={key}>
                 <Button
@@ -168,6 +169,11 @@ export default function Navbar() {
         {/* Mobile menu */}
         {mobileOpen && (
           <Box sx={{ display: { xs: 'block', md: 'none' }, pb: 2 }}>
+            <Box sx={{ px: 2, py: 1 }}>
+              <Button component={RouterLink} to="/" fullWidth onClick={() => setMobileOpen(false)} sx={{ justifyContent: 'flex-start' }}>
+                {t('nav.home')}
+              </Button>
+            </Box>
             {Object.entries(menu).map(([k, items]) => (
               <Box key={k} sx={{ px: 2, py: 1 }}>
                 <Typography variant="overline" color="text.secondary">{t(`nav.menu.${k.toLowerCase()}`)}</Typography>
