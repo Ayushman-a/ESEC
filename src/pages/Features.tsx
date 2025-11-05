@@ -321,7 +321,7 @@ export default function Features() {
       </Container>
 
       {/* Introduction Section */}
-      <Container sx={{ mt: 10, mb: 8 }}>
+      <Container id="introduction" sx={{ mt: 10, mb: 8, scrollMarginTop: '100px' }}>
         <Paper sx={{
           p: { xs: 4, md: 6 },
           background: mode === 'dark'

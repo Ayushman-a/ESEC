@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Button, Container, Grid, List, ListItemButton, ListItemIcon, ListItemText, Paper, Stack, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, List, ListItemButton, ListItemIcon, ListItemText, Modal, Paper, Stack, Typography } from '@mui/material'
 import { Icon } from '@iconify/react'
 import { useColors } from '../theme/useColors'
 import { useNavigate } from 'react-router-dom'
@@ -39,6 +39,7 @@ const FEATURES: Feature[] = [
 export default function FeatureShowcase() {
   const [active, setActive] = React.useState(FEATURES[0])
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
+  const [isLightboxOpen, setIsLightboxOpen] = React.useState(false)
   const colors = useColors()
   const navigate = useNavigate()
 
@@ -54,6 +55,32 @@ export default function FeatureShowcase() {
   const handlePrevImage = () => {
     setCurrentImageIndex((prev) => prev === 0 ? active.images.length - 1 : prev - 1)
   }
+
+  const handleOpenLightbox = () => {
+    setIsLightboxOpen(true)
+  }
+
+  const handleCloseLightbox = () => {
+    setIsLightboxOpen(false)
+  }
+
+  // Handle keyboard navigation in lightbox
+  React.useEffect(() => {
+    if (!isLightboxOpen) return
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleCloseLightbox()
+      } else if (e.key === 'ArrowLeft') {
+        handlePrevImage()
+      } else if (e.key === 'ArrowRight') {
+        handleNextImage()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isLightboxOpen, active.images.length])
 
   return (
     <Box >
@@ -114,10 +141,16 @@ export default function FeatureShowcase() {
                       component="img"
                       src={active.images[currentImageIndex]}
                       alt={`${active.title} - Image ${currentImageIndex + 1}`}
+                      onClick={handleOpenLightbox}
                       sx={{
                         maxWidth: '100%',
                         maxHeight: '100%',
-                        objectFit: 'contain'
+                        objectFit: 'contain',
+                        cursor: 'zoom-in',
+                        transition: 'transform 0.2s ease',
+                        '&:hover': {
+                          transform: 'scale(1.02)'
+                        }
                       }}
                     />
 
@@ -256,6 +289,171 @@ export default function FeatureShowcase() {
           </Stack>
         </Box>
       </Container>
+
+      {/* Lightbox Modal */}
+      <Modal
+        open={isLightboxOpen}
+        onClose={handleCloseLightbox}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bgcolor: 'rgba(0, 0, 0, 0.9)'
+        }}
+      >
+        <Box sx={{
+          position: 'relative',
+          width: '90vw',
+          height: '90vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          outline: 'none'
+        }}>
+          {/* Close Button */}
+          <Box
+            onClick={handleCloseLightbox}
+            sx={{
+              position: 'absolute',
+              top: 16,
+              right: 16,
+              width: 48,
+              height: 48,
+              borderRadius: '50%',
+              background: 'rgba(255, 255, 255, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              zIndex: 1000,
+              transition: 'all 0.2s ease',
+              '&:hover': {
+                background: 'rgba(255, 255, 255, 0.2)',
+                transform: 'scale(1.1)'
+              }
+            }}
+          >
+            <Icon icon="mdi:close" color="white" width="32" height="32" />
+          </Box>
+
+          {/* Main Image */}
+          <Box
+            component="img"
+            src={active.images[currentImageIndex]}
+            alt={`${active.title} - Image ${currentImageIndex + 1}`}
+            sx={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              objectFit: 'contain',
+              userSelect: 'none'
+            }}
+          />
+
+          {/* Navigation Arrows in Lightbox */}
+          {active.images.length > 1 && (
+            <>
+              <Box
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handlePrevImage()
+                }}
+                sx={{
+                  position: 'absolute',
+                  left: 32,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: 56,
+                  height: 56,
+                  borderRadius: '50%',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  zIndex: 10,
+                  '&:hover': {
+                    background: 'rgba(255, 255, 255, 0.2)',
+                    transform: 'translateY(-50%) scale(1.1)'
+                  }
+                }}
+              >
+                <Icon icon="mdi:chevron-left" color="white" width="32" height="32" />
+              </Box>
+              <Box
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleNextImage()
+                }}
+                sx={{
+                  position: 'absolute',
+                  right: 32,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: 56,
+                  height: 56,
+                  borderRadius: '50%',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  zIndex: 10,
+                  '&:hover': {
+                    background: 'rgba(255, 255, 255, 0.2)',
+                    transform: 'translateY(-50%) scale(1.1)'
+                  }
+                }}
+              >
+                <Icon icon="mdi:chevron-right" color="white" width="32" height="32" />
+              </Box>
+            </>
+          )}
+
+          {/* Image Counter in Lightbox */}
+          <Box sx={{
+            position: 'absolute',
+            bottom: 32,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 2,
+            bgcolor: 'rgba(0, 0, 0, 0.6)',
+            px: 3,
+            py: 1.5,
+            borderRadius: 2
+          }}>
+            <Typography variant="body2" color="white">
+              {currentImageIndex + 1} / {active.images.length}
+            </Typography>
+            {active.images.length > 1 && (
+              <Box sx={{ display: 'flex', gap: 1 }}>
+                {active.images.map((_, index) => (
+                  <Box
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    sx={{
+                      width: 10,
+                      height: 10,
+                      borderRadius: '50%',
+                      background: index === currentImageIndex ? 'white' : 'rgba(255, 255, 255, 0.4)',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      '&:hover': {
+                        transform: 'scale(1.3)',
+                        background: 'white'
+                      }
+                    }}
+                  />
+                ))}
+              </Box>
+            )}
+          </Box>
+        </Box>
+      </Modal>
     </Box>
   )
 }
