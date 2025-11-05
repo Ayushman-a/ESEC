@@ -20,6 +20,7 @@ export default function Navbar() {
 
   const menu = {
     Products: [
+      { label: t('nav.menu.introduction'), to: '/features#introduction' },
       { label: t('nav.menu.sam'), to: '/features#sam' },
       { label: t('nav.menu.compliance'), to: '/features#compliance' },
       { label: t('nav.menu.project'), to: '/features#project' },
