@@ -121,17 +121,27 @@ export default function About() {
           </Box>
 
           <Typography variant="h2" sx={{
-            fontSize: { xs: 32, md: 52 },
+            fontSize: { xs: 28, sm: 36, md: 52 },
             fontWeight: 800,
             background: colors.gradient.primary,
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+            WebkitTextFillColor: 'transparent',
+            px: { xs: 2, sm: 0 }
           }}>
             Predictive Analytics<br />for Asset Management
           </Typography>
 
-          <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.7 }}>
+          <Typography
+            variant="h5"
+            color="text.secondary"
+            sx={{
+              maxWidth: 800,
+              lineHeight: 1.7,
+              fontSize: { xs: '1rem', sm: '1.25rem' },
+              px: { xs: 2, sm: 0 }
+            }}
+          >
             Founded by seasoned professionals with extensive experience in manufacturing and services sectors,
             delivering ESEC - the next generation of software and hardware asset management.
           </Typography>
@@ -278,7 +288,7 @@ export default function About() {
           <Typography variant="h3" sx={{ fontWeight: 800 }}>
             Our Approach
           </Typography>
-          <Typography variant="body1" color="text.secondary" >
+          <Typography variant="body1" color="text.secondary" textAlign="left">
             ESEC gathers data from various software license servers, end points and hardware systems, providing secure, near
             real-time reports, dashboards, and alerts. ESEC is set up at the customer's location, where access to the information is
             limited to designated employees.

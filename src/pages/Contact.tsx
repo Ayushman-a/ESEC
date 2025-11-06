@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Button, Container, Grid, Paper, Stack, TextField, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, Paper, Stack, TextField, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { Icon } from '@iconify/react'
@@ -7,6 +7,16 @@ import { Icon } from '@iconify/react'
 export default function Contact() {
   const colors = useColors()
   const { mode } = useThemeMode()
+  const [requestType, setRequestType] = React.useState<string>('Demo')
+
+  const handleRequestTypeChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newType: string,
+  ) => {
+    if (newType !== null) {
+      setRequestType(newType)
+    }
+  }
 
   return (
     <Box sx={{ py: { xs: 6, md: 10 } }}>
@@ -77,6 +87,7 @@ export default function Contact() {
                     <TextField
                       label="Department / Division"
                       fullWidth
+                      required
                       variant="outlined"
                     />
                   </Grid>
@@ -84,6 +95,7 @@ export default function Contact() {
                     <TextField
                       label="Designation"
                       fullWidth
+                      required
                       variant="outlined"
                     />
                   </Grid>
@@ -121,6 +133,43 @@ export default function Contact() {
                       variant="outlined"
                     />
                   </Grid>
+                  <Grid item xs={12}>
+                    <Box>
+                      <Typography variant="body2" sx={{ mb: 1, fontWeight: 600 }}>
+                        Request Type *
+                      </Typography>
+                      <ToggleButtonGroup
+                        value={requestType}
+                        exclusive
+                        onChange={handleRequestTypeChange}
+                        aria-label="request type"
+                        size="small"
+                        sx={{
+                          '& .MuiToggleButton-root': {
+                            px: 3,
+                            py: 0.75,
+                            fontSize: '0.875rem',
+                            fontWeight: 600,
+                            textTransform: 'none',
+                            '&.Mui-selected': {
+                              backgroundColor: colors.primary,
+                              color: 'white',
+                              '&:hover': {
+                                backgroundColor: colors.primary,
+                              }
+                            }
+                          }
+                        }}
+                      >
+                        <ToggleButton value="Demo" aria-label="demo">
+                          Demo
+                        </ToggleButton>
+                        <ToggleButton value="Sales" aria-label="sales">
+                          Sales
+                        </ToggleButton>
+                      </ToggleButtonGroup>
+                    </Box>
+                  </Grid>
                 </Grid>
               </Box>
 
@@ -134,6 +183,7 @@ export default function Contact() {
                     <TextField
                       label="Key Software to be Optimized - List of Engineering and Non-Engineering"
                       fullWidth
+                      required
                       multiline
                       minRows={3}
                       variant="outlined"
@@ -144,6 +194,7 @@ export default function Contact() {
                     <TextField
                       label="Total Number of Software Applications"
                       fullWidth
+                      required
                       type="number"
                       variant="outlined"
                     />
@@ -152,6 +203,7 @@ export default function Contact() {
                     <TextField
                       label="Total Number of Unique Users (Employees plus Contractors)"
                       fullWidth
+                      required
                       type="number"
                       variant="outlined"
                     />
@@ -169,6 +221,7 @@ export default function Contact() {
                     <TextField
                       label="Demo dates - Please mention 2-3 alternate dates and time"
                       fullWidth
+                      required
                       multiline
                       minRows={4}
                       variant="outlined"

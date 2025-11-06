@@ -15,12 +15,14 @@ import {
 import { Icon } from '@iconify/react'
 import { useColors } from '../theme/useColors'
 import { useAccessibility } from '../contexts/AccessibilityContext'
+import { useThemeMode } from '../ThemeContext'
 import { useTranslation } from 'react-i18next'
 
 export default function AccessibilityToolbar() {
   const [isOpen, setIsOpen] = useState(false)
   const colors = useColors()
   const { settings, setZoomLevel, setFontSize, toggleReduceMotion, resetSettings } = useAccessibility()
+  const { mode, toggleTheme } = useThemeMode()
   const { t } = useTranslation()
 
   return (
@@ -214,6 +216,41 @@ export default function AccessibilityToolbar() {
           </Box>
 
           <Divider />
+
+          {/* Theme Mode Toggle */}
+          <Box sx={{
+            p: 2,
+            borderRadius: 2,
+            background: colors.interactive.backgroundSubtle,
+            border: `1px solid ${colors.border.subtle}`
+          }}>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={mode === 'dark'}
+                  onChange={toggleTheme}
+                  size="small"
+                  sx={{
+                    '& .MuiSwitch-switchBase.Mui-checked': {
+                      color: colors.primary
+                    },
+                    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                      backgroundColor: colors.primary
+                    }
+                  }}
+                />
+              }
+              label={
+                <Stack direction="row" spacing={1} alignItems="center">
+                  <Icon icon={mode === 'dark' ? 'mdi:moon-waning-crescent' : 'mdi:white-balance-sunny'} width="18" height="18" />
+                  <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                    {mode === 'dark' ? 'Dark Mode' : 'Light Mode'}
+                  </Typography>
+                </Stack>
+              }
+              sx={{ m: 0 }}
+            />
+          </Box>
 
           {/* Reduce Motion Toggle */}
           <Box sx={{

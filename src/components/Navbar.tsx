@@ -14,7 +14,7 @@ export default function Navbar() {
   })
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const navigate = useNavigate()
-  const { mode, toggleTheme } = useThemeMode()
+  const { mode } = useThemeMode()
   const colors = useColors()
   const { t } = useTranslation()
 
@@ -25,12 +25,13 @@ export default function Navbar() {
       { label: t('nav.menu.compliance'), to: '/features#compliance' },
       { label: t('nav.menu.project'), to: '/features#project' },
       { label: t('nav.menu.alerts'), to: '/features#alerts' },
+      { label: 'Reports and Dashboard', to: '/#reports-dashboards' },
     ],
     Company: [
       { label: t('nav.menu.aboutUs'), to: '/about' },
       { label: t('nav.menu.partners'), to: '/partners' },
       { label: t('nav.menu.careers'), to: '/about#careers' },
-      { label: t('nav.menu.contact'), to: '/contact' },
+      // { label: t('nav.menu.contact'), to: '/contact' },
     ],
     Contacts: [
       { label: t('nav.menu.demoSalesRequest'), to: '/contact' },
@@ -128,20 +129,6 @@ export default function Navbar() {
           <Box flex={1} />
 
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, alignItems: 'center' }}>
-            <IconButton
-              onClick={toggleTheme}
-              sx={{
-                color: 'primary.main',
-                border: '1px solid',
-                borderColor: colors.border.primary,
-                '&:hover': {
-                  background: colors.interactive.background,
-                  borderColor: 'primary.main',
-                }
-              }}
-            >
-              <Icon icon={mode === 'dark' ? 'mdi:white-balance-sunny' : 'mdi:moon-waning-crescent'} width="20" height="20" />
-            </IconButton>
             <Button variant="outlined" onClick={() => navigate('/contact')}>
               {t('nav.login')}
             </Button>
@@ -151,16 +138,6 @@ export default function Navbar() {
           </Box>
 
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1, alignItems: 'center' }}>
-            <IconButton
-              onClick={toggleTheme}
-              sx={{
-                color: 'primary.main',
-                border: '1px solid',
-                borderColor: colors.border.primary,
-              }}
-            >
-              <Icon icon={mode === 'dark' ? 'mdi:white-balance-sunny' : 'mdi:moon-waning-crescent'} width="20" height="20" />
-            </IconButton>
             <IconButton onClick={() => setMobileOpen(v => !v)}>
               <Icon icon={mobileOpen ? 'mdi:close' : 'mdi:menu'} />
             </IconButton>
