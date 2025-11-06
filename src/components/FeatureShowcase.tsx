@@ -83,27 +83,40 @@ export default function FeatureShowcase() {
   }, [isLightboxOpen, active.images.length])
 
   return (
-    <Box >
+    <Box id="reports-dashboards" sx={{ scrollMarginTop: '100px', py: { xs: 4, sm: 6, md: 8 } }}>
       <Container>
-        <Stack spacing={1} sx={{ mb: 0 }}>
-          <Typography variant="h3">Explore few Key Reports/Dashboards</Typography>
-          <Typography color="text.secondary">Click a report to reveal dashboard screenshots and detailed views.</Typography>
+        <Stack spacing={1} sx={{ mb: { xs: 3, sm: 4 }, px: { xs: 1, sm: 0 } }}>
+          <Typography variant="h3" sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } }}>
+            Explore few Key Reports/Dashboards
+          </Typography>
+          <Typography color="text.secondary" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' } }}>
+            Click a report to reveal dashboard screenshots and detailed views.
+          </Typography>
         </Stack>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={{ xs: 2, sm: 3 }}>
           <Grid item xs={12} md={5}>
             <Paper>
-              <List>
+              <List sx={{ py: { xs: 0.5, sm: 1 } }}>
                 {FEATURES.map(f => (
                   <ListItemButton
                     key={f.key}
                     selected={active.key === f.key}
                     onClick={() => setActive(f)}
+                    sx={{
+                      py: { xs: 1.5, sm: 2 },
+                      px: { xs: 2, sm: 2 }
+                    }}
                   >
-                    <ListItemIcon>
-                      <Icon icon={f.icon} width={22} height={22} />
+                    <ListItemIcon sx={{ minWidth: { xs: 36, sm: 44 } }}>
+                      <Icon icon={f.icon} width={20} height={20} />
                     </ListItemIcon>
-                    <ListItemText primary={f.title} />
+                    <ListItemText
+                      primary={f.title}
+                      primaryTypographyProps={{
+                        sx: { fontSize: { xs: '0.875rem', sm: '1rem' } }
+                      }}
+                    />
                   </ListItemButton>
                 ))}
               </List>
@@ -111,22 +124,34 @@ export default function FeatureShowcase() {
           </Grid>
 
           <Grid item xs={12} md={7}>
-            <Paper sx={{ p: 3, height: '100%' }}>
-              <Stack spacing={2}>
-                <Typography variant="h5">{active.title}</Typography>
-                <Typography color="text.secondary">{active.blurb}</Typography>
+            <Paper sx={{ p: { xs: 2, sm: 3 }, height: '100%' }}>
+              <Stack spacing={{ xs: 1.5, sm: 2 }}>
+                <Typography variant="h5" sx={{ fontSize: { xs: '1.125rem', sm: '1.5rem' } }}>
+                  {active.title}
+                </Typography>
+                <Typography
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: '0.875rem', sm: '1rem' },
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    hyphens: 'auto'
+                  }}
+                >
+                  {active.blurb}
+                </Typography>
 
                 <Box sx={{
                   mt: 1,
                   position: 'relative',
-                  minHeight: '450px',
+                  minHeight: { xs: '250px', sm: '350px', md: '450px' },
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'flex-start'
                 }}>
-                  {/* Dashboard Image Container with Fixed Height */}
+                  {/* Dashboard Image Container with Responsive Height */}
                   <Box sx={{
-                    height: '450px',
+                    height: { xs: '250px', sm: '350px', md: '450px' },
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -161,11 +186,11 @@ export default function FeatureShowcase() {
                           onClick={handlePrevImage}
                           sx={{
                             position: 'absolute',
-                            left: 8,
+                            left: { xs: 4, sm: 8 },
                             top: '50%',
                             transform: 'translateY(-50%)',
-                            width: 36,
-                            height: 36,
+                            width: { xs: 32, sm: 36 },
+                            height: { xs: 32, sm: 36 },
                             borderRadius: '50%',
                             background: 'rgba(0, 0, 0, 0.6)',
                             display: 'flex',
@@ -180,17 +205,17 @@ export default function FeatureShowcase() {
                             }
                           }}
                         >
-                          <Icon icon="mdi:chevron-left" color="white" width="24" height="24" />
+                          <Icon icon="mdi:chevron-left" color="white" width={20} height={20} />
                         </Box>
                         <Box
                           onClick={handleNextImage}
                           sx={{
                             position: 'absolute',
-                            right: 8,
+                            right: { xs: 4, sm: 8 },
                             top: '50%',
                             transform: 'translateY(-50%)',
-                            width: 36,
-                            height: 36,
+                            width: { xs: 32, sm: 36 },
+                            height: { xs: 32, sm: 36 },
                             borderRadius: '50%',
                             background: 'rgba(0, 0, 0, 0.6)',
                             display: 'flex',
@@ -205,7 +230,7 @@ export default function FeatureShowcase() {
                             }
                           }}
                         >
-                          <Icon icon="mdi:chevron-right" color="white" width="24" height="24" />
+                          <Icon icon="mdi:chevron-right" color="white" width={20} height={20} />
                         </Box>
                       </>
                     )}
@@ -217,20 +242,20 @@ export default function FeatureShowcase() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      gap: 1.5,
-                      mt: 2
+                      gap: { xs: 1, sm: 1.5 },
+                      mt: { xs: 1.5, sm: 2 }
                     }}>
-                      <Typography variant="caption" color="text.secondary">
+                      <Typography variant="caption" color="text.secondary" sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
                         {currentImageIndex + 1} / {active.images.length}
                       </Typography>
-                      <Box sx={{ display: 'flex', gap: 0.75 }}>
+                      <Box sx={{ display: 'flex', gap: { xs: 0.5, sm: 0.75 } }}>
                         {active.images.map((_, index) => (
                           <Box
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
                             sx={{
-                              width: 8,
-                              height: 8,
+                              width: { xs: 7, sm: 8 },
+                              height: { xs: 7, sm: 8 },
                               borderRadius: '50%',
                               background: index === currentImageIndex ? colors.primary : colors.border.secondary,
                               cursor: 'pointer',
@@ -252,19 +277,23 @@ export default function FeatureShowcase() {
         </Grid>
 
         {/* CTA Buttons */}
-        <Box sx={{ mt: 6, textAlign: 'center' }}>
+        <Box sx={{ mt: { xs: 4, sm: 6 }, textAlign: 'center', px: { xs: 2, sm: 0 } }}>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
-            spacing={2}
+            spacing={{ xs: 1.5, sm: 2 }}
             justifyContent="center"
-            sx={{ flexWrap: 'wrap', gap: 2 }}
+            sx={{ flexWrap: 'wrap', gap: { xs: 1.5, sm: 2 } }}
           >
             <Button
               variant="contained"
               size="large"
               onClick={() => navigate('/contact')}
-              endIcon={<Icon icon="mdi:play-circle" />}
-              sx={{ px: 4, py: 1.5 }}
+              endIcon={<Icon icon="mdi:play-circle" width={18} height={18} />}
+              sx={{
+                px: { xs: 3, sm: 4 },
+                py: { xs: 1.25, sm: 1.5 },
+                fontSize: { xs: '0.875rem', sm: '1rem' }
+              }}
             >
               Demo/Sales Request
             </Button>
@@ -272,8 +301,12 @@ export default function FeatureShowcase() {
               variant="outlined"
               size="large"
               onClick={() => navigate('/pricing-proposal')}
-              endIcon={<Icon icon="mdi:file-document-edit" />}
-              sx={{ px: 4, py: 1.5 }}
+              endIcon={<Icon icon="mdi:file-document-edit" width={18} height={18} />}
+              sx={{
+                px: { xs: 3, sm: 4 },
+                py: { xs: 1.25, sm: 1.5 },
+                fontSize: { xs: '0.875rem', sm: '1rem' }
+              }}
             >
               Proposal Request
             </Button>
@@ -281,8 +314,12 @@ export default function FeatureShowcase() {
               variant="outlined"
               size="large"
               onClick={() => navigate('/pricing')}
-              endIcon={<Icon icon="mdi:currency-usd" />}
-              sx={{ px: 4, py: 1.5 }}
+              endIcon={<Icon icon="mdi:currency-usd" width={18} height={18} />}
+              sx={{
+                px: { xs: 3, sm: 4 },
+                py: { xs: 1.25, sm: 1.5 },
+                fontSize: { xs: '0.875rem', sm: '1rem' }
+              }}
             >
               View Pricing
             </Button>
@@ -315,10 +352,10 @@ export default function FeatureShowcase() {
             onClick={handleCloseLightbox}
             sx={{
               position: 'absolute',
-              top: 16,
-              right: 16,
-              width: 48,
-              height: 48,
+              top: { xs: 8, sm: 16 },
+              right: { xs: 8, sm: 16 },
+              width: { xs: 36, sm: 48 },
+              height: { xs: 36, sm: 48 },
               borderRadius: '50%',
               background: 'rgba(255, 255, 255, 0.1)',
               display: 'flex',
@@ -333,7 +370,7 @@ export default function FeatureShowcase() {
               }
             }}
           >
-            <Icon icon="mdi:close" color="white" width="32" height="32" />
+            <Icon icon="mdi:close" color="white" width={24} height={24} />
           </Box>
 
           {/* Main Image */}
@@ -359,11 +396,11 @@ export default function FeatureShowcase() {
                 }}
                 sx={{
                   position: 'absolute',
-                  left: 32,
+                  left: { xs: 8, sm: 32 },
                   top: '50%',
                   transform: 'translateY(-50%)',
-                  width: 56,
-                  height: 56,
+                  width: { xs: 40, sm: 56 },
+                  height: { xs: 40, sm: 56 },
                   borderRadius: '50%',
                   background: 'rgba(255, 255, 255, 0.1)',
                   display: 'flex',
@@ -378,7 +415,7 @@ export default function FeatureShowcase() {
                   }
                 }}
               >
-                <Icon icon="mdi:chevron-left" color="white" width="32" height="32" />
+                <Icon icon="mdi:chevron-left" color="white" width={24} height={24} />
               </Box>
               <Box
                 onClick={(e) => {
@@ -387,11 +424,11 @@ export default function FeatureShowcase() {
                 }}
                 sx={{
                   position: 'absolute',
-                  right: 32,
+                  right: { xs: 8, sm: 32 },
                   top: '50%',
                   transform: 'translateY(-50%)',
-                  width: 56,
-                  height: 56,
+                  width: { xs: 40, sm: 56 },
+                  height: { xs: 40, sm: 56 },
                   borderRadius: '50%',
                   background: 'rgba(255, 255, 255, 0.1)',
                   display: 'flex',
@@ -406,7 +443,7 @@ export default function FeatureShowcase() {
                   }
                 }}
               >
-                <Icon icon="mdi:chevron-right" color="white" width="32" height="32" />
+                <Icon icon="mdi:chevron-right" color="white" width={24} height={24} />
               </Box>
             </>
           )}
@@ -414,30 +451,30 @@ export default function FeatureShowcase() {
           {/* Image Counter in Lightbox */}
           <Box sx={{
             position: 'absolute',
-            bottom: 32,
+            bottom: { xs: 16, sm: 32 },
             left: '50%',
             transform: 'translateX(-50%)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: 2,
+            gap: { xs: 1, sm: 2 },
             bgcolor: 'rgba(0, 0, 0, 0.6)',
-            px: 3,
-            py: 1.5,
+            px: { xs: 2, sm: 3 },
+            py: { xs: 1, sm: 1.5 },
             borderRadius: 2
           }}>
-            <Typography variant="body2" color="white">
+            <Typography variant="body2" color="white" sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
               {currentImageIndex + 1} / {active.images.length}
             </Typography>
             {active.images.length > 1 && (
-              <Box sx={{ display: 'flex', gap: 1 }}>
+              <Box sx={{ display: 'flex', gap: { xs: 0.75, sm: 1 } }}>
                 {active.images.map((_, index) => (
                   <Box
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
                     sx={{
-                      width: 10,
-                      height: 10,
+                      width: { xs: 8, sm: 10 },
+                      height: { xs: 8, sm: 10 },
                       borderRadius: '50%',
                       background: index === currentImageIndex ? 'white' : 'rgba(255, 255, 255, 0.4)',
                       cursor: 'pointer',

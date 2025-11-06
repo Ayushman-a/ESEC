@@ -94,17 +94,27 @@ export default function Partners() {
           </Box>
 
           <Typography variant="h2" sx={{
-            fontSize: { xs: 32, md: 52 },
+            fontSize: { xs: 28, sm: 36, md: 52 },
             fontWeight: 800,
             background: colors.gradient.primary,
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+            WebkitTextFillColor: 'transparent',
+            px: { xs: 2, sm: 0 }
           }}>
             {t('partners.title')}
           </Typography>
 
-          <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.7 }}>
+          <Typography
+            variant="h5"
+            color="text.secondary"
+            sx={{
+              maxWidth: 800,
+              lineHeight: 1.7,
+              fontSize: { xs: '1rem', sm: '1.25rem' },
+              px: { xs: 2, sm: 0 }
+            }}
+          >
             {t('partners.subtitle')}
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>

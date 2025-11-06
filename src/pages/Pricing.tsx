@@ -89,7 +89,10 @@ export default function Pricing() {
             {t('pricing.scrollMessage')}
           </Typography>
 
-          <Typography variant="h2" sx={{ fontSize: { xs: 32, md: 52 } }}>
+          <Typography variant="h2" sx={{
+            fontSize: { xs: 28, sm: 36, md: 52 },
+            px: { xs: 2, sm: 0 }
+          }}>
             {t('pricing.title')}
           </Typography>
 
@@ -159,7 +162,7 @@ export default function Pricing() {
                     ₹ 3,00,000 <Typography component="span" variant="body2" color="text.secondary">/ Year Base Price</Typography>
                   </Typography>
                   <Typography variant="h5" sx={{ color: colors.primary, fontWeight: 700 }}>
-                    + ₹ XXX <Typography component="span" variant="body2" color="text.secondary">/Month/User</Typography>
+                    + ₹ XXX <Typography component="span" variant="body2" color="text.secondary">/Year/User OR Asset</Typography>
                   </Typography>
                 </Box>
 
@@ -280,7 +283,7 @@ export default function Pricing() {
                     $ 4,000 <Typography component="span" variant="body2" color="text.secondary">/ Year Base Price</Typography>
                   </Typography>
                   <Typography variant="h5" sx={{ color: colors.primary, fontWeight: 700 }}>
-                    + $ XXX <Typography component="span" variant="body2" color="text.secondary">/Month/User</Typography>
+                    + $ XXX <Typography component="span" variant="body2" color="text.secondary">/Year/User OR Asset</Typography>
                   </Typography>
                 </Box>
 

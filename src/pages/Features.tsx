@@ -275,17 +275,27 @@ export default function Features() {
           </Box>
 
           <Typography variant="h2" sx={{
-            fontSize: { xs: 32, md: 52 },
+            fontSize: { xs: 28, sm: 36, md: 52 },
             fontWeight: 800,
             background: colors.gradient.primary,
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+            WebkitTextFillColor: 'transparent',
+            px: { xs: 2, sm: 0 }
           }}>
             Powerful Features for<br />Complete Control
           </Typography>
 
-          <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, lineHeight: 1.7 }}>
+          <Typography
+            variant="h5"
+            color="text.secondary"
+            sx={{
+              maxWidth: 800,
+              lineHeight: 1.7,
+              px: { xs: 2, sm: 0 },
+              fontSize: { xs: '1rem', sm: '1.25rem' }
+            }}
+          >
             Everything you need to optimize software assets, manage licenses, ensure compliance, and boost productivity
           </Typography>
         </Stack>
@@ -429,7 +439,17 @@ export default function Features() {
                   </Typography>
                 </Box>
               </Box>
-              <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.8, maxWidth: 900 }}>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: { xs: '0.95rem', sm: '1.1rem' },
+                  lineHeight: 1.8,
+                  maxWidth: 900,
+                  wordBreak: 'break-word',
+                  overflowWrap: 'break-word',
+                  px: { xs: 2, sm: 0 }
+                }}
+              >
                 {feature.description}
               </Typography>
             </Stack>
@@ -490,7 +510,16 @@ export default function Features() {
                             </IconButton>
                           )}
                         </Stack>
-                        <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{
+                            lineHeight: 1.7,
+                            wordBreak: 'break-word',
+                            overflowWrap: 'break-word',
+                            hyphens: 'auto'
+                          }}
+                        >
                           {capability.description}
                         </Typography>
                       </Box>

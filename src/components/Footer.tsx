@@ -21,6 +21,7 @@ export default function Footer() {
         { label: t('nav.menu.compliance'), to: '/features#compliance' },
         { label: t('nav.menu.project'), to: '/features#project' },
         { label: t('nav.menu.alerts'), to: '/features#alerts' },
+        { label: 'Reports and Dashboard', to: '/#reports-dashboards' },
       ]
     },
     // {
