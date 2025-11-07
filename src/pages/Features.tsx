@@ -359,15 +359,16 @@ export default function Features() {
             </Box>
 
             <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.9, color: colors.text.primary }}>
-              ESEC is a <strong>predictive analytics software</strong>. ESEC collects data from license servers, end points, cloud and subscription license servers, etc. and generates reports/dashboards/alerts etc. on real time basis. ESEC data and reports/dashboards are <strong>secure and located onsite</strong> within the customers environment and are accessible only to the designated employees of the organization.
+              ESEC is a <strong>Predictive Analytics Software Solution developed to Optimize Software assets on a continuous basis</strong>. ESEC collects data from license servers, endpoints, cloud, and subscription license servers, among others, and generates real-time reports, dashboards, and alerts. All ESEC data and associated reports or dashboards are securely stored onsite, within the customer’s environment, and access is restricted to authorized personnel.
+
             </Typography>
 
             <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.9, color: colors.text.primary }}>
-              ESEC publishes <strong>100s of reports and dashboards</strong> and customized alerts regularly for organizations to manage licenses and understand the licenses utilization trends and take appropriate decisions at the right time.
+            ESEC delivers a wide array of reports and dashboards, alongside customized alerts, enabling organizations to manage licenses efficiently, monitor utilization trends, and make informed decisions in a timely manner. Utilizing historical data, ESEC can forecast future license requirements, enhancing proactive management.
             </Typography>
 
             <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.9, color: colors.text.primary }}>
-              ESEC has capability to <strong>predict the licenses needed in future</strong> based on past trends. ESEC features have been classified under 4 broad categories and which form part of comprehensive offering to customers irrespective of number of users.
+            ESEC’s functionality is organized into four main categories, offering comprehensive solutions to customers, regardless of user count. 
             </Typography>
 
             <Box sx={{
@@ -384,7 +385,7 @@ export default function Features() {
             }}>
               <Icon icon="mdi:sparkles" width="28" height="28" color="#9C27B0" />
               <Typography variant="body1" sx={{ fontSize: '1.05rem', fontWeight: 600, color: colors.text.primary }}>
-                ESEC team is working on introducing useful <strong>AI tools</strong> in the coming months.
+              Additionally, the ESEC team is working on introducing advanced AI capabilities in the coming months.
               </Typography>
             </Box>
           </Stack>

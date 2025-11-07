@@ -10,7 +10,7 @@ import esecDarkLogo from '../assets/images/esec_darklogo.png'
 
 export default function Navbar() {
   const [anchorEls, setAnchorEls] = React.useState<Record<string, null | HTMLElement>>({
-    Products: null, Company: null, Contacts: null
+    Solutions: null, Company: null, Contacts: null
   })
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const navigate = useNavigate()
@@ -19,7 +19,7 @@ export default function Navbar() {
   const { t } = useTranslation()
 
   const menu = {
-    Products: [
+    Solutions: [
       { label: t('nav.menu.introduction'), to: '/features#introduction' },
       { label: t('nav.menu.sam'), to: '/features#sam' },
       { label: t('nav.menu.compliance'), to: '/features#compliance' },
