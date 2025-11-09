@@ -21,4 +21,4 @@ export const EMAILJS_CONFIG = {
 }
 
 // Recipient email address
-export const RECIPIENT_EMAIL = 'ayushmanthakur93977@gmail.com'
+export const RECIPIENT_EMAIL = ''

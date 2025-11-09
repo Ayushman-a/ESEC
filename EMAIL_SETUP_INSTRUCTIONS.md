@@ -1,6 +1,6 @@
 # Email Configuration Setup Instructions
 
-All three forms (Contact, PricingProposal, and PartnerRequest) have been successfully configured to send emails to: **ayushmanthakur93977@gmail.com**
+All three forms (Contact, PricingProposal, and PartnerRequest) have been successfully configured to send emails to: ****
 
 ## Setup Steps
 
@@ -152,7 +152,7 @@ export const EMAILJS_CONFIG = {
    - Pricing Proposal: `/pricing-proposal`
    - Partner Request: `/partner-request`
 3. Fill out and submit each form to test
-4. Check your email (ayushmanthakur93977@gmail.com) for the submissions
+4. Check your email () for the submissions
 
 ## Features Implemented
 
