@@ -17,11 +17,12 @@ export default function Footer() {
     {
       title: t('footer.solutions.title'),
       items: [
+        { label: t('nav.menu.introduction'), to: '/features#introduction' },
         { label: t('nav.menu.sam'), to: '/features#sam' },
         { label: t('nav.menu.compliance'), to: '/features#compliance' },
         { label: t('nav.menu.project'), to: '/features#project' },
         { label: t('nav.menu.alerts'), to: '/features#alerts' },
-        { label: 'Reports and Dashboard', to: '/#reports-dashboards' },
+        { label: 'Reports and Dashboards', to: '/#reports-dashboards' },
       ]
     },
     // {
@@ -263,6 +264,40 @@ export default function Footer() {
                   {t('footer.offices.usName')}<br />
                   {t('footer.offices.usLocation')}
                 </Typography>
+              </Box>
+
+              {/* Contact Email */}
+              <Box sx={{
+                mt: 1,
+                pt: 2.5,
+                borderTop: `1px solid ${colors.border.secondary}`
+              }}>
+                <Typography variant="body2" sx={{
+                  color: colors.text.primary,
+                  fontWeight: 600,
+                  mb: 1
+                }}>
+                  Contact
+                </Typography>
+                <Stack direction="row" spacing={1} alignItems="center">
+                  <Icon icon="mdi:email" color={colors.primary} width="16" height="16" />
+                  <Typography
+                    component="a"
+                    href="mailto:sales@nibanasolutions.com"
+                    variant="body2"
+                    sx={{
+                      color: colors.text.secondary,
+                      fontSize: '0.875rem',
+                      textDecoration: 'none',
+                      transition: 'color 0.2s ease',
+                      '&:hover': {
+                        color: colors.primary
+                      }
+                    }}
+                  >
+                    sales@nibanasolutions.com
+                  </Typography>
+                </Stack>
               </Box>
             </Stack>
           </Grid>

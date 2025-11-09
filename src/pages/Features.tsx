@@ -15,7 +15,7 @@ const features = [
     capabilities: [
       {
         icon: 'mdi:view-dashboard',
-        title: 'Realtime Cockpit View - Summary Dashboard',
+        title: 'Realtime Cockpit View - Summary Dashboards',
         description: 'Utilization summary with Pie Chart/Bar/Grid view toggle options. Customizable per User/Enterprise/Division/Department/Project/Unit/Reservation Group/Country. All types of licenses viewable in one dashboard by time period.',
         images: ['/graphs/image_0.png', '/graphs/image_1.png', '/graphs/image_2.png','/graphs/image_3.png']
       },
@@ -494,21 +494,39 @@ export default function Features() {
                             {capability.title}
                           </Typography>
                           {capability.images && capability.images.length > 0 && (
-                            <IconButton
-                              size="small"
+                            <Box
                               onClick={() => openImageModal(capability.images!, capability.title)}
                               sx={{
-                                color: feature.color,
-                                background: `${feature.color}15`,
-                                border: `1px solid ${feature.color}40`,
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 0.5,
+                                px: 1.5,
+                                py: 0.5,
+                                borderRadius: 1.5,
+                                background: `${feature.color}20`,
+                                border: `1.5px solid ${feature.color}`,
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease',
                                 '&:hover': {
-                                  background: `${feature.color}25`,
-                                  transform: 'scale(1.1)'
+                                  background: `${feature.color}35`,
+                                  transform: 'scale(1.05)',
+                                  boxShadow: `0 2px 8px ${feature.color}40`
                                 }
                               }}
                             >
-                              <Icon icon="mdi:image-multiple" width="18" height="18" />
-                            </IconButton>
+                              <Icon icon="mdi:image-multiple" width="16" height="16" color={feature.color} />
+                              <Typography
+                                variant="caption"
+                                sx={{
+                                  color: feature.color,
+                                  fontWeight: 700,
+                                  fontSize: '0.7rem',
+                                  whiteSpace: 'nowrap'
+                                }}
+                              >
+                                Click to View
+                              </Typography>
+                            </Box>
                           )}
                         </Stack>
                         <Typography

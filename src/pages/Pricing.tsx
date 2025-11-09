@@ -448,6 +448,47 @@ export default function Pricing() {
                 </Grid>
               ))}
             </Grid>
+
+            <Box sx={{
+              mt: 4,
+              p: 3,
+              borderRadius: 2,
+              background: `linear-gradient(135deg, ${colors.primary}08, ${colors.primary}03)`,
+              border: `2px dashed ${colors.border.primary}`,
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <Stack direction="row" spacing={2} alignItems="flex-start">
+                <Box sx={{
+                  minWidth: 36,
+                  height: 36,
+                  borderRadius: '50%',
+                  background: `linear-gradient(135deg, ${colors.primary}25, ${colors.primary}15)`,
+                  border: `1px solid ${colors.border.primary}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  mt: 0.5
+                }}>
+                  <Icon icon="mdi:information" color={colors.primary} width="20" height="20" />
+                </Box>
+                <Box sx={{ flex: 1 }}>
+                  <Typography variant="subtitle2" sx={{
+                    color: colors.primary,
+                    fontWeight: 700,
+                    mb: 1
+                  }}>
+                    Price Excludes
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{
+                    lineHeight: 1.6
+                  }}>
+                    * Additional annual fees for development and maintenance of customer specific modules integrated with ESEC.
+                  </Typography>
+                </Box>
+              </Stack>
+            </Box>
           </Stack>
         </Paper>
 
