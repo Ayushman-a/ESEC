@@ -17,13 +17,13 @@ const features = [
         icon: 'mdi:view-dashboard',
         title: 'Realtime Cockpit View - Summary Dashboard',
         description: 'Utilization summary with Pie Chart/Bar/Grid view toggle options. Customizable per User/Enterprise/Division/Department/Project/Unit/Reservation Group/Country. All types of licenses viewable in one dashboard by time period.',
-        images: ['/graphs/image_0.png', '/graphs/image_1.png', '/graphs/image_2.png']
+        images: ['/graphs/image_0.png', '/graphs/image_1.png', '/graphs/image_2.png','/graphs/image_3.png']
       },
       {
         icon: 'mdi:chart-line',
         title: 'Drill Down Views',
         description: 'Detailed utilization trends by time period (7/15/30/90/180/365 days, YTD, Date Range) and by License Server(s), Heat Maps, License groups with comprehensive analytics.',
-        images: ['/graphs/image_3.png', '/graphs/image_4.png', '/graphs/image_5.png']
+        images: ['/graphs/image_4.png', '/graphs/image_5.png', '/graphs/image_6.png', '/graphs/image_7.png']
       },
       {
         icon: 'mdi:file-alert',
@@ -69,7 +69,7 @@ const features = [
         icon: 'mdi:crystal-ball',
         title: 'Predictability of Future Need',
         description: 'Comprehensive charts highlighting minimal software needed for future based on historical trends and usage patterns.',
-        images: ['/graphs/image_6.png']
+        images: ['/graphs/image_8.png']
       },
       {
         icon: 'mdi:bookmark-multiple',
