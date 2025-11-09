@@ -13,7 +13,7 @@ const features = [
     subtitle: 'Complete visibility and control over your software assets',
     description: 'Real-time dashboards, detailed utilization tracking, and predictive analytics. Monitor all types of licenses from a single unified platform.',
     highlights: [
-      'Realtime Cockpit Dashboard with customizable views',
+      'Realtime Cockpit Dashboards with customizable views',
       'Cloud License Monitoring (Autodesk, Aveva, Hexagon, etc.)',
       'HPC Integration with comprehensive reports',
       'Predictive analytics for future license needs'
@@ -82,6 +82,7 @@ export default function FeaturesSection() {
             background: colors.interactive.backgroundSubtle,
             display: 'inline-flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: 1,
             mx: 'auto'
           }}>
@@ -89,13 +90,14 @@ export default function FeaturesSection() {
             <Typography variant="caption" sx={{
               color: colors.primary,
               fontWeight: 600,
-              letterSpacing: '0.05em'
+              letterSpacing: '0.05em',
+              textAlign: 'center'
             }}>
-              COMPREHENSIVE FEATURES
+              COMPREHENSIVE SOLUTIONS
             </Typography>
           </Box>
           <Typography variant="h2" sx={{ fontSize: { xs: 32, md: 48 }, fontWeight: 800 }}>
-            Powerful Features for Complete Control
+            Powerful Solutions for Complete Control
           </Typography>
         </Stack>
 

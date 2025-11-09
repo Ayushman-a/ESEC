@@ -25,7 +25,7 @@ export default function Navbar() {
       { label: t('nav.menu.compliance'), to: '/features#compliance' },
       { label: t('nav.menu.project'), to: '/features#project' },
       { label: t('nav.menu.alerts'), to: '/features#alerts' },
-      { label: 'Reports and Dashboard', to: '/#reports-dashboards' },
+      { label: 'Reports and Dashboards', to: '/#reports-dashboards' },
     ],
     Company: [
       { label: t('nav.menu.aboutUs'), to: '/about' },
@@ -162,6 +162,14 @@ export default function Navbar() {
                 ))}
               </Box>
             ))}
+            <Box sx={{ px: 2, py: 1 }}>
+              <Button component={RouterLink} to="/pricing" fullWidth onClick={() => setMobileOpen(false)} sx={{ justifyContent: 'flex-start' }}>
+                {t('nav.pricing')}
+              </Button>
+              <Button component={RouterLink} to="/partners" fullWidth onClick={() => setMobileOpen(false)} sx={{ justifyContent: 'flex-start' }}>
+                {t('nav.partners')}
+              </Button>
+            </Box>
             <Box sx={{ px: 2, display:'grid', gap: 1 }}>
               <Button variant="outlined" onClick={() => { setMobileOpen(false); navigate('/contact') }}>{t('nav.login')}</Button>
               <Button variant="contained" onClick={() => { setMobileOpen(false); navigate('/contact') }}>{t('nav.requestDemo')}</Button>

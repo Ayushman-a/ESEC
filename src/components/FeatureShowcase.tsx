@@ -16,7 +16,7 @@ const FEATURES: Feature[] = [
   {
     key: 'cockpit-dashboard',
     icon: 'mdi:view-dashboard',
-    title: 'Realtime Cockpit View - Summary Dashboard',
+    title: 'Realtime Cockpit View - Summary Dashboards',
     blurb: 'Utilization summary with Pie Chart/Bar/Grid view toggle options. Customizable per User/Enterprise/Division/Department/Project/Unit/Reservation Group/Country. All types of licenses viewable in one dashboard by time period.',
     images: ['/graphs/image_0.png', '/graphs/image_1.png', '/graphs/image_2.png','/graphs/image_3.png']
   },
@@ -160,7 +160,11 @@ export default function FeatureShowcase() {
                     boxShadow: colors.shadow.subtle,
                     bgcolor: colors.background.surface,
                     overflow: 'hidden',
-                    position: 'relative'
+                    position: 'relative',
+                    cursor: 'zoom-in',
+                    '&:hover .click-to-view-overlay': {
+                      opacity: 1
+                    }
                   }}>
                     <Box
                       component="img"
@@ -178,6 +182,91 @@ export default function FeatureShowcase() {
                         }
                       }}
                     />
+
+                    {/* Click to View Overlay */}
+                    <Box
+                      className="click-to-view-overlay"
+                      onClick={handleOpenLightbox}
+                      sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background: 'rgba(0, 0, 0, 0.7)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 1,
+                        opacity: 0,
+                        transition: 'opacity 0.3s ease',
+                        cursor: 'zoom-in',
+                        zIndex: 5
+                      }}
+                    >
+                      <Icon icon="mdi:magnify-plus" color="white" width={48} height={48} />
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: 'white',
+                          fontWeight: 700,
+                          textAlign: 'center',
+                          fontSize: { xs: '1rem', sm: '1.25rem' }
+                        }}
+                      >
+                        Click to View
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: 'rgba(255, 255, 255, 0.8)',
+                          textAlign: 'center',
+                          fontSize: { xs: '0.75rem', sm: '0.875rem' }
+                        }}
+                      >
+                        Expand for full screen
+                      </Typography>
+                    </Box>
+
+                    {/* Permanent Click Indicator Badge */}
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: { xs: 8, sm: 12 },
+                        right: { xs: 8, sm: 12 },
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 0.5,
+                        px: { xs: 1, sm: 1.5 },
+                        py: { xs: 0.5, sm: 0.75 },
+                        borderRadius: 1.5,
+                        background: 'rgba(0, 0, 0, 0.6)',
+                        backdropFilter: 'blur(4px)',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        cursor: 'zoom-in',
+                        transition: 'all 0.2s ease',
+                        zIndex: 3,
+                        '&:hover': {
+                          background: 'rgba(0, 0, 0, 0.8)',
+                          transform: 'scale(1.05)'
+                        }
+                      }}
+                      onClick={handleOpenLightbox}
+                    >
+                      <Icon icon="mdi:arrow-expand" color="white" width={16} height={16} />
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          color: 'white',
+                          fontWeight: 600,
+                          fontSize: { xs: '0.65rem', sm: '0.75rem' },
+                          whiteSpace: 'nowrap'
+                        }}
+                      >
+                        Click to Expand
+                      </Typography>
+                    </Box>
 
                     {/* Navigation Arrows */}
                     {active.images.length > 1 && (
