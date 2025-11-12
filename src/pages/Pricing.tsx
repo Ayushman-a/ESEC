@@ -482,15 +482,15 @@ export default function Pricing() {
                     Price Excludes
                   </Typography>
                   <Stack spacing={0.5}>
-                    <Typography variant="body2" color="text.secondary" sx={{
+                  <Typography variant="body2" color="text.secondary" sx={{
                       lineHeight: 1.6
                     }}>
-                      * Additional annual fees for development and maintenance of customer specific modules integrated with ESEC.
+                      * Applicable taxes and duties in respective countries.
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={{
                       lineHeight: 1.6
                     }}>
-                      * Price is exclusive of taxes and duties in respective countries.
+                      * Additional annual fees for development and maintenance of customer specific modules integrated with ESEC.
                     </Typography>
                   </Stack>
                 </Box>

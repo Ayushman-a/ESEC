@@ -43,6 +43,12 @@ export default function Footer() {
         { label: t('footer.company.contact'), to: '/contact' }
       ]
     },
+    {
+      title: 'PRICING',
+      items: [
+        { label: 'View Plans', to: '/pricing' }
+      ]
+    },
   ]
 
   return (
@@ -298,25 +304,6 @@ export default function Footer() {
                     >
                       sales@nibanasolutions.com
                     </Typography>
-                  </Stack>
-                  <Stack direction="row" spacing={1} alignItems="center">
-                    <Icon icon="mdi:tag" color={colors.primary} width="16" height="16" />
-                    <Link
-                      component={RouterLink}
-                      to="/pricing"
-                      underline="none"
-                      variant="body2"
-                      sx={{
-                        color: colors.text.secondary,
-                        fontSize: '0.875rem',
-                        transition: 'color 0.2s ease',
-                        '&:hover': {
-                          color: colors.primary
-                        }
-                      }}
-                    >
-                      Pricing
-                    </Link>
                   </Stack>
                 </Stack>
               </Box>
