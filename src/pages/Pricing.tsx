@@ -232,7 +232,7 @@ export default function Pricing() {
                     <Stack direction="row" spacing={1} alignItems="flex-start">
                       <Icon icon="mdi:trending-down" color={colors.primary} width="18" height="18" />
                       <Typography variant="body2">
-                        Attractive Volume Discounts for above 500 Users
+                        Volume Discounts for above 500 Users
                       </Typography>
                     </Stack>
                   </Stack>
@@ -347,13 +347,13 @@ export default function Pricing() {
                     <Stack direction="row" spacing={1} alignItems="flex-start">
                       <Icon icon="mdi:brightness-percent" color={colors.primary} width="18" height="18" />
                       <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                        20% discount for registered MSMEs with revenue below US $100M
+                        20% discount for registered MSMEs with revenue below US $100M revenue per year
                       </Typography>
                     </Stack>
                     <Stack direction="row" spacing={1} alignItems="flex-start">
                       <Icon icon="mdi:trending-down" color={colors.primary} width="18" height="18" />
                       <Typography variant="body2">
-                        Attractive Volume Discounts for above 500 Users
+                        Volume Discounts for above 500 Users
                       </Typography>
                     </Stack>
                   </Stack>
@@ -481,11 +481,18 @@ export default function Pricing() {
                   }}>
                     Price Excludes
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{
-                    lineHeight: 1.6
-                  }}>
-                    * Additional annual fees for development and maintenance of customer specific modules integrated with ESEC.
-                  </Typography>
+                  <Stack spacing={0.5}>
+                    <Typography variant="body2" color="text.secondary" sx={{
+                      lineHeight: 1.6
+                    }}>
+                      * Additional annual fees for development and maintenance of customer specific modules integrated with ESEC.
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{
+                      lineHeight: 1.6
+                    }}>
+                      * Price is exclusive of taxes and duties in respective countries.
+                    </Typography>
+                  </Stack>
                 </Box>
               </Stack>
             </Box>

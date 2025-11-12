@@ -3,7 +3,7 @@
     "engineeringSoftware": "Engineering Software",
     "nonEngineeringSoftware": "Non-Engineering Software",
     "badge": "DEVELOPED IN INDIA FOR THE WORLD",
-    "title": "Reduce Software Assets Cost and Optimize Utilization Continuously",
+    "title": "Reduce Software Assets Cost and Optimize Utilization",
     "subtitle": "Are you worried about escalating Software Asset costs and complex license models? ESEC will Reduce and Optimize your costs...",
     "guaranteed": "GUARANTEED",
     "requestDemo": "Demo/Sales Request",
@@ -56,7 +56,8 @@
         "aboutUs": "About Us",
         "partners": "Partners",
         "careers": "Careers",
-        "contact": "Contact"
+        "contact": "Contact",
+        "pricing": "Pricing"
       }
     },
     "offices": {
