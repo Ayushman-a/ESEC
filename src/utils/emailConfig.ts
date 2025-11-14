@@ -1,24 +1,34 @@
-// EmailJS Configuration
-// To set up EmailJS:
-// 1. Go to https://www.emailjs.com/ and create a free account
-// 2. Add an email service (Gmail, Outlook, etc.)
-// 3. Create email templates for each form
-// 4. Replace the values below with your actual EmailJS credentials
+// API Configuration for PHP Backend
+// Update this with your production API URL when deploying
+export const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost/api'
 
-export const EMAILJS_CONFIG = {
-  // Your EmailJS Public Key (found in Account > General)
-  PUBLIC_KEY: 'YOUR_PUBLIC_KEY_HERE',
-
-  // Service ID (found in Email Services)
-  SERVICE_ID: 'YOUR_SERVICE_ID_HERE',
-
-  // Template IDs for each form (create these in Email Templates)
-  TEMPLATES: {
-    CONTACT: 'template_contact_form',
-    PRICING_PROPOSAL: 'template_pricing_proposal',
-    PARTNER_REQUEST: 'template_partner_request'
-  }
+// API Endpoints
+export const API_ENDPOINTS = {
+  CONTACT: `${API_BASE_URL}/contact.php`,
+  PRICING_PROPOSAL: `${API_BASE_URL}/pricing-proposal.php`,
+  PARTNER_REQUEST: `${API_BASE_URL}/partner-request.php`
 }
 
-// Recipient email address
-export const RECIPIENT_EMAIL = ''
+// Helper function to send form data to PHP API
+export const sendFormData = async (endpoint: string, data: any) => {
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+
+    const result = await response.json()
+
+    if (!response.ok) {
+      throw new Error(result.message || 'Failed to submit form')
+    }
+
+    return result
+  } catch (error) {
+    console.error('API Error:', error)
+    throw error
+  }
+}
