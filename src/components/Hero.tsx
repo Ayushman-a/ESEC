@@ -53,7 +53,7 @@ export default function Hero() {
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                  fontSize: { xs: '0.95rem', sm: '1.125rem' },
                   '&:hover': { opacity: 0.8 }
                 }}
                 onClick={() => navigate('/services')}
@@ -67,7 +67,7 @@ export default function Hero() {
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                  fontSize: { xs: '0.95rem', sm: '1.125rem' },
                   '&:hover': { opacity: 0.8 }
                 }}
                 onClick={() => navigate('/services')}
@@ -78,26 +78,27 @@ export default function Hero() {
           </Stack>
 
           <Box sx={{
-            px: { xs: 1.5, sm: 2.5 },
-            py: { xs: 0.75, sm: 1 },
+            px: { xs: 2, sm: 3.5 },
+            py: { xs: 1, sm: 1.5 },
             borderRadius: 10,
-            border: `1px solid rgba(255, 153, 51, 0.3)`,
-            background: 'linear-gradient(135deg, rgba(255, 153, 51, 0.15) 0%, rgba(255, 255, 255, 0.15) 33%, rgba(255, 255, 255, 0.15) 66%, rgba(19, 136, 8, 0.15) 100%)',
+            border: `2px solid rgba(255, 153, 51, 0.6)`,
+            background: 'linear-gradient(135deg, rgba(255, 153, 51, 0.25) 0%, rgba(255, 255, 255, 0.25) 33%, rgba(255, 255, 255, 0.25) 66%, rgba(19, 136, 8, 0.25) 100%)',
             backdropFilter: 'blur(10px)',
             display: 'inline-flex',
             alignItems: 'center',
-            gap: { xs: 0.5, sm: 1 }
+            gap: { xs: 0.75, sm: 1.5 },
+            boxShadow: '0 4px 15px rgba(255, 153, 51, 0.3)'
           }}>
-            <Icon icon="twemoji:flag-india" width="16" height="16" />
+            <Icon icon="twemoji:flag-india" width="20" height="20" />
             <Typography variant="caption" sx={{
               color: colors.primary,
-              fontWeight: 600,
-              letterSpacing: '0.05em',
-              fontSize: { xs: '0.65rem', sm: '0.75rem' }
+              fontWeight: 800,
+              letterSpacing: '0.08em',
+              fontSize: { xs: '0.8rem', sm: '0.95rem' }
             }}>
               {t('home.hero.badge')}
             </Typography>
-            <Icon icon="mdi:earth" color={colors.primary} width="14" height="14" />
+            <Icon icon="mdi:earth" color={colors.primary} width="18" height="18" />
           </Box>
 
           <Typography variant="h1" sx={{

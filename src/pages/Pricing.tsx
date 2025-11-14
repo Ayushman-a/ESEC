@@ -162,7 +162,7 @@ export default function Pricing() {
                     ₹ 3,00,000 <Typography component="span" variant="body2" color="text.secondary">/ Year Base Price</Typography>
                   </Typography>
                   <Typography variant="h5" sx={{ color: colors.primary, fontWeight: 700 }}>
-                    + ₹ XXX <Typography component="span" variant="body2" color="text.secondary">/Year/User OR Asset</Typography>
+                    + ₹ 1,200 <Typography component="span" variant="body2" color="text.secondary">/Year/User OR Asset</Typography>
                   </Typography>
                 </Box>
 
@@ -280,10 +280,10 @@ export default function Pricing() {
 
                 <Box>
                   <Typography variant="h4" sx={{ mb: 1, fontWeight: 800 }}>
-                    $ 4,000 <Typography component="span" variant="body2" color="text.secondary">/ Year Base Price</Typography>
+                    US $ 4,000 <Typography component="span" variant="body2" color="text.secondary">/ Year Base Price</Typography>
                   </Typography>
                   <Typography variant="h5" sx={{ color: colors.primary, fontWeight: 700 }}>
-                    + $ XXX <Typography component="span" variant="body2" color="text.secondary">/Year/User OR Asset</Typography>
+                    + US $ 18 <Typography component="span" variant="body2" color="text.secondary">/Year/User OR Asset</Typography>
                   </Typography>
                 </Box>
 

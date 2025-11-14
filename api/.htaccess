@@ -1,0 +1,55 @@
+# Security Headers
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Enable XSS protection
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # CORS headers are handled in PHP config.php
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect configuration files
+<FilesMatch "^(config\.php)$">
+    Order Allow,Deny
+    Deny from all
+    # Allow only from PHP scripts
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} -f
+        RewriteRule ^config\.php$ - [F]
+    </IfModule>
+</FilesMatch>
+
+# Prevent access to hidden files
+<FilesMatch "^\.">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# PHP Security Settings
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log /path/to/php-error.log
+</IfModule>
+
+# Only allow POST requests to API endpoints
+<FilesMatch "\.(php)$">
+    <LimitExcept POST OPTIONS>
+        # Allow GET only for test.php
+    </LimitExcept>
+</FilesMatch>
+
+# Enable GZIP compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/plain
+</IfModule>

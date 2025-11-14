@@ -3,8 +3,7 @@ import { Box, Button, Container, Grid, Paper, Stack, TextField, ToggleButton, To
 import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { Icon } from '@iconify/react'
-import emailjs from '@emailjs/browser'
-import { EMAILJS_CONFIG, RECIPIENT_EMAIL } from '../utils/emailConfig'
+import { API_ENDPOINTS, sendFormData } from '../utils/emailConfig'
 import { Country, City } from 'country-state-city'
 
 export default function Contact() {
@@ -24,6 +23,7 @@ export default function Contact() {
     phone: '',
     city: '',
     country: '',
+    website: '',
     keySoftware: '',
     totalSoftware: '',
     totalUsers: '',
@@ -66,32 +66,24 @@ export default function Contact() {
     setStatus({ type: null, message: '' })
 
     try {
-      const templateParams = {
-        to_email: RECIPIENT_EMAIL,
-        form_type: 'Demo/Sales Request',
-        request_type: requestType,
-        company_name: formData.companyName,
-        contact_person: formData.contactPerson,
+      const result = await sendFormData(API_ENDPOINTS.CONTACT, {
+        requestType: requestType,
+        companyName: formData.companyName,
+        contactPerson: formData.contactPerson,
         department: formData.department,
         designation: formData.designation,
         email: formData.email,
         phone: formData.phone,
         city: formData.city,
         country: formData.country,
-        key_software: formData.keySoftware,
-        total_software: formData.totalSoftware,
-        total_users: formData.totalUsers,
-        demo_dates: formData.demoDates
-      }
+        website: formData.website,
+        keySoftware: formData.keySoftware,
+        totalSoftware: formData.totalSoftware,
+        totalUsers: formData.totalUsers,
+        demoDates: formData.demoDates
+      })
 
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATES.CONTACT,
-        templateParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      )
-
-      setStatus({ type: 'success', message: 'Thank you! Your demo request has been submitted successfully. We will contact you soon.' })
+      setStatus({ type: 'success', message: result.message })
       // Reset form
       setFormData({
         companyName: '',
@@ -102,6 +94,7 @@ export default function Contact() {
         phone: '',
         city: '',
         country: '',
+        website: '',
         keySoftware: '',
         totalSoftware: '',
         totalUsers: '',
@@ -109,9 +102,12 @@ export default function Contact() {
       })
       setRequestType('Demo')
       setSelectedCountryCode('')
-    } catch (error) {
-      console.error('Email send error:', error)
-      setStatus({ type: 'error', message: 'Failed to submit request. Please try again or contact us directly.' })
+    } catch (error: any) {
+      console.error('Form submission error:', error)
+      setStatus({
+        type: 'error',
+        message: error.message || 'Failed to submit request. Please try again or contact us directly at sales@nibanasolutions.com'
+      })
     } finally {
       setLoading(false)
     }
@@ -232,6 +228,17 @@ export default function Contact() {
                       variant="outlined"
                       value={formData.phone}
                       onChange={handleInputChange('phone')}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      label="Company Website"
+                      fullWidth
+                      type="url"
+                      variant="outlined"
+                      placeholder="https://www.example.com"
+                      value={formData.website}
+                      onChange={handleInputChange('website')}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>

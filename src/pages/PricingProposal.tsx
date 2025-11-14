@@ -3,8 +3,7 @@ import { Box, Button, Container, Grid, Paper, Stack, TextField, Typography, Menu
 import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { Icon } from '@iconify/react'
-import emailjs from '@emailjs/browser'
-import { EMAILJS_CONFIG, RECIPIENT_EMAIL } from '../utils/emailConfig'
+import { API_ENDPOINTS, sendFormData } from '../utils/emailConfig'
 import { Country, City } from 'country-state-city'
 
 export default function PricingProposal() {
@@ -26,6 +25,7 @@ export default function PricingProposal() {
     phone: '',
     city: '',
     country: '',
+    website: '',
     keySoftware: '',
     totalSoftware: '',
     totalUsers: '',
@@ -59,34 +59,26 @@ export default function PricingProposal() {
     setStatus({ type: null, message: '' })
 
     try {
-      const templateParams = {
-        to_email: RECIPIENT_EMAIL,
-        form_type: 'Pricing Proposal Request',
-        company_name: formData.companyName,
-        is_msme: isMSME,
-        udyam_number: formData.udyamNumber,
-        msme_proof: formData.msmeProof,
-        contact_person: formData.contactPerson,
+      const result = await sendFormData(API_ENDPOINTS.PRICING_PROPOSAL, {
+        companyName: formData.companyName,
+        isMSME: isMSME,
+        udyamNumber: formData.udyamNumber,
+        msmeProof: formData.msmeProof,
+        contactPerson: formData.contactPerson,
         department: formData.department,
         designation: formData.designation,
         email: formData.email,
         phone: formData.phone,
         city: formData.city,
         country: formData.country,
-        key_software: formData.keySoftware,
-        total_software: formData.totalSoftware,
-        total_users: formData.totalUsers,
+        website: formData.website,
+        keySoftware: formData.keySoftware,
+        totalSoftware: formData.totalSoftware,
+        totalUsers: formData.totalUsers,
         timeline: formData.timeline
-      }
+      })
 
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATES.PRICING_PROPOSAL,
-        templateParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      )
-
-      setStatus({ type: 'success', message: 'Thank you! Your proposal request has been submitted successfully. We will send you a customized proposal soon.' })
+      setStatus({ type: 'success', message: result.message })
       // Reset form
       setFormData({
         companyName: '',
@@ -99,6 +91,7 @@ export default function PricingProposal() {
         phone: '',
         city: '',
         country: '',
+        website: '',
         keySoftware: '',
         totalSoftware: '',
         totalUsers: '',
@@ -106,9 +99,12 @@ export default function PricingProposal() {
       })
       setIsMSME('')
       setSelectedCountryCode('')
-    } catch (error) {
-      console.error('Email send error:', error)
-      setStatus({ type: 'error', message: 'Failed to submit request. Please try again or contact us directly.' })
+    } catch (error: any) {
+      console.error('Form submission error:', error)
+      setStatus({
+        type: 'error',
+        message: error.message || 'Failed to submit request. Please try again or contact us directly at sales@nibanasolutions.com'
+      })
     } finally {
       setLoading(false)
     }
@@ -278,6 +274,17 @@ export default function PricingProposal() {
                       variant="outlined"
                       value={formData.phone}
                       onChange={handleInputChange('phone')}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      label="Company Website"
+                      fullWidth
+                      type="url"
+                      variant="outlined"
+                      placeholder="https://www.example.com"
+                      value={formData.website}
+                      onChange={handleInputChange('website')}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
