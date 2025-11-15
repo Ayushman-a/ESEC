@@ -1,5 +1,8 @@
 <?php
 require_once 'config.php';
+if (ENABLE_DB_SAVE) {
+    require_once 'dbcon.php';
+}
 
 // Only allow POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -157,12 +160,49 @@ $subject = "New Pricing Proposal Request" . $msmeText . " from " . $companyName 
 // Create full email template
 $email_body = create_email_template("Pricing Proposal Request - " . $companyName, $email_content);
 
+// Save to database if enabled
+$db_saved = false;
+if (ENABLE_DB_SAVE) {
+    try {
+        $conn = OpenCon();
+
+        $sql = "INSERT INTO pricing_proposals (
+            company_name, is_msme, udyam_number, msme_proof,
+            contact_person, department, designation, email, phone,
+            city, country, website, key_software, total_software,
+            total_users, timeline, ip_address, user_agent
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param(
+            "ssssssssssssssssss",
+            $companyName, $isMSME, $udyamNumber, $msmeProof,
+            $contactPerson, $department, $designation, $email, $phone,
+            $city, $country, $website, $keySoftware, $totalSoftware,
+            $totalUsers, $timeline, $ip_address, $user_agent
+        );
+
+        $db_saved = $stmt->execute();
+        $stmt->close();
+        CloseCon($conn);
+    } catch (Exception $e) {
+        error_log("Database save error: " . $e->getMessage());
+        // Continue even if DB save fails
+    }
+}
+
 // Send email
-if (send_email($subject, $email_body, $email, $contactPerson)) {
+$email_sent = send_email($subject, $email_body, $email, $contactPerson);
+
+if ($email_sent) {
     http_response_code(200);
     echo json_encode([
         'success' => true,
-        'message' => 'Thank you! Your proposal request has been submitted successfully. We will send you a customized proposal soon.'
+        'message' => 'Thank you! Your proposal request has been submitted successfully. We will send you a customized proposal soon.',
+        'db_saved' => $db_saved
     ]);
 } else {
     http_response_code(500);

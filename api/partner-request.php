@@ -1,5 +1,8 @@
 <?php
 require_once 'config.php';
+if (ENABLE_DB_SAVE) {
+    require_once 'dbcon.php';
+}
 
 // Only allow POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -142,12 +145,49 @@ $subject = "New Partnership Request - " . $partnershipTypeName . " from " . $com
 // Create full email template
 $email_body = create_email_template("Partnership Request - " . $companyName, $email_content);
 
+// Save to database if enabled
+$db_saved = false;
+if (ENABLE_DB_SAVE) {
+    try {
+        $conn = OpenCon();
+
+        $sql = "INSERT INTO partner_requests (
+            company_name, contact_person, designation, partnership_type,
+            email, phone, city, country, website, industries,
+            current_products, total_customers, industries_operating, employees,
+            ip_address, user_agent
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param(
+            "ssssssssssssssss",
+            $companyName, $contactPerson, $designation, $partnershipType,
+            $email, $phone, $city, $country, $website, $industries,
+            $currentProducts, $totalCustomers, $industriesOperating, $employees,
+            $ip_address, $user_agent
+        );
+
+        $db_saved = $stmt->execute();
+        $stmt->close();
+        CloseCon($conn);
+    } catch (Exception $e) {
+        error_log("Database save error: " . $e->getMessage());
+        // Continue even if DB save fails
+    }
+}
+
 // Send email
-if (send_email($subject, $email_body, $email, $contactPerson)) {
+$email_sent = send_email($subject, $email_body, $email, $contactPerson);
+
+if ($email_sent) {
     http_response_code(200);
     echo json_encode([
         'success' => true,
-        'message' => 'Thank you! Your partnership request has been submitted successfully. We will review and contact you soon.'
+        'message' => 'Thank you! Your partnership request has been submitted successfully. We will review and contact you soon.',
+        'db_saved' => $db_saved
     ]);
 } else {
     http_response_code(500);
