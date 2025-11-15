@@ -15,7 +15,7 @@ export default function Hero() {
       minHeight: { xs: '85vh', md: '90vh' },
       display: 'flex',
       alignItems: 'center',
-      pt: { xs: 10, md: 8 },
+      pt: { xs: 6, md: 8 },
       pb: { xs: 8, md: 6 },
       position: 'relative',
       overflow: 'hidden',
@@ -53,7 +53,7 @@ export default function Hero() {
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  fontSize: { xs: '0.95rem', sm: '1.125rem' },
+                  fontSize: { xs: '1.125rem', sm: '1.125rem' },
                   '&:hover': { opacity: 0.8 }
                 }}
                 onClick={() => navigate('/services')}
@@ -67,7 +67,7 @@ export default function Hero() {
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  fontSize: { xs: '0.95rem', sm: '1.125rem' },
+                  fontSize: { xs: '1.125rem', sm: '1.125rem' },
                   '&:hover': { opacity: 0.8 }
                 }}
                 onClick={() => navigate('/services')}
@@ -113,7 +113,7 @@ export default function Hero() {
             {t('home.hero.title')}
           </Typography>
 
-          <Typography variant="h5" color="text.secondary" sx={{ gap: 3, maxWidth: 900, lineHeight: 1.6, fontSize: { xs: 15, sm: 18, md: 20, lg: 22 }, textShadow: '0 1px 5px rgba(0,0,0,0.5)', px: { xs: 1, sm: 0 } }}>
+          <Typography variant="h5" sx={{ gap: 3, maxWidth: 900, lineHeight: 1.6, fontSize: { xs: 15, sm: 18, md: 20, lg: 22 }, textShadow: '0 2px 8px rgba(0,0,0,0.6)', px: { xs: 1, sm: 0 }, fontWeight: 700, color: '#FFFFFF' }}>
             {t('home.hero.subtitle')} <strong style={{
               color: colors.primary
             }}>{t('home.hero.guaranteed')}</strong>
