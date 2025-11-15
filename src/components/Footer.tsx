@@ -39,7 +39,7 @@ export default function Footer() {
       items: [
         { label: t('footer.company.aboutUs'), to: '/about' },
         { label: t('footer.company.partners'), to: '/partners' },
-        { label: t('footer.company.careers'), to: '/about#careers' },
+        { label: t('footer.company.careers'), to: '/careers' },
         { label: t('footer.company.contact'), to: '/contact' }
       ]
     },

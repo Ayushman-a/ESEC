@@ -91,7 +91,7 @@ export default function Hero() {
           }}>
             <Icon icon="twemoji:flag-india" width="20" height="20" />
             <Typography variant="caption" sx={{
-              color: colors.primary,
+              color: 'white',
               fontWeight: 800,
               letterSpacing: '0.08em',
               fontSize: { xs: '0.8rem', sm: '0.95rem' }

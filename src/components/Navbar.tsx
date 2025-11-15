@@ -30,7 +30,7 @@ export default function Navbar() {
     Company: [
       { label: t('nav.menu.aboutUs'), to: '/about' },
       { label: t('nav.menu.partners'), to: '/partners' },
-      { label: t('nav.menu.careers'), to: '/about#careers' },
+      { label: t('nav.menu.careers'), to: '/careers' },
       // { label: t('nav.menu.contact'), to: '/contact' },
     ],
     Contacts: [
