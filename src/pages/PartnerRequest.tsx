@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Button, Container, Grid, Paper, Stack, TextField, Typography, MenuItem, Alert, CircularProgress } from '@mui/material'
+import { Box, Button, Container, Grid, Paper, Stack, TextField, Typography, MenuItem, Alert, CircularProgress, Snackbar } from '@mui/material'
 import { useColors } from '../theme/useColors'
 import { useThemeMode } from '../ThemeContext'
 import { Icon } from '@iconify/react'
@@ -82,6 +82,8 @@ export default function PartnerRequest() {
       })
 
       setStatus({ type: 'success', message: result.message })
+      // Scroll to top to show success message
+      window.scrollTo({ top: 0, behavior: 'smooth' })
       // Reset form
       setFormData({
         companyName: '',
@@ -106,9 +108,15 @@ export default function PartnerRequest() {
         type: 'error',
         message: error.message || 'Failed to submit request. Please try again or contact us directly at sales@nibanasolutions.com'
       })
+      // Scroll to top to show error message
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     } finally {
       setLoading(false)
     }
+  }
+
+  const handleCloseSnackbar = () => {
+    setStatus({ type: null, message: '' })
   }
 
   return (
@@ -155,11 +163,6 @@ export default function PartnerRequest() {
           }}>
             <form onSubmit={handleSubmit}>
             <Stack spacing={3}>
-              {status.type && (
-                <Alert severity={status.type} onClose={() => setStatus({ type: null, message: '' })}>
-                  {status.message}
-                </Alert>
-              )}
               {/* Company & Contact Information Section */}
               <Box>
                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, color: colors.primary }}>
@@ -395,6 +398,28 @@ export default function PartnerRequest() {
           </Paper>
         </Stack>
       </Container>
+
+      {/* Snackbar for success/error messages */}
+      <Snackbar
+        open={status.type !== null}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        sx={{ mt: 8 }}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={status.type || 'info'}
+          variant="filled"
+          sx={{
+            width: '100%',
+            fontSize: '1rem',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
+          }}
+        >
+          {status.message}
+        </Alert>
+      </Snackbar>
     </Box>
   )
 }

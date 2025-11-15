@@ -5,10 +5,13 @@ define('RECIPIENT_EMAIL_1', 'sales@nibanasolutions.com');
 define('RECIPIENT_EMAIL_2', 'narendar.reddy@nibanasolutions.com');
 
 // Email sender (use your domain email for better deliverability)
-define('SENDER_EMAIL', 'noreply@nibanasolutions.com');
+define('SENDER_EMAIL', 'narendar.reddy@nibanasolutions.com');
 define('SENDER_NAME', 'Nibana Solutions - ESEC');
 
-// CORS Configuration - Update this with your production domain
+define('RECAPTCHA_SECRET_KEY', '6LeWcA0sAAAAAN-DTkr8JGDKuJWFtn-00bZONBFx');
+define('RECAPTCHA_SITE_KEY', '6LeWcA0sAAAAAN-DTkr8JGDKuJWFtn-00bZONBFx'); // REPLACE THIS with your actual site key
+define('ENABLE_DB_SAVE', true); // Database saving is now enabled
+
 $allowed_origins = [
     'http://localhost:3000',
     'http://localhost:5173',
@@ -44,6 +47,48 @@ function sanitize_input($data) {
 // Function to validate email
 function validate_email($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+// Function to verify Google reCAPTCHA
+function verify_recaptcha($recaptcha_response) {
+    if (empty($recaptcha_response)) {
+        return [
+            'success' => false,
+            'message' => 'Please complete the reCAPTCHA verification'
+        ];
+    }
+
+    $secret_key = RECAPTCHA_SECRET_KEY;
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+    // Verify with Google
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = [
+        'secret' => $secret_key,
+        'response' => $recaptcha_response,
+        'remoteip' => $ip
+    ];
+
+    $options = [
+        'http' => [
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($data)
+        ]
+    ];
+
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $response_keys = json_decode($result, true);
+
+    if ($response_keys['success']) {
+        return ['success' => true];
+    } else {
+        return [
+            'success' => false,
+            'message' => 'reCAPTCHA verification failed. Please try again.'
+        ];
+    }
 }
 
 // Function to send email to multiple recipients

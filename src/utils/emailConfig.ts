@@ -1,7 +1,7 @@
 // API Configuration for PHP Backend
 // Update this with your production API URL when deploying
-export const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost/api'
-
+export const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://esec.live'
+export const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6Lemfg0sAAAAALoTqVyWuFqXoYH4bsqQaJP782cf'
 // API Endpoints
 export const API_ENDPOINTS = {
   CONTACT: `${API_BASE_URL}/contact.php`,
