@@ -17,6 +17,7 @@ import Contact from './pages/Contact'
 import Partners from './pages/Partners'
 import PartnerRequest from './pages/PartnerRequest'
 import Features from './pages/Features'
+import Careers from './pages/Careers'
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="/partners" element={<Partners />} />
           <Route path="/partner-request" element={<PartnerRequest />} />
           <Route path="/features" element={<Features />} />
+          <Route path="/careers" element={<Careers />} />
         </Routes>
       </Box>
       <Footer />
