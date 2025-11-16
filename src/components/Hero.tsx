@@ -56,7 +56,6 @@ export default function Hero() {
                   fontSize: { xs: '1.125rem', sm: '1.125rem' },
                   '&:hover': { opacity: 0.8 }
                 }}
-                onClick={() => navigate('/services')}
               >
                 {t('home.hero.engineeringSoftware')}
               </Typography>
@@ -70,7 +69,6 @@ export default function Hero() {
                   fontSize: { xs: '1.125rem', sm: '1.125rem' },
                   '&:hover': { opacity: 0.8 }
                 }}
-                onClick={() => navigate('/services')}
               >
                 {t('home.hero.nonEngineeringSoftware')}
               </Typography>
